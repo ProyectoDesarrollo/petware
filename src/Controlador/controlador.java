@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyVetoException;
+import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -16,14 +18,16 @@ import javax.swing.JTextField;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import paneles.panelCliente;
 import vista.Principal;
+import vista.clienteFrame;
 
 public class controlador implements ActionListener {
 
     Principal vista;
     String nombrePestaña;
     JTabbedPane tabbedPane;
-
-    JPanel cliente = new panelCliente();
+    clienteFrame vistaCliente = new clienteFrame();
+    JDesktopPane cliente = new JDesktopPane();
+    // JPanel cliente = new panelCliente();
     JPanel producto = new panelCliente();
     JPanel proveedores = new panelCliente();
     JPanel facturas = new panelCliente();
@@ -67,13 +71,23 @@ public class controlador implements ActionListener {
         String comand = e.getActionCommand();
 
         if (comand.equals("btnCliente")) {
-            if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
+         if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
                 crearPestaña("Clientes");
+                cliente.add(vistaCliente);
+                vistaCliente.setUI(null);
+                vistaCliente.setBorder(null);
+                try {
+                    vistaCliente.setSelected(false);
+                } catch (PropertyVetoException ex) {
+                }
+                
+                vistaCliente.setResizable(false);
+                vistaCliente.setVisible(true);
             } else {
 
                 int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
                 this.vista.panelPestaña.setSelectedIndex(ntabCLiente);
-            }
+          }
 
         } else if (comand.equals("btnMascotas")) {
             if (this.vista.panelPestaña.indexOfTab("Mascotas") < 0) {

@@ -71,6 +71,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1160, 600));
 
         panelBotones.setLayout(new java.awt.GridLayout(1, 0, 1, 3));
 
