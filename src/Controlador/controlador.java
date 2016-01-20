@@ -1,21 +1,29 @@
 package Controlador;
 
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import paneles.panelCliente;
 import vista.Principal;
 
 public class controlador implements ActionListener {
 
     Principal vista;
-    int numeroPestaña = 0;
+    String nombrePestaña;
     JTabbedPane tabbedPane;
-    JPanel cliente = new panelCliente();
+   
+    JPanel cliente  = new panelCliente() ;
     JPanel producto = new panelCliente();
     JPanel mascota = new panelCliente();
 
@@ -26,6 +34,8 @@ public class controlador implements ActionListener {
 
     public void iniciar() {
 
+        
+        this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(true);
         //ActionCommand y ActionListener
         this.vista.btnCliente.setActionCommand("btnCliente");
@@ -55,35 +65,90 @@ public class controlador implements ActionListener {
         String comand = e.getActionCommand();
 
         if (comand.equals("btnCliente")) {
-            JLabel probando = new JLabel("Cliente");
-            cliente.add(probando);
-            this.vista.panelPestaña.addTab("Cliente", cliente);
-            int ntabCLiente = this.vista.panelPestaña.indexOfTab("Cliente");
+            if(this.vista.panelPestaña.indexOfTab("Clientes") <  0){
+              crearPestaña("Clientes");  
+            }else{
+                
+            int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
             this.vista.panelPestaña.setSelectedIndex(ntabCLiente);
+            }
+            
 
-//            this.vista.btnCliente.setEnabled(false);
-//          this.vista.panelPestaña.add(cliente);
         } else if (comand.equals("btnMascotas")) {
-            JLabel probando = new JLabel("Mascota");
-            mascota.add(probando);
-            this.vista.panelPestaña.addTab("Mascotas", mascota);
-            int ntabMascota = this.vista.panelPestaña.indexOfTab("Mascotas");
-            this.vista.panelPestaña.setSelectedIndex(ntabMascota);
-//            this.vista.btnMascota.setEnabled(false);
-//           this.vista.panelPestaña.add(mascota);
+            if(this.vista.panelPestaña.indexOfTab("Mascotas") <  0){
+                crearPestaña("Mascotas");
+            }else{
+                  int ntabMascota = this.vista.panelPestaña.indexOfTab("Mascotas");
+                  this.vista.panelPestaña.setSelectedIndex(ntabMascota);
+            }
+            
+          
+
         } else if (comand.equals("btnProductos")) {
-            JLabel probando = new JLabel("Producto");
-            producto.add(probando);
-            this.vista.panelPestaña.addTab("Productos", producto);
-            int ntabProductos = this.vista.panelPestaña.indexOfTab("Productos");
-            this.vista.panelPestaña.setSelectedIndex(ntabProductos);
-//            this.vista.btnMascota.setEnabled(false);
-//           this.vista.panelPestaña.add(mascota);
+             if(this.vista.panelPestaña.indexOfTab("Productos") <  0){
+                 crearPestaña("Productos");
+             }else{
+                   int ntabProductos = this.vista.panelPestaña.indexOfTab("Productos");
+                   this.vista.panelPestaña.setSelectedIndex(ntabProductos);
+             }
+          
+        
+
         }
     }
-
-    public void crearPestaña() {
-
+    public void crearPestaña(String nombre){
+        nombrePestaña = nombre;
+        
+        if(nombrePestaña.equals("Clientes")){
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ",cliente);
+        }else if(nombrePestaña.equals("Mascotas")){
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ",mascota);
+        }else if(nombrePestaña.equals("Productos")){
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ",producto);
+        }
+       
+        
     }
+
+    class CustomTabbedPaneUI extends MetalTabbedPaneUI
+{
+   Rectangle xRect;
+  
+   protected void installListeners() {
+      super.installListeners();
+      tabPane.addMouseListener(new MyMouseHandler());
+   }
+  
+   protected void paintTab(Graphics g, int tabPlacement,
+                           Rectangle[] rects, int tabIndex,
+                           Rectangle iconRect, Rectangle textRect) {
+      super.paintTab(g, tabPlacement, rects, tabIndex, iconRect, textRect);
+  
+      Font f = g.getFont();
+      g.setFont(new Font("Courier", Font.BOLD, 10));
+      FontMetrics fm = g.getFontMetrics(g.getFont());
+      int charWidth = fm.charWidth('x');
+      int maxAscent = fm.getMaxAscent();
+      g.drawString("x", textRect.x + textRect.width - 3, textRect.y + textRect.height - 3);
+      g.drawRect(textRect.x+textRect.width-5,
+                 textRect.y+textRect.height-maxAscent, charWidth+2, maxAscent-1);
+      xRect = new Rectangle(textRect.x+textRect.width-2,
+                 textRect.y+textRect.height-maxAscent, charWidth+2 ,maxAscent-1);
+      g.setFont(f);
+    }
+  
+    public class MyMouseHandler extends MouseAdapter {
+        @Override
+        public void mousePressed(MouseEvent e) {
+            System.out.println(e);
+            if (xRect.contains(e.getPoint())) {
+               JTabbedPane tabPane = (JTabbedPane)e.getSource();
+               int tabIndex = tabForCoordinate(tabPane, e.getX(), e.getY());
+               tabPane.remove(tabIndex);
+            }
+        }
+    }
+}
+
 
 }
