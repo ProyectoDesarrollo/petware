@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import paneles.panelCliente;
 import vista.Principal;
+import vista.clienteF;
 import vista.clienteFrame;
 
 public class controlador implements ActionListener {
@@ -73,16 +74,6 @@ public class controlador implements ActionListener {
         if (comand.equals("btnCliente")) {
          if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
                 crearPestaña("Clientes");
-                cliente.add(vistaCliente);
-                vistaCliente.setUI(null);
-                vistaCliente.setBorder(null);
-                try {
-                    vistaCliente.setSelected(false);
-                } catch (PropertyVetoException ex) {
-                }
-                
-                vistaCliente.setResizable(false);
-                vistaCliente.setVisible(true);
             } else {
 
                 int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
@@ -134,7 +125,7 @@ public class controlador implements ActionListener {
         nombrePestaña = nombre;
 
         if (nombrePestaña.equals("Clientes")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", cliente);
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaCliente);
         } else if (nombrePestaña.equals("Mascotas")) {
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", mascota);
         } else if (nombrePestaña.equals("Productos")) {
