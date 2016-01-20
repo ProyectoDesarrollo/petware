@@ -25,6 +25,9 @@ public class controlador implements ActionListener {
 
     JPanel cliente = new panelCliente();
     JPanel producto = new panelCliente();
+    JPanel proveedores = new panelCliente();
+    JPanel facturas = new panelCliente();
+    JPanel alimentacion = new panelCliente();
     JPanel mascota = new panelCliente();
 
     public controlador(Principal vista) {
@@ -103,11 +106,11 @@ public class controlador implements ActionListener {
                 int ntabFactura = this.vista.panelPestaña.indexOfTab("Facturas");
                 this.vista.panelPestaña.setSelectedIndex(ntabFactura);
             }
-        }else if ( comand.equals("btnAlimentacion")){
-            if(this.vista.panelPestaña.indexOfTab("Alimentacion")<0){
+        } else if (comand.equals("btnAlimentacion")) {
+            if (this.vista.panelPestaña.indexOfTab("Alimentacion") < 0) {
                 crearPestaña("Alimentacion");
-            }else{
-                int ntabAlimentacion =  this.vista.panelPestaña.indexOfTab("Alimentacion");
+            } else {
+                int ntabAlimentacion = this.vista.panelPestaña.indexOfTab("Alimentacion");
                 this.vista.panelPestaña.setSelectedIndex(ntabAlimentacion);
             }
         }
@@ -124,18 +127,17 @@ public class controlador implements ActionListener {
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", producto);
 
         } else if (nombrePestaña.equals("Proveedores")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", producto);
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ", proveedores);
 
         } else if (nombrePestaña.equals("Facturas")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", producto);
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ", facturas);
 
         } else if (nombrePestaña.equals("Alimentacion")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", producto);
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ", alimentacion);
         }
 
     }
 
-    
     //Metodo para modificar las pestañas del JTabbedPanel
     class CustomTabbedPaneUI extends MetalTabbedPaneUI {
 
