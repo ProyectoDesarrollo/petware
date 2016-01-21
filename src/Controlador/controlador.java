@@ -150,7 +150,9 @@ public class controlador implements ActionListener {
 
     }
     
-   
+   private void Buscar(java.awt.event.KeyEvent evt){
+       
+   }
     //Metodo para modificar las pestañas del JTabbedPanel
     class CustomTabbedPaneUI extends MetalTabbedPaneUI {
         
