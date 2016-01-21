@@ -24,7 +24,7 @@ public class modelo extends Database{
         
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0; // Indica la cantidad de filas de la tabla.
-      String[] columNames = {"DNI", "Nombre", "Apellidos", "Direccion", "Telefono", "Movil", "Email", "Provincia", "Nacimiento", "Tipo", "Desde", "CodigoPostal"}; // Indica el nombre de las columnas de la tabla.
+      String[] columNames = {"DNI", "Nombre", "Apellidos"}; // Indica el nombre de las columnas de la tabla.
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
@@ -37,18 +37,16 @@ public class modelo extends Database{
            System.err.println( e.getMessage() );
         }
       //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][5];
+        Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT DNI, Nombre, Apellidos, Telefono, Movil FROM Cliente");
+         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Cliente");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
                 data[i][0] = res.getString("DNI");
                 data[i][1] = res.getString("Nombre");
                 data[i][2] = res.getString("Apellidos");
-                data[i][3] = res.getString("Telefono");
-                data[i][4] = res.getString("Movil");
             i++;
          }
          res.close();
@@ -64,7 +62,7 @@ public class modelo extends Database{
         
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0; // Indica la cantidad de filas de la tabla.
-      String[] columNames = {"Codigo", "Nombre", "Raza", "Sexo", "Edad", "Color"}; // Indica el nombre de las columnas de la tabla.
+      String[] columNames = {"Codigo", "Nombre", "Raza"}; // Indica el nombre de las columnas de la tabla.
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
@@ -80,16 +78,13 @@ public class modelo extends Database{
         Object[][] data = new String[registros][6];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT Codigo, Nombre, Raza, Sexo, Edad, Color FROM Pacientes");
+         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT Codigo, Nombre, Raza FROM Pacientes");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
                 data[i][0] = res.getString("Codigo");
                 data[i][1] = res.getString("Nombre");
                 data[i][2] = res.getString("Raza");
-                data[i][3] = res.getString("Sexo");
-                data[i][4] = res.getString("Edad");
-                data[i][4] = res.getString("Color");
             i++;
          }
          res.close();
@@ -105,7 +100,7 @@ public class modelo extends Database{
         
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0; // Indica la cantidad de filas de la tabla.
-      String[] columNames = {"NIF", "Nombre", "Apellidos", "Telefono", "Movil", "Email"}; // Indica el nombre de las columnas de la tabla.
+      String[] columNames = {"NIF", "Nombre", "Apellidos"}; // Indica el nombre de las columnas de la tabla.
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
@@ -121,16 +116,13 @@ public class modelo extends Database{
         Object[][] data = new String[registros][6];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT NIF, Nombre, Apellidos, Telefono, Movil, Email FROM Cliente");
+         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT NIF, Nombre, Apellidos FROM Cliente");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
                 data[i][0] = res.getString("NIF");
                 data[i][1] = res.getString("Nombre");
                 data[i][2] = res.getString("Apellidos");
-                data[i][3] = res.getString("Telefono");
-                data[i][4] = res.getString("Movil");
-                data[i][4] = res.getString("Email");
             i++;
          }
          res.close();
@@ -186,7 +178,7 @@ public class modelo extends Database{
         
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0; // Indica la cantidad de filas de la tabla.
-      String[] columNames = {"DNI", "Nombre", "Apellidos", "Telefono", "Movil", "Email"}; // Indica el nombre de las columnas de la tabla.
+      String[] columNames = {"DNI", "Nombre", "Apellidos"}; // Indica el nombre de las columnas de la tabla.
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
@@ -202,16 +194,13 @@ public class modelo extends Database{
         Object[][] data = new String[registros][6];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT DNI, Nombre, Apellidos, Telefono, Movil, Email FROM Trabajadores");
+         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Trabajadores");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
                 data[i][0] = res.getString("DNI");
                 data[i][1] = res.getString("Nombre");
                 data[i][2] = res.getString("Apellidos");
-                data[i][3] = res.getString("Telefono");
-                data[i][4] = res.getString("Movil");
-                data[i][4] = res.getString("Email");
             i++;
          }
          res.close();
