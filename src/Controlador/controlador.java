@@ -24,7 +24,7 @@ import vista.clienteFrame;
 public class controlador implements ActionListener, MouseListener {
     
     Principal vista;
-    modelo modelo = new modelo();
+    modelo modelo;
     String nombrePestaña;
     JTabbedPane tabbedPane;
     clienteFrame vistaCliente = new clienteFrame();
@@ -32,20 +32,23 @@ public class controlador implements ActionListener, MouseListener {
     
     public controlador(Principal vista) {
         
+        modelo= new modelo();
         this.vista = vista;
     }
     
     public void iniciar() {
         
-        try {
-
-            this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
-
-        } catch (Exception e) {
-        }
-        
-        this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
-        this.vista.setVisible(true);
+            
+            try {
+                
+                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+            
+            } catch (Exception e) {
+            }
+               
+            this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
+            this.vista.setVisible(true);
+           
         //ActionCommand y ActionListener
         this.vista.btnCliente.setActionCommand("btnCliente");
         this.vista.btnCliente.addActionListener(this);
@@ -84,9 +87,6 @@ public class controlador implements ActionListener, MouseListener {
         
         
         });
-        
-        
-        
     }
     
     @Override

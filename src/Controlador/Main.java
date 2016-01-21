@@ -12,7 +12,15 @@ import vista.Principal;
  * @author rober
  */
 public class Main {
+    
     public static void main(String[] args) {
+        
+        try {
+                    
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
         new controlador(new Principal()).iniciar();
     }
 }
