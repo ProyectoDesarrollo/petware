@@ -33,7 +33,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Cliente");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Cliente");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -45,7 +45,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Cliente");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Cliente");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
@@ -71,7 +71,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Pacientes");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Pacientes");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -83,7 +83,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT Codigo, Nombre, Raza FROM Pacientes");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT Codigo, Nombre, Raza FROM Pacientes");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
@@ -109,7 +109,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Proveedores");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Proveedores");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -121,7 +121,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT NIF, Nombre, Apellidos FROM Cliente");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT NIF, Nombre, Apellidos FROM Cliente");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
@@ -147,7 +147,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Productos");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Productos");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -159,7 +159,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][4];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Cliente");
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Cliente");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
@@ -187,7 +187,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Trabajadores");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Trabajadores");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -199,7 +199,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Trabajadores");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Trabajadores");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
@@ -224,7 +224,7 @@ public class modelo extends Database{
         
         try{ 
             
-            PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as total FROM Clientes where (Nombre like '%"+buscar+"%') || (DNI like '%"+buscar+"%') || (Apellidos like '%"+buscar+"%')");
+            PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total FROM Clientes where (Nombre like '%"+buscar+"%') || (DNI like '%"+buscar+"%') || (Apellidos like '%"+buscar+"%')");
             ResultSet res = pstm.executeQuery();
             res.next();
             productos=res.getInt("total");
@@ -240,7 +240,7 @@ public class modelo extends Database{
         
         try{
             //realizamos la consulta sql 
-            PreparedStatement pstm = this.getConexion().prepareStatement("SELECT * FROM Clientes where (Nombre like '%"+buscar+"%' ) ||( DNI like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')" );
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM Clientes where (Nombre like '%"+buscar+"%' ) ||( DNI like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')" );
             ResultSet res = pstm.executeQuery();
             int i=0;
             
@@ -274,7 +274,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Pacientes where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Pacientes where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -286,7 +286,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT Codigo, Nombre, Raza FROM Pacientes where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT Codigo, Nombre, Raza FROM Pacientes where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
@@ -312,7 +312,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Proveedores where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Proveedores where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -324,7 +324,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT NIF, Nombre, Apellidos FROM Cliente where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT NIF, Nombre, Apellidos FROM Cliente where (Codigo like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Raza like '%"+buscar+"%')");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
@@ -350,7 +350,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Productos where (Nombre like '%"+buscar+"%' ");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Productos where (Nombre like '%"+buscar+"%' ");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -362,7 +362,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][4];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-        PreparedStatement pstm = this.getConexion().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Cliente where ( Nombre like '%"+buscar+"%')");
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Cliente where ( Nombre like '%"+buscar+"%')");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
@@ -390,7 +390,7 @@ public class modelo extends Database{
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConexion().prepareStatement( "SELECT count(*) as Total FROM Trabajadores where (DNI like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Trabajadores where (DNI like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -402,7 +402,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConexion().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Trabajadores where (DNI like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos FROM Trabajadores where (DNI like '%"+buscar+"%' ) ||( Nombre like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){

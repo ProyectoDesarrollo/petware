@@ -27,12 +27,12 @@ public class Database {
         } catch (SQLException | ClassNotFoundException e) {
             
             System.err.println(e.getMessage());
-            
+            System.out.println("No va");
         }
     
     }
     
-    public Connection getConexion () {
+    public Connection getConnection () {
         
         return this.conn;
         
