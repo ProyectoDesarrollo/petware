@@ -1,9 +1,11 @@
+package vista;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+
 
 import java.awt.Cursor;
 import java.awt.Point;
@@ -71,7 +73,6 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1435, 700));
 
         panelBotones.setLayout(new java.awt.GridLayout(1, 0, 1, 3));
 
