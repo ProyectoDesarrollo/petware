@@ -32,7 +32,7 @@ public class Database {
     
     }
     
-    public Connection getConnection () {
+    public Connection getConexion () {
         
         return this.conn;
         
