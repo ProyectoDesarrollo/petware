@@ -16,9 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
-import paneles.panelCliente;
 import vista.Principal;
-import vista.clienteF;
 import vista.clienteFrame;
 
 public class controlador implements ActionListener {
@@ -28,12 +26,6 @@ public class controlador implements ActionListener {
     JTabbedPane tabbedPane;
     clienteFrame vistaCliente = new clienteFrame();
     JDesktopPane cliente = new JDesktopPane();
-    // JPanel cliente = new panelCliente();
-    JPanel producto = new panelCliente();
-    JPanel proveedores = new panelCliente();
-    JPanel facturas = new panelCliente();
-    JPanel alimentacion = new panelCliente();
-    JPanel mascota = new panelCliente();
 
     public controlador(Principal vista) {
 
@@ -74,6 +66,7 @@ public class controlador implements ActionListener {
         if (comand.equals("btnCliente")) {
          if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
                 crearPestaña("Clientes");
+                vistaCliente.setUI(null);
             } else {
 
                 int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
@@ -126,20 +119,20 @@ public class controlador implements ActionListener {
 
         if (nombrePestaña.equals("Clientes")) {
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaCliente);
-        } else if (nombrePestaña.equals("Mascotas")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", mascota);
-        } else if (nombrePestaña.equals("Productos")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", producto);
-
-        } else if (nombrePestaña.equals("Proveedores")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", proveedores);
-
-        } else if (nombrePestaña.equals("Facturas")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", facturas);
-
-        } else if (nombrePestaña.equals("Alimentacion")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", alimentacion);
-        }
+        } //else if (nombrePestaña.equals("Mascotas")) {
+//            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
+//        } else if (nombrePestaña.equals("Productos")) {
+//            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
+//
+//        } else if (nombrePestaña.equals("Proveedores")) {
+//            this.vista.panelPestaña.addTab(nombrePestaña + "    ",);
+//
+//        } else if (nombrePestaña.equals("Facturas")) {
+//            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
+//
+//        } else if (nombrePestaña.equals("Alimentacion")) {
+//            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
+//        }
 
     }
 

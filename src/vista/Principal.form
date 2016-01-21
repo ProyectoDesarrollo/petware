@@ -62,7 +62,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1160, 600]"/>
+      <Dimension value="[1435, 700]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -94,7 +94,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="panelBotones" min="-2" pref="108" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelPestaña" pref="449" max="32767" attributes="0"/>
+              <Component id="panelPestaña" pref="552" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
