@@ -78,11 +78,18 @@ public class controlador implements ActionListener {
         
         if (comand.equals("btnCliente")) {
             if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
+                
+                //Invocamos al metodo para crear las pestañas
                 crearPestaña("Clientes");
+                //Quitamos el marco del jInternalFrame
                 vistaCliente.setUI(null);
                 
             } else {
+                /*
+                   En caso de que ya este creada la pestaña ,
+                   en vez de crear otra abre la pestaña con el nombre del boton.
                 
+                */
                 int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
                 this.vista.panelPestaña.setSelectedIndex(ntabCLiente);
             }
@@ -132,6 +139,12 @@ public class controlador implements ActionListener {
         nombrePestaña = nombre;
         
         if (nombrePestaña.equals("Clientes")) {
+            /*
+            *De esta forma Segun el boton que pulsemos dara nombre a la pestaña
+            *primer parametro es el nombre de la pestaña y el segundo parametro es el componente 
+            *que añadimos a la pestaña
+            */
+            
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaCliente);
         } //else if (nombrePestaña.equals("Mascotas")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
