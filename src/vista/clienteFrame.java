@@ -64,7 +64,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jPanel4 = new javax.swing.JPanel();
         txtBuscadorCliente = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableCliente = new javax.swing.JTable();
 
         jButton1.setText("jButton1");
 
@@ -282,7 +282,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -301,7 +301,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(jTableCliente);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -375,7 +375,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
+    public javax.swing.JTable jTableCliente;
     public javax.swing.JTextField jTextField49;
     public javax.swing.JTextField jTextField50;
     public javax.swing.JTextField jTextField51;

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import vista.Principal;
+import vista.clienteFrame;
 
 /**
  *
@@ -18,7 +19,9 @@ import vista.Principal;
  */
 public class modelo extends Database{
     
-    Principal vista;  
+    Principal vista;
+    clienteFrame vistaCliente = new clienteFrame();
+    
     public modelo() {}
     
     //---------------------------------------Creacion de Tablas-------------------------------------

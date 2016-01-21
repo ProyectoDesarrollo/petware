@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.modelo;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.beans.PropertyVetoException;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
@@ -19,9 +21,10 @@ import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import vista.Principal;
 import vista.clienteFrame;
 
-public class controlador implements ActionListener {
+public class controlador implements ActionListener, MouseListener {
     
     Principal vista;
+    modelo modelo = new modelo();
     String nombrePestaña;
     JTabbedPane tabbedPane;
     clienteFrame vistaCliente = new clienteFrame();
@@ -33,6 +36,13 @@ public class controlador implements ActionListener {
     }
     
     public void iniciar() {
+        
+        try {
+
+            this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+
+        } catch (Exception e) {
+        }
         
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(true);
@@ -55,6 +65,15 @@ public class controlador implements ActionListener {
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
         
+        //--------------------- MouseClick--------------------------
+        
+        this.vistaCliente.jTableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                
+            }
+        });
+        
+        //---------------------- Buscar--------------------------
         this.vistaCliente.txtBuscadorCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt){
                 vistaCliente.txtBuscadorCliente.setText("");
@@ -162,10 +181,17 @@ public class controlador implements ActionListener {
 //        }
 
     }
+
+    public void mouseClicked(MouseEvent e) {}
+
+    public void mousePressed(MouseEvent e) {}
+
+    public void mouseReleased(MouseEvent e) {}
+
+    public void mouseEntered(MouseEvent e) {}
+
+    public void mouseExited(MouseEvent e) {}
     
-   private void Buscar(java.awt.event.KeyEvent evt){
-       
-   }
     //Metodo para modificar las pestañas del JTabbedPanel
     class CustomTabbedPaneUI extends MetalTabbedPaneUI {
         
