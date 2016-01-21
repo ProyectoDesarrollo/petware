@@ -51,7 +51,6 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelBotones = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         btnCliente = new javax.swing.JButton();
         btnMascota = new javax.swing.JButton();
@@ -59,6 +58,7 @@ public class Principal extends javax.swing.JFrame {
         btnProveedores = new javax.swing.JButton();
         btnFacturas = new javax.swing.JButton();
         btnAlimentacion = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         panelPestaña = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -73,27 +73,15 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1439, 715));
 
         panelBotones.setLayout(new java.awt.GridLayout(1, 0, 1, 3));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 144, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 108, Short.MAX_VALUE)
-        );
-
-        panelBotones.add(jPanel3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 144, Short.MAX_VALUE)
+            .addGap(0, 153, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,6 +182,18 @@ public class Principal extends javax.swing.JFrame {
         btnAlimentacion.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnAlimentacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         panelBotones.add(btnAlimentacion);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
+        jButton1.setText("TRABAJADORES");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador.png"))); // NOI18N
+        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        panelBotones.add(jButton1);
 
         panelPestaña.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         panelPestaña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -304,6 +304,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JButton btnMascota;
     public javax.swing.JButton btnProductos;
     public javax.swing.JButton btnProveedores;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -315,7 +316,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel panelBotones;
     public javax.swing.JTabbedPane panelPestaña;

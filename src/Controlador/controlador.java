@@ -20,59 +20,73 @@ import vista.Principal;
 import vista.clienteFrame;
 
 public class controlador implements ActionListener {
-
+    
     Principal vista;
     String nombrePestaña;
     JTabbedPane tabbedPane;
     clienteFrame vistaCliente = new clienteFrame();
     JDesktopPane cliente = new JDesktopPane();
-
+    
     public controlador(Principal vista) {
-
+        
         this.vista = vista;
     }
-
+    
     public void iniciar() {
-
+        
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(true);
         //ActionCommand y ActionListener
         this.vista.btnCliente.setActionCommand("btnCliente");
         this.vista.btnCliente.addActionListener(this);
-
+        
         this.vista.btnMascota.setActionCommand("btnMascotas");
         this.vista.btnMascota.addActionListener(this);
-
+        
         this.vista.btnProductos.setActionCommand("btnProductos");
         this.vista.btnProductos.addActionListener(this);
-
+        
         this.vista.btnProveedores.setActionCommand("btnProveedores");
         this.vista.btnProveedores.addActionListener(this);
-
+        
         this.vista.btnFacturas.setActionCommand("btnFactura");
         this.vista.btnFacturas.addActionListener(this);
-
+        
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
-
+        
+        this.vistaCliente.txtBuscadorCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt){
+                vistaCliente.txtBuscadorCliente.setText("");
+            }
+            public void keyReleased( java.awt.event.KeyEvent evt){
+                
+            }
+        
+        
+        });
+        
+        
+        
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         //Captura en String l comando accionado por el usuario
 
         String comand = e.getActionCommand();
-
+        
         if (comand.equals("btnCliente")) {
-         if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
+            if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
                 crearPestaña("Clientes");
                 vistaCliente.setUI(null);
+                
             } else {
-
+                
                 int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
                 this.vista.panelPestaña.setSelectedIndex(ntabCLiente);
-          }
-
+            }
+            
         } else if (comand.equals("btnMascotas")) {
             if (this.vista.panelPestaña.indexOfTab("Mascotas") < 0) {
                 crearPestaña("Mascotas");
@@ -80,7 +94,7 @@ public class controlador implements ActionListener {
                 int ntabMascota = this.vista.panelPestaña.indexOfTab("Mascotas");
                 this.vista.panelPestaña.setSelectedIndex(ntabMascota);
             }
-
+            
         } else if (comand.equals("btnProductos")) {
             if (this.vista.panelPestaña.indexOfTab("Productos") < 0) {
                 crearPestaña("Productos");
@@ -88,7 +102,7 @@ public class controlador implements ActionListener {
                 int ntabProductos = this.vista.panelPestaña.indexOfTab("Productos");
                 this.vista.panelPestaña.setSelectedIndex(ntabProductos);
             }
-
+            
         } else if (comand.equals("btnProveedores")) {
             if (this.vista.panelPestaña.indexOfTab("Proveedores") < 0) {
                 crearPestaña("Proveedores");
@@ -96,7 +110,7 @@ public class controlador implements ActionListener {
                 int ntabProveedores = this.vista.panelPestaña.indexOfTab("Proveedores");
                 this.vista.panelPestaña.setSelectedIndex(ntabProveedores);
             }
-
+            
         } else if (comand.equals("btnFactura")) {
             if (this.vista.panelPestaña.indexOfTab("Facturas") < 0) {
                 crearPestaña("Facturas");
@@ -113,10 +127,10 @@ public class controlador implements ActionListener {
             }
         }
     }
-
+    
     public void crearPestaña(String nombre) {
         nombrePestaña = nombre;
-
+        
         if (nombrePestaña.equals("Clientes")) {
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaCliente);
         } //else if (nombrePestaña.equals("Mascotas")) {
@@ -135,22 +149,23 @@ public class controlador implements ActionListener {
 //        }
 
     }
-
+    
+   
     //Metodo para modificar las pestañas del JTabbedPanel
     class CustomTabbedPaneUI extends MetalTabbedPaneUI {
-
+        
         Rectangle xRect;
-
+        
         protected void installListeners() {
             super.installListeners();
             tabPane.addMouseListener(new MyMouseHandler());
         }
-
+        
         protected void paintTab(Graphics g, int tabPlacement,
                 Rectangle[] rects, int tabIndex,
                 Rectangle iconRect, Rectangle textRect) {
             super.paintTab(g, tabPlacement, rects, tabIndex, iconRect, textRect);
-
+            
             Font f = g.getFont();
             g.setFont(new Font("Courier", Font.BOLD, 10));
             FontMetrics fm = g.getFontMetrics(g.getFont());
@@ -163,9 +178,9 @@ public class controlador implements ActionListener {
                     textRect.y + textRect.height - maxAscent, charWidth + 2, maxAscent - 1);
             g.setFont(f);
         }
-
+        
         public class MyMouseHandler extends MouseAdapter {
-
+            
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println(e);
@@ -177,5 +192,5 @@ public class controlador implements ActionListener {
             }
         }
     }
-
+    
 }
