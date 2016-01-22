@@ -97,7 +97,7 @@ public class controlador implements ActionListener, MouseListener {
                 //Invocamos al metodo para crear las pestañas
                 crearPestaña("Clientes");
                 //Quitamos el marco del jInternalFrame
-                vistaCliente.setUI(null);
+//                vistaCliente.setUI(null);
                 
             } else {
                 /*

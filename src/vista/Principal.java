@@ -1,5 +1,7 @@
 package vista;
 
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -73,7 +75,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1439, 715));
+        setPreferredSize(new java.awt.Dimension(1618, 900));
 
         panelBotones.setLayout(new java.awt.GridLayout(1, 0, 1, 3));
 
