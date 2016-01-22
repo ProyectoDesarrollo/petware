@@ -224,7 +224,7 @@ public class modelo extends Database{
         
         try{ 
             
-            PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total FROM Clientes where (Nombre like '%"+buscar+"%') || (DNI like '%"+buscar+"%') || (Apellidos like '%"+buscar+"%')");
+            PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total FROM Cliente where (Nombre like '%"+buscar+"%') || (DNI like '%"+buscar+"%') || (Apellidos like '%"+buscar+"%')");
             ResultSet res = pstm.executeQuery();
             res.next();
             productos=res.getInt("total");
@@ -240,7 +240,7 @@ public class modelo extends Database{
         
         try{
             //realizamos la consulta sql 
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM Clientes where (Nombre like '%"+buscar+"%' ) ||( DNI like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')" );
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM Cliente where (Nombre like '%"+buscar+"%' ) ||( DNI like '%"+buscar+"%')|| (Apellidos like '%"+buscar+"%')" );
             ResultSet res = pstm.executeQuery();
             int i=0;
             

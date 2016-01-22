@@ -77,15 +77,11 @@ public class controlador implements ActionListener, MouseListener {
         });
         
         //---------------------- Buscar--------------------------
-        this.vistaCliente.txtBuscadorCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt){
-                vistaCliente.txtBuscadorCliente.setText("");
-            }
-            public void keyReleased( java.awt.event.KeyEvent evt){
-                
-            }
         
-        
+        this.vistaCliente.txtBuscadorCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BuscarClientes(evt);
+            }
         });
     }
     
@@ -153,7 +149,14 @@ public class controlador implements ActionListener, MouseListener {
             }
         }
     }
+    //-----------------------------Metodo Buscar-------------------------------
     
+    private void BuscarClientes(java.awt.event.KeyEvent evt) {//Busca Clientes            
+        String buscar = this.vistaCliente.txtBuscadorCliente.getText();
+        this.vistaCliente.jTableCliente.setModel(this.modelo.buscarCliente(buscar));
+    }
+    
+    //-----------------------------Crear Cliente----------------------------------
     public void crearPestaña(String nombre) {
         nombrePestaña = nombre;
         
