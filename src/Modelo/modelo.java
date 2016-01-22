@@ -159,7 +159,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][4];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Cliente");
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Productos");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
