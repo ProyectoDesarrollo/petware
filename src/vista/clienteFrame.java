@@ -72,7 +72,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         panelListadoCliente = new javax.swing.JPanel();
         txtBuscadorCliente = new javax.swing.JTextField();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        scrollTableCliente = new javax.swing.JScrollPane();
         jTableCliente = new javax.swing.JTable();
         btnAgregarCliente = new javax.swing.JButton();
 
@@ -291,7 +291,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                 .addComponent(scrollNotaCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab1", panelClienteDatos);
+        jTabbedPane1.addTab("Cliente", panelClienteDatos);
 
         javax.swing.GroupLayout pestañaMascotaClienteLayout = new javax.swing.GroupLayout(pestañaMascotaCliente);
         pestañaMascotaCliente.setLayout(pestañaMascotaClienteLayout);
@@ -304,7 +304,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
             .addGap(0, 654, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab2", pestañaMascotaCliente);
+        jTabbedPane1.addTab("Mascota", pestañaMascotaCliente);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -329,8 +329,9 @@ public class clienteFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollTableCliente.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollTableCliente.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollTableCliente.setOpaque(false);
 
         jTableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -351,7 +352,8 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTableCliente);
+        jTableCliente.setOpaque(false);
+        scrollTableCliente.setViewportView(jTableCliente);
 
         btnAgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
 
@@ -364,7 +366,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(panelListadoClienteLayout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollTableCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         panelListadoClienteLayout.setVerticalGroup(
@@ -375,7 +377,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                     .addComponent(btnAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBuscadorCliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3))
+                .addComponent(scrollTableCliente))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -436,7 +438,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTableCliente;
     private javax.swing.JToggleButton jToggleButton1;
@@ -448,6 +449,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel panelListadoCliente;
     private javax.swing.JPanel pestañaMascotaCliente;
     private javax.swing.JScrollPane scrollNotaCliente;
+    public javax.swing.JScrollPane scrollTableCliente;
     public javax.swing.JTextField txtApellidosCliente;
     public javax.swing.JTextField txtBuscadorCliente;
     public javax.swing.JTextField txtCodigoPCliente;

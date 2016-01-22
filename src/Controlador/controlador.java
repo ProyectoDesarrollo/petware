@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
+import javax.swing.table.DefaultTableCellRenderer;
 import vista.Principal;
 import vista.clienteFrame;
 
@@ -68,6 +69,17 @@ public class controlador implements ActionListener, MouseListener {
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
         
+        
+        //modificacion tabla cliente
+        this.vistaCliente.jTableCliente.setShowGrid(false);
+        this.vistaCliente.jTableCliente.setOpaque(false);
+//        ((DefaultTableCellRenderer)vistaCliente.jTableCliente.getDefaultRenderer(Object.class)).setOpaque(false); //vuelve transparente la celda
+
+        
+        this.vistaCliente.scrollTableCliente.setOpaque(false);
+        this.vistaCliente.scrollTableCliente.getViewport().setOpaque(false);
+       
+        
         //--------------------- MouseClick--------------------------
         
         this.vistaCliente.jTableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -83,6 +95,11 @@ public class controlador implements ActionListener, MouseListener {
                 BuscarClientes(evt);
             }
         });
+        this.vistaCliente.txtBuscadorCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vistaCliente.txtBuscadorCliente.setText("");
+            }
+        });
     }
     
     @Override
@@ -96,6 +113,7 @@ public class controlador implements ActionListener, MouseListener {
                 
                 //Invocamos al metodo para crear las pestañas
                 crearPestaña("Clientes");
+               
                 //Quitamos el marco del jInternalFrame
 //                vistaCliente.setUI(null);
                 
