@@ -21,75 +21,78 @@ import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import javax.swing.table.DefaultTableCellRenderer;
 import vista.Principal;
 import vista.clienteFrame;
+import vista.pacienteFrame;
+import vista.productoFrame;
 
 public class controlador implements ActionListener, MouseListener {
-    
+
     Principal vista;
     modelo modelo;
     String nombrePestaña;
     JTabbedPane tabbedPane;
     clienteFrame vistaCliente = new clienteFrame();
+    pacienteFrame vistaPaciente = new pacienteFrame();
+    productoFrame vistaProducto = new productoFrame();
     JDesktopPane cliente = new JDesktopPane();
-    
+
     public controlador(Principal vista) {
-        
-        modelo= new modelo();
+
+        modelo = new modelo();
         this.vista = vista;
     }
-    
+
     public void iniciar() {
+
+        try {
+
+            this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+
+        } catch (Exception e) {
+        }
+
+        this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
+        this.vista.setVisible(true);
         
-            
-            try {
-                
-                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
-            
-            } catch (Exception e) {
-            }
-               
-            this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
-            this.vista.setVisible(true);
-           
+
         //ActionCommand y ActionListener
         this.vista.btnCliente.setActionCommand("btnCliente");
         this.vista.btnCliente.addActionListener(this);
-        
+
         this.vista.btnMascota.setActionCommand("btnMascotas");
         this.vista.btnMascota.addActionListener(this);
-        
+
         this.vista.btnProductos.setActionCommand("btnProductos");
         this.vista.btnProductos.addActionListener(this);
-        
+
         this.vista.btnProveedores.setActionCommand("btnProveedores");
         this.vista.btnProveedores.addActionListener(this);
-        
+
         this.vista.btnFacturas.setActionCommand("btnFactura");
         this.vista.btnFacturas.addActionListener(this);
-        
+
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
         
+        //InternalFrame
         
+        this.vistaCliente.setVisible(false);
+
         //modificacion tabla cliente
         this.vistaCliente.jTableCliente.setShowGrid(false);
         this.vistaCliente.jTableCliente.setOpaque(false);
 //        ((DefaultTableCellRenderer)vistaCliente.jTableCliente.getDefaultRenderer(Object.class)).setOpaque(false); //vuelve transparente la celda
 
-        
         this.vistaCliente.scrollTableCliente.setOpaque(false);
         this.vistaCliente.scrollTableCliente.getViewport().setOpaque(false);
-       
-        
+
         //--------------------- MouseClick--------------------------
-        
         this.vistaCliente.jTableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
+
             }
         });
-        
+
         //---------------------- Buscar--------------------------
-        
         this.vistaCliente.txtBuscadorCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 BuscarClientes(evt);
@@ -101,32 +104,31 @@ public class controlador implements ActionListener, MouseListener {
             }
         });
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         //Captura en String l comando accionado por el usuario
 
         String comand = e.getActionCommand();
-        
+
         if (comand.equals("btnCliente")) {
-            if (this.vista.panelPestaña.indexOfTab("Clientes") < 0) {
-                
+            if (this.vistaCliente.isVisible() == false)  {
+
                 //Invocamos al metodo para crear las pestañas
                 crearPestaña("Clientes");
-               
+
                 //Quitamos el marco del jInternalFrame
 //                vistaCliente.setUI(null);
-                
-            } else {
+            } else if (this.vistaCliente.isVisible() == true) {
                 /*
                    En caso de que ya este creada la pestaña ,
                    en vez de crear otra abre la pestaña con el nombre del boton.
                 
-                */
+                 */
                 int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
                 this.vista.panelPestaña.setSelectedIndex(ntabCLiente);
             }
-            
+
         } else if (comand.equals("btnMascotas")) {
             if (this.vista.panelPestaña.indexOfTab("Mascotas") < 0) {
                 crearPestaña("Mascotas");
@@ -134,7 +136,7 @@ public class controlador implements ActionListener, MouseListener {
                 int ntabMascota = this.vista.panelPestaña.indexOfTab("Mascotas");
                 this.vista.panelPestaña.setSelectedIndex(ntabMascota);
             }
-            
+
         } else if (comand.equals("btnProductos")) {
             if (this.vista.panelPestaña.indexOfTab("Productos") < 0) {
                 crearPestaña("Productos");
@@ -142,7 +144,7 @@ public class controlador implements ActionListener, MouseListener {
                 int ntabProductos = this.vista.panelPestaña.indexOfTab("Productos");
                 this.vista.panelPestaña.setSelectedIndex(ntabProductos);
             }
-            
+
         } else if (comand.equals("btnProveedores")) {
             if (this.vista.panelPestaña.indexOfTab("Proveedores") < 0) {
                 crearPestaña("Proveedores");
@@ -150,7 +152,7 @@ public class controlador implements ActionListener, MouseListener {
                 int ntabProveedores = this.vista.panelPestaña.indexOfTab("Proveedores");
                 this.vista.panelPestaña.setSelectedIndex(ntabProveedores);
             }
-            
+
         } else if (comand.equals("btnFactura")) {
             if (this.vista.panelPestaña.indexOfTab("Facturas") < 0) {
                 crearPestaña("Facturas");
@@ -168,30 +170,30 @@ public class controlador implements ActionListener, MouseListener {
         }
     }
     //-----------------------------Metodo Buscar-------------------------------
-    
+
     private void BuscarClientes(java.awt.event.KeyEvent evt) {//Busca Clientes            
         String buscar = this.vistaCliente.txtBuscadorCliente.getText();
         this.vistaCliente.jTableCliente.setModel(this.modelo.buscarCliente(buscar));
     }
-    
+
     //-----------------------------Crear Cliente----------------------------------
     public void crearPestaña(String nombre) {
         nombrePestaña = nombre;
-        
+
         if (nombrePestaña.equals("Clientes")) {
             /*
             *De esta forma Segun el boton que pulsemos dara nombre a la pestaña
             *primer parametro es el nombre de la pestaña y el segundo parametro es el componente 
             *que añadimos a la pestaña
-            */
-            
+             */
+
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaCliente);
-        } //else if (nombrePestaña.equals("Mascotas")) {
-//            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
-//        } else if (nombrePestaña.equals("Productos")) {
-//            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
+        } else if (nombrePestaña.equals("Mascotas")) {
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaPaciente);
+        } else if (nombrePestaña.equals("Productos")) {
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaProducto);
 //
-//        } else if (nombrePestaña.equals("Proveedores")) {
+        } //else if (nombrePestaña.equals("Proveedores")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ",);
 //
 //        } else if (nombrePestaña.equals("Facturas")) {
@@ -203,31 +205,36 @@ public class controlador implements ActionListener, MouseListener {
 
     }
 
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+    }
 
-    public void mousePressed(MouseEvent e) {}
+    public void mousePressed(MouseEvent e) {
+    }
 
-    public void mouseReleased(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {
+    }
 
-    public void mouseEntered(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {
+    }
 
-    public void mouseExited(MouseEvent e) {}
-    
+    public void mouseExited(MouseEvent e) {
+    }
+
     //Metodo para modificar las pestañas del JTabbedPanel
     class CustomTabbedPaneUI extends MetalTabbedPaneUI {
-        
+
         Rectangle xRect;
-        
+
         protected void installListeners() {
             super.installListeners();
             tabPane.addMouseListener(new MyMouseHandler());
         }
-        
+
         protected void paintTab(Graphics g, int tabPlacement,
                 Rectangle[] rects, int tabIndex,
                 Rectangle iconRect, Rectangle textRect) {
             super.paintTab(g, tabPlacement, rects, tabIndex, iconRect, textRect);
-            
+
             Font f = g.getFont();
             g.setFont(new Font("Courier", Font.BOLD, 10));
             FontMetrics fm = g.getFontMetrics(g.getFont());
@@ -240,9 +247,9 @@ public class controlador implements ActionListener, MouseListener {
                     textRect.y + textRect.height - maxAscent, charWidth + 2, maxAscent - 1);
             g.setFont(f);
         }
-        
+
         public class MyMouseHandler extends MouseAdapter {
-            
+
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println(e);
@@ -254,5 +261,5 @@ public class controlador implements ActionListener, MouseListener {
             }
         }
     }
-    
+
 }
