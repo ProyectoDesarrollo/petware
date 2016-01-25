@@ -536,7 +536,7 @@ public class modelo extends Database{
         String[] Relleno= new String[5];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Clientes WHERE DNI like '%"+dni+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT Nombre, Apellidos, Direccion, Telefono, Movil, Nacimiento, Poblacion, Provincia, CP, Fecha, Tipo FROM Clientes WHERE DNI like '%"+dni+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
@@ -545,6 +545,13 @@ public class modelo extends Database{
             Relleno[2]= res.getString("Apellidos");
             Relleno[3]= res.getString("Direccion");
             Relleno[4]= res.getString("Telefono");
+            Relleno[5]= res.getString("Movil");
+            Relleno[6] = res.getString("Nacimiento");
+            Relleno[7]= res.getString("Poblacion");
+            Relleno[8]= res.getString("Provincia");
+            Relleno[9]= res.getString("CP");
+            Relleno[7]= res.getString("Fecha");
+            Relleno[8]= res.getString("Tipo");
           
          }           
          res.close();
