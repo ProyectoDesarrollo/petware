@@ -419,4 +419,138 @@ public class modelo extends Database{
         }
         return tablemodel;
     }
+    
+    //--------------------------------- Meotdos Rellenar-----------------------------
+    
+    public String[] RellenarCliente(String dni){     
+        String[] Relleno= new String[5];
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Clientes WHERE DNI like '%"+dni+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("DNI");
+            Relleno[1] = res.getString("Nombre");
+            Relleno[2]= res.getString("Apellidos");
+            Relleno[3]= res.getString("Direccion");
+            Relleno[4]= res.getString("Telefono");
+          
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return Relleno; 
+    }
+    
+    public String[] RellenarProveedor(String nif){     
+        String[] Relleno= new String[5];
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT NIF, Nombre, Apellidos, Direccion, Telefono FROM Proveedores WHERE NIF like '%"+nif+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("NIF");
+            Relleno[1] = res.getString("Nombre");
+            Relleno[2]= res.getString("Apellidos");
+            Relleno[3]= res.getString("Direccion");
+            Relleno[4]= res.getString("Telefono");
+          
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return Relleno; 
+    }
+    
+    public String[] RellenarPaciente(String codigo){     
+        String[] Relleno= new String[5];
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Pacientes WHERE Codigo like '%"+codigo+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("DNI");
+            Relleno[1] = res.getString("Nombre");
+            Relleno[2]= res.getString("Apellidos");
+            Relleno[3]= res.getString("Direccion");
+            Relleno[4]= res.getString("Telefono");
+          
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return Relleno; 
+    }
+    
+    public String[] RellenarProducto(String id){     
+        String[] Relleno= new String[5];
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Productos WHERE ID like '%"+id+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("DNI");
+            Relleno[1] = res.getString("Nombre");
+            Relleno[2]= res.getString("Apellidos");
+            Relleno[3]= res.getString("Direccion");
+            Relleno[4]= res.getString("Telefono");
+          
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return Relleno; 
+    }
+    
+    public String[] RellenarTrabajadores(String dni){     
+        String[] Relleno= new String[5];
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Trabajadores WHERE DNI like '%"+dni+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("DNI");
+            Relleno[1] = res.getString("Nombre");
+            Relleno[2]= res.getString("Apellidos");
+            Relleno[3]= res.getString("Direccion");
+            Relleno[4]= res.getString("Telefono");
+          
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return Relleno; 
+    }
+    
+    public String[] RellenarVacunas(String dni){     
+        String[] Relleno= new String[5];
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Clientes WHERE DNI like '%"+dni+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("DNI");
+            Relleno[1] = res.getString("Nombre");
+            Relleno[2]= res.getString("Apellidos");
+            Relleno[3]= res.getString("Direccion");
+            Relleno[4]= res.getString("Telefono");
+          
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return Relleno; 
+    }
 }
