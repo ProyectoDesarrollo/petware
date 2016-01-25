@@ -34,7 +34,8 @@ public class controlador implements ActionListener, MouseListener {
     pacienteFrame vistaPaciente = new pacienteFrame();
     productoFrame vistaProducto = new productoFrame();
     JDesktopPane cliente = new JDesktopPane();
-
+    int fila=0;
+    
     public controlador(Principal vista) {
 
         modelo = new modelo();
@@ -219,7 +220,24 @@ public class controlador implements ActionListener, MouseListener {
 
     public void mouseExited(MouseEvent e) {
     }
+    
+    
+    //----------------------Permite la selección de elementos dentro de tablas---------------------------
+    private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {
 
+        fila = this.vistaCliente.jTableCliente.getSelectedRow();
+        String dni = (String) this.vistaCliente.jTableCliente.getValueAt(fila, 0);
+    
+        String[] Relleno = this.modelo.RellenarCliente(dni);
+        this.vistaCliente.txtDNICliente.setText(dni);
+        this.vistaCliente.txtDNICliente.enable(false);        
+        this.vistaCliente.txtNombreCliente.setText(Relleno[0]);
+        this.vistaCliente.txtApellidosCliente.setText(Relleno[1]);
+        this.vistaCliente.txtDireccionCliente.setText(Relleno[2]);
+        this.vistaCliente.txtTelefonoCliente.setText(Relleno[3]);
+        this.vistaCliente.txtMovilCliente.setText(Relleno[4]);
+    }
+    
     //Metodo para modificar las pestañas del JTabbedPanel
     class CustomTabbedPaneUI extends MetalTabbedPaneUI {
 
