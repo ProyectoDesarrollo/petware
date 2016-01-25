@@ -120,7 +120,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        txtBuscadorProducto = new javax.swing.JTextField();
+        txtBuscadorPaciente = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTablePacientes = new javax.swing.JTable();
 
@@ -601,12 +601,17 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
 
         jTabbedPane2.addTab("Proveedores", jPanel1);
 
-        txtBuscadorProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtBuscadorPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtBuscadorProductoMouseClicked(evt);
+                txtBuscadorPacienteMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtBuscadorProductoMouseEntered(evt);
+                txtBuscadorPacienteMouseEntered(evt);
+            }
+        });
+        txtBuscadorPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscadorPacienteActionPerformed(evt);
             }
         });
 
@@ -640,7 +645,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtBuscadorProducto)
+                .addComponent(txtBuscadorPaciente)
                 .addContainerGap())
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
         );
@@ -648,7 +653,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtBuscadorProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBuscadorPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
@@ -664,20 +669,24 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 403, Short.MAX_VALUE)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscadorProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscadorProductoMouseClicked
+    private void txtBuscadorPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscadorPacienteMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscadorProductoMouseClicked
+    }//GEN-LAST:event_txtBuscadorPacienteMouseClicked
 
-    private void txtBuscadorProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscadorProductoMouseEntered
+    private void txtBuscadorPacienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscadorPacienteMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscadorProductoMouseEntered
+    }//GEN-LAST:event_txtBuscadorPacienteMouseEntered
+
+    private void txtBuscadorPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorPacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscadorPacienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -774,7 +783,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField jTextField8;
     public javax.swing.JTextField jTextField9;
     private javax.swing.JPanel panelClienteDatos5;
-    public javax.swing.JTextField txtBuscadorProducto;
+    public javax.swing.JTextField txtBuscadorPaciente;
     public javax.swing.JTextField txtIDProductos;
     public javax.swing.JTextField txtNombreProductos;
     // End of variables declaration//GEN-END:variables

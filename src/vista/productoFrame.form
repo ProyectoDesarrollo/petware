@@ -94,7 +94,7 @@
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jSpinner1" min="-2" pref="117" max="-2" attributes="0"/>
+                                                      <Component id="jSpinner" min="-2" pref="117" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                                       <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
@@ -129,9 +129,9 @@
                           <Component id="jButton4" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtNombreProductos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel67" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="txtNombreProductos" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -140,7 +140,7 @@
                           <Component id="txtIDProductos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtPrecioProductos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel68" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel60" min="-2" pref="34" max="-2" attributes="0"/>
@@ -222,7 +222,10 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner1">
+            <Component class="javax.swing.JSpinner" name="jSpinner">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>

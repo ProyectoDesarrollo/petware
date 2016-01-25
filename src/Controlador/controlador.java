@@ -89,10 +89,23 @@ public class controlador implements ActionListener, MouseListener {
         //--------------------- MouseClick--------------------------
         this.vistaCliente.jTableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-
+                tableClientesMouseClicked(evt);
             }
         });
-
+        
+        this.vistaProducto.jTableProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableProductosMouseClicked(evt);
+                
+            }
+        });
+        
+        this.vistaPaciente.jTablePacientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableClientesMouseClicked(evt);
+            }
+        });
+        
         //---------------------- Buscar--------------------------
         this.vistaCliente.txtBuscadorCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -104,6 +117,8 @@ public class controlador implements ActionListener, MouseListener {
                 vistaCliente.txtBuscadorCliente.setText("");
             }
         });
+    
+        
     }
 
     @Override
@@ -176,6 +191,17 @@ public class controlador implements ActionListener, MouseListener {
         String buscar = this.vistaCliente.txtBuscadorCliente.getText();
         this.vistaCliente.jTableCliente.setModel(this.modelo.buscarCliente(buscar));
     }
+    
+    private void BuscarProductos(java.awt.event.KeyEvent evt) {//Busca Clientes            
+        String buscar = this.vistaProducto.txtBuscadorProducto.getText();
+        this.vistaProducto.jTableProductos.setModel(this.modelo.buscarProductos(buscar));
+    }
+    
+    private void BuscarPacientes(java.awt.event.KeyEvent evt) {//Busca Clientes            
+        String buscar = this.vistaPaciente.txtBuscadorPaciente.getText();
+        this.vistaPaciente.jTablePacientes.setModel(this.modelo.buscarPacientes(buscar));
+    }
+    
 
     //-----------------------------Crear Cliente----------------------------------
     public void crearPestaña(String nombre) {
@@ -242,6 +268,29 @@ public class controlador implements ActionListener, MouseListener {
         this.vistaCliente.txtCodigoPCliente.setText(Relleno[8]);
         this.vistaCliente.txtFechaICliente.setText(Relleno[9]);
         this.vistaCliente.txtTipoCliente.setText(Relleno[10]);
+    }
+    
+    private void tableProductosMouseClicked(java.awt.event.MouseEvent evt) {
+        
+        fila = this.vistaProducto.jTableProductos.getSelectedRow();
+        String id = (String) this.vistaProducto.jTableProductos.getValueAt(fila, 0);
+    
+        String[] Relleno= this.modelo.RellenarProducto(id);
+        this.vistaProducto.txtIDProductos.setText(id);
+        this.vistaProducto.txtIDProductos.enable(false);        
+        this.vistaProducto.txtNombreProductos.setText(Relleno[0]);
+        this.vistaProducto.txtPrecioProductos.setText(Relleno[1]);
+        this.vistaProducto.jSpinner.setValue(Relleno[2]);
+    }
+    
+    private void tablePacientesMouseClicked(java.awt.event.MouseEvent evt) {
+        
+        fila = this.vistaPaciente.jTablePacientes.getSelectedRow();
+        String codigo = (String) this.vistaPaciente.jTablePacientes.getValueAt(fila, 0);
+    
+        String[] Relleno= this.modelo.RellenarPaciente(codigo);
+        
+        
     
     }
     

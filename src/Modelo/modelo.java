@@ -499,16 +499,13 @@ public class modelo extends Database{
         String[] Relleno= new String[5];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Productos WHERE ID like '%"+id+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Productos WHERE ID like '%"+id+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
-            Relleno[0]= res.getString("DNI");
-            Relleno[1] = res.getString("Nombre");
-            Relleno[2]= res.getString("Apellidos");
-            Relleno[3]= res.getString("Direccion");
-            Relleno[4]= res.getString("Telefono");
-          
+            Relleno[0]= res.getString("Nombre");
+            Relleno[1] = res.getString("Stock");
+            Relleno[2]= res.getString("Precio");
          }           
          res.close();
          }catch(SQLException e){
