@@ -457,12 +457,12 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtDireccionCliente;
     public javax.swing.JTextField txtFechaICliente;
     public javax.swing.JTextField txtFechaNCliente;
-    private javax.swing.JTextField txtMovilCliente;
+    public javax.swing.JTextField txtMovilCliente;
     public javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextPane txtPCliente;
     public javax.swing.JTextField txtPoblacionCliente;
     public javax.swing.JTextField txtProvinciaCliente;
     public javax.swing.JTextField txtTelefonoCliente;
-    private javax.swing.JTextField txtTipoCliente;
+    public javax.swing.JTextField txtTipoCliente;
     // End of variables declaration//GEN-END:variables
 }

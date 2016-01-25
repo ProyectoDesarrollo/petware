@@ -236,6 +236,12 @@ public class controlador implements ActionListener, MouseListener {
         this.vistaCliente.txtDireccionCliente.setText(Relleno[2]);
         this.vistaCliente.txtTelefonoCliente.setText(Relleno[3]);
         this.vistaCliente.txtMovilCliente.setText(Relleno[4]);
+        this.vistaCliente.txtFechaNCliente.setText(Relleno[5]);
+        this.vistaCliente.txtPoblacionCliente.setText(Relleno[6]);
+        this.vistaCliente.txtProvinciaCliente.setText(Relleno[7]);
+        this.vistaCliente.txtCodigoPCliente.setText(Relleno[8]);
+        this.vistaCliente.txtFechaICliente.setText(Relleno[9]);
+        this.vistaCliente.txtTipoCliente.setText(Relleno[10]);
     }
     
     //Metodo para modificar las pestañas del JTabbedPanel
