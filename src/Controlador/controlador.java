@@ -257,17 +257,18 @@ public class controlador implements ActionListener, MouseListener {
         String[] Relleno = this.modelo.RellenarCliente(dni);
         this.vistaCliente.txtDNICliente.setText(dni);
         this.vistaCliente.txtDNICliente.enable(false);        
-        this.vistaCliente.txtNombreCliente.setText(Relleno[0]);
-        this.vistaCliente.txtApellidosCliente.setText(Relleno[1]);
-        this.vistaCliente.txtDireccionCliente.setText(Relleno[2]);
-        this.vistaCliente.txtTelefonoCliente.setText(Relleno[3]);
-        this.vistaCliente.txtMovilCliente.setText(Relleno[4]);
-        this.vistaCliente.txtFechaNCliente.setText(Relleno[5]);
-        this.vistaCliente.txtPoblacionCliente.setText(Relleno[6]);
+        this.vistaCliente.txtNombreCliente.setText(Relleno[1]);
+        this.vistaCliente.txtApellidosCliente.setText(Relleno[2]);
+        this.vistaCliente.txtDireccionCliente.setText(Relleno[3]);
+        this.vistaCliente.txtTelefonoCliente.setText(Relleno[4]);
+        this.vistaCliente.txtMovilCliente.setText(Relleno[5]);
+        this.vistaCliente.txtEmailCliente.setText(Relleno[6]);
         this.vistaCliente.txtProvinciaCliente.setText(Relleno[7]);
-        this.vistaCliente.txtCodigoPCliente.setText(Relleno[8]);
-        this.vistaCliente.txtFechaICliente.setText(Relleno[9]);
+        this.vistaCliente.txtFechaNCliente.setText(Relleno[8]);
+        this.vistaCliente.txtCodigoPCliente.setText(Relleno[9]);
         this.vistaCliente.txtTipoCliente.setText(Relleno[10]);
+        this.vistaCliente.txtFechaICliente.setText(Relleno[11]);
+        this.vistaCliente.txtCodigoPCliente.setText(Relleno[12]);
     }
     
     private void tableProductosMouseClicked(java.awt.event.MouseEvent evt) {

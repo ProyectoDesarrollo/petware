@@ -53,7 +53,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         txtDNICliente = new javax.swing.JTextField();
         txtFechaNCliente = new javax.swing.JTextField();
         txtCodigoPCliente = new javax.swing.JTextField();
-        txtPoblacionCliente = new javax.swing.JTextField();
+        txtEmailCliente = new javax.swing.JTextField();
         txtFechaICliente = new javax.swing.JTextField();
         txtProvinciaCliente = new javax.swing.JTextField();
         btnEliminarCliente = new javax.swing.JButton();
@@ -90,7 +90,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
         jLabel51.setText("Provincia :");
 
-        jLabel52.setText("Poblacion :");
+        jLabel52.setText("Email :");
 
         jLabel53.setText("Fecha Nacimiento:");
 
@@ -206,7 +206,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
                                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtPoblacionCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(txtEmailCliente, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(txtFechaNCliente, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(txtTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE))
@@ -265,7 +265,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                             .addComponent(jLabel50))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPoblacionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -455,12 +455,12 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtCodigoPCliente;
     public javax.swing.JTextField txtDNICliente;
     public javax.swing.JTextField txtDireccionCliente;
+    public javax.swing.JTextField txtEmailCliente;
     public javax.swing.JTextField txtFechaICliente;
     public javax.swing.JTextField txtFechaNCliente;
     public javax.swing.JTextField txtMovilCliente;
     public javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextPane txtPCliente;
-    public javax.swing.JTextField txtPoblacionCliente;
     public javax.swing.JTextField txtProvinciaCliente;
     public javax.swing.JTextField txtTelefonoCliente;
     public javax.swing.JTextField txtTipoCliente;
