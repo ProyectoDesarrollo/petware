@@ -265,10 +265,9 @@ public class controlador implements ActionListener, MouseListener {
         this.vistaCliente.txtEmailCliente.setText(Relleno[6]);
         this.vistaCliente.txtProvinciaCliente.setText(Relleno[7]);
         this.vistaCliente.txtFechaNCliente.setText(Relleno[8]);
-        this.vistaCliente.txtCodigoPCliente.setText(Relleno[9]);
-        this.vistaCliente.txtTipoCliente.setText(Relleno[10]);
-        this.vistaCliente.txtFechaICliente.setText(Relleno[11]);
-        this.vistaCliente.txtCodigoPCliente.setText(Relleno[12]);
+        this.vistaCliente.txtTipoCliente.setText(Relleno[9]);
+        this.vistaCliente.txtFechaICliente.setText(Relleno[10]);
+        this.vistaCliente.txtCodigoPCliente.setText(Relleno[11]);
     }
     
     private void tableProductosMouseClicked(java.awt.event.MouseEvent evt) {

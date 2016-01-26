@@ -426,7 +426,7 @@ public class modelo extends Database{
         String[] Relleno= new String[13];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Nacimiento, Tipo, Desde, CodigoPostal FROM Cliente WHERE DNI like '%"+dni+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal FROM Cliente WHERE DNI like '%"+dni+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
