@@ -423,7 +423,7 @@ public class modelo extends Database{
     //--------------------------------- Meotdos Rellenar-----------------------------
     
     public String[] RellenarCliente(String dni){     
-        String[] Relleno= new String[13];
+        String[] Relleno= new String[12];
       try{
          
          PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal FROM Cliente WHERE DNI like '%"+dni+"%'");
@@ -499,13 +499,15 @@ public class modelo extends Database{
         String[] Relleno= new String[5];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT ID, Nombre, Stock, Precio FROM Productos WHERE ID like '%"+id+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Stock, Precio, Tipo FROM Productos WHERE idProducto like '%"+id+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
-            Relleno[0]= res.getString("Nombre");
-            Relleno[1] = res.getString("Stock");
-            Relleno[2]= res.getString("Precio");
+            Relleno[0]= res.getString("idProducto");
+            Relleno[1]= res.getString("Nombre");
+            Relleno[2]= res.getString("Stock");
+            Relleno[3]= res.getString("Precio");
+            Relleno[4]= res.getString("Tipo");
          }           
          res.close();
          }catch(SQLException e){

@@ -47,6 +47,7 @@ public class controlador implements ActionListener, MouseListener {
         try {
 
             this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+            this.vistaProducto.jTableProductos.setModel(this.modelo.getTablaProductos());
 
         } catch (Exception e) {
         }
@@ -278,9 +279,10 @@ public class controlador implements ActionListener, MouseListener {
         String[] Relleno= this.modelo.RellenarProducto(id);
         this.vistaProducto.txtIDProductos.setText(id);
         this.vistaProducto.txtIDProductos.enable(false);        
-        this.vistaProducto.txtNombreProductos.setText(Relleno[0]);
-        this.vistaProducto.txtPrecioProductos.setText(Relleno[1]);
+        this.vistaProducto.txtNombreProductos.setText(Relleno[1]);
         this.vistaProducto.jSpinner.setValue(Relleno[2]);
+        this.vistaProducto.txtPrecioProductos.setText(Relleno[3]);
+        this.vistaProducto.jTextAreaProductos.setText(Relleno[4]);
     }
     
     private void tablePacientesMouseClicked(java.awt.event.MouseEvent evt) {

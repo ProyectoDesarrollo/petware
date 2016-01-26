@@ -42,7 +42,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
         jButton4 = new javax.swing.JButton();
         jSpinner = new javax.swing.JSpinner();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaProductos = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         txtBuscadorProducto = new javax.swing.JTextField();
@@ -72,9 +72,9 @@ public class productoFrame extends javax.swing.JInternalFrame {
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/guardar_1.png"))); // NOI18N
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaProductos.setColumns(20);
+        jTextAreaProductos.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaProductos);
 
         javax.swing.GroupLayout panelClienteDatos5Layout = new javax.swing.GroupLayout(panelClienteDatos5);
         panelClienteDatos5.setLayout(panelClienteDatos5Layout);
@@ -255,7 +255,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
     public javax.swing.JSpinner jSpinner;
     private javax.swing.JTabbedPane jTabbedPane2;
     public javax.swing.JTable jTableProductos;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextAreaProductos;
     private javax.swing.JPanel panelClienteDatos5;
     public javax.swing.JTextField txtBuscadorProducto;
     public javax.swing.JTextField txtIDProductos;
