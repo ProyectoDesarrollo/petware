@@ -23,6 +23,7 @@ import vista.Principal;
 import vista.clienteFrame;
 import vista.pacienteFrame;
 import vista.productoFrame;
+import vista.proveedoresFrame;
 
 public class controlador implements ActionListener, MouseListener {
 
@@ -32,6 +33,7 @@ public class controlador implements ActionListener, MouseListener {
     JTabbedPane tabbedPane;
     clienteFrame vistaCliente = new clienteFrame();
     pacienteFrame vistaPaciente = new pacienteFrame();
+    proveedoresFrame vistaProveedor = new proveedoresFrame();
     productoFrame vistaProducto = new productoFrame();
     JDesktopPane cliente = new JDesktopPane();
     int fila=0;
@@ -108,6 +110,7 @@ public class controlador implements ActionListener, MouseListener {
         });
         
         //---------------------- Buscar--------------------------
+        //---------------------- Buscar Cientes------------------
         this.vistaCliente.txtBuscadorCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 BuscarClientes(evt);
@@ -118,7 +121,39 @@ public class controlador implements ActionListener, MouseListener {
                 vistaCliente.txtBuscadorCliente.setText("");
             }
         });
-    
+        //--------------------- Buscar Producto ------------------
+        this.vistaProducto.txtBuscadorProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BuscarProductos(evt);
+            }
+        });
+        this.vistaProducto.txtBuscadorProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vistaProducto.txtBuscadorProducto.setText("");
+            }
+        });
+        //-------------------- Buscar Proveedores ------------------
+        this.vistaProveedor.txtBuscadorProveedores.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BuscarProveedor(evt);
+            }
+        });
+        this.vistaProveedor.txtBuscadorProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vistaProveedor.txtBuscadorProveedores.setText("");
+            }
+        });
+        //------------------- Buscar Paciente-------------
+        this.vistaPaciente.txtBuscadorPaciente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BuscarPacientes(evt);
+            }
+        });
+        this.vistaPaciente.txtBuscadorPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vistaPaciente.txtBuscadorPaciente.setText("");
+            }
+        });
         
     }
 
@@ -191,6 +226,11 @@ public class controlador implements ActionListener, MouseListener {
     private void BuscarClientes(java.awt.event.KeyEvent evt) {//Busca Clientes            
         String buscar = this.vistaCliente.txtBuscadorCliente.getText();
         this.vistaCliente.jTableCliente.setModel(this.modelo.buscarCliente(buscar));
+    }
+    
+    private void BuscarProveedor(java.awt.event.KeyEvent evt) {//Busca Clientes            
+        String buscar = this.vistaProveedor.txtBuscadorProveedores.getText();
+        this.vistaProveedor.jTableProveedores.setModel(this.modelo.buscarProveedores(buscar));
     }
     
     private void BuscarProductos(java.awt.event.KeyEvent evt) {//Busca Clientes            
