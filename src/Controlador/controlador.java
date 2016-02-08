@@ -103,11 +103,20 @@ public class controlador implements ActionListener, MouseListener {
             }
         });
         
+        this.vistaProveedor.jTableProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableProveedoresMouseClicked(evt);
+                
+            }
+        });
+        
         this.vistaPaciente.jTablePacientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableClientesMouseClicked(evt);
             }
         });
+        
+        
         
         //---------------------- Buscar--------------------------
         //---------------------- Buscar Cientes------------------
@@ -309,6 +318,23 @@ public class controlador implements ActionListener, MouseListener {
         this.vistaCliente.txtTipoCliente.setText(Relleno[9]);
         this.vistaCliente.txtFechaICliente.setText(Relleno[10]);
         this.vistaCliente.txtCodigoPCliente.setText(Relleno[11]);
+    }
+    
+    private void tableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {
+
+        fila = this.vistaProveedor.jTableProveedores.getSelectedRow();
+        String nif = (String) this.vistaProveedor.jTableProveedores.getValueAt(fila, 0);
+    
+        String[] Relleno = this.modelo.RellenarProveedor(nif);
+        this.vistaProveedor.txtDNICliente.setText(nif);
+        this.vistaProveedor.txtDNICliente.enable(false);        
+        this.vistaProveedor.txtNombreCliente.setText(Relleno[1]);
+        this.vistaProveedor.txtApellidosCliente.setText(Relleno[2]);
+        this.vistaProveedor.txtDireccionCliente.setText(Relleno[3]);
+        this.vistaProveedor.txtTelefonoCliente.setText(Relleno[4]);
+        this.vistaProveedor.txtMovilCliente.setText(Relleno[5]);
+        this.vistaProveedor.txtEmailCliente.setText(Relleno[6]);
+        this.vistaProveedor.txtFechaNCliente.setText(Relleno[8]);
     }
     
     private void tableProductosMouseClicked(java.awt.event.MouseEvent evt) {
