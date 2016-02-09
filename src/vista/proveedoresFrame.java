@@ -33,18 +33,18 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
         jLabel53 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        txtApellidosCliente = new javax.swing.JTextField();
+        txtApellidosProveedor = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
-        txtNombreCliente = new javax.swing.JTextField();
+        txtNombreProveedor = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        txtDireccionCliente = new javax.swing.JTextField();
+        txtDireccionProveedor = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
-        txtTelefonoCliente = new javax.swing.JTextField();
+        txtTelefonoProveedor = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
-        txtMovilCliente = new javax.swing.JTextField();
-        txtDNICliente = new javax.swing.JTextField();
-        txtFechaNCliente = new javax.swing.JTextField();
-        txtEmailCliente = new javax.swing.JTextField();
+        txtMovilProveedor = new javax.swing.JTextField();
+        txtDNIProveedor = new javax.swing.JTextField();
+        txtFechaNCProveedor = new javax.swing.JTextField();
+        txtEmailProveedor = new javax.swing.JTextField();
         btnEliminarCliente = new javax.swing.JButton();
         btnGuardarCliente = new javax.swing.JButton();
         scrollNotaCliente = new javax.swing.JScrollPane();
@@ -80,25 +80,25 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
 
         jLabel58.setText("Dirección :");
 
-        txtDireccionCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtDireccionProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDireccionClienteActionPerformed(evt);
+                txtDireccionProveedorActionPerformed(evt);
             }
         });
 
         jLabel59.setText("Teléfono :");
 
-        txtTelefonoCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefonoProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefonoClientejTextField3ActionPerformed(evt);
+                txtTelefonoProveedorjTextField3ActionPerformed(evt);
             }
         });
 
         jLabel60.setText("Móvil :");
 
-        txtDNICliente.addActionListener(new java.awt.event.ActionListener() {
+        txtDNIProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDNIClienteActionPerformed(evt);
+                txtDNIProveedorActionPerformed(evt);
             }
         });
 
@@ -163,11 +163,11 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                                         .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelTrabajadorDatosLayout.createSequentialGroup()
                                         .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(txtApellidosCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                                                .addComponent(txtNombreCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtDNICliente, javax.swing.GroupLayout.Alignment.LEADING)))
+                                                .addComponent(txtApellidosProveedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
+                                                .addComponent(txtNombreProveedor, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtDNIProveedor, javax.swing.GroupLayout.Alignment.LEADING)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -176,10 +176,10 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                                             .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.TRAILING))
                                         .addGap(18, 18, 18)
                                         .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtDireccionCliente)
-                                            .addComponent(txtFechaNCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                                            .addComponent(txtEmailCliente)
-                                            .addComponent(txtMovilCliente))))
+                                            .addComponent(txtDireccionProveedor)
+                                            .addComponent(txtFechaNCProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
+                                            .addComponent(txtEmailProveedor)
+                                            .addComponent(txtMovilProveedor))))
                                 .addGap(186, 186, 186))))))
         );
         panelTrabajadorDatosLayout.setVerticalGroup(
@@ -191,10 +191,10 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                     .addComponent(btnGuardarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDNICliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDNIProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel53)
-                    .addComponent(txtFechaNCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaNCProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
@@ -202,21 +202,21 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                     .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDireccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel58))))
                 .addGap(18, 18, 18)
                 .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtApellidosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtApellidosProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEmailProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel59)
-                    .addComponent(txtMovilCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMovilProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,17 +331,17 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDireccionClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionClienteActionPerformed
+    private void txtDireccionProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDireccionClienteActionPerformed
+    }//GEN-LAST:event_txtDireccionProveedorActionPerformed
 
-    private void txtTelefonoClientejTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoClientejTextField3ActionPerformed
+    private void txtTelefonoProveedorjTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoProveedorjTextField3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefonoClientejTextField3ActionPerformed
+    }//GEN-LAST:event_txtTelefonoProveedorjTextField3ActionPerformed
 
-    private void txtDNIClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIClienteActionPerformed
+    private void txtDNIProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDNIClienteActionPerformed
+    }//GEN-LAST:event_txtDNIProveedorActionPerformed
 
     private void txtBuscadorProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscadorProveedoresMouseClicked
         // TODO add your handling code here:
@@ -381,15 +381,15 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
     public javax.swing.JPanel panelTrabajadorDatos;
     private javax.swing.JScrollPane scrollNotaCliente;
     public javax.swing.JScrollPane scrollTableTrabajador;
-    public javax.swing.JTextField txtApellidosCliente;
+    public javax.swing.JTextField txtApellidosProveedor;
     public javax.swing.JTextField txtBuscadorProveedores;
-    public javax.swing.JTextField txtDNICliente;
-    public javax.swing.JTextField txtDireccionCliente;
-    public javax.swing.JTextField txtEmailCliente;
-    public javax.swing.JTextField txtFechaNCliente;
-    public javax.swing.JTextField txtMovilCliente;
-    public javax.swing.JTextField txtNombreCliente;
+    public javax.swing.JTextField txtDNIProveedor;
+    public javax.swing.JTextField txtDireccionProveedor;
+    public javax.swing.JTextField txtEmailProveedor;
+    public javax.swing.JTextField txtFechaNCProveedor;
+    public javax.swing.JTextField txtMovilProveedor;
+    public javax.swing.JTextField txtNombreProveedor;
     private javax.swing.JTextPane txtPCliente;
-    public javax.swing.JTextField txtTelefonoCliente;
+    public javax.swing.JTextField txtTelefonoProveedor;
     // End of variables declaration//GEN-END:variables
 }

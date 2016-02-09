@@ -110,11 +110,11 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="txtTelefonoCliente" alignment="1" min="-2" pref="336" max="-2" attributes="0"/>
+                                                  <Component id="txtTelefonoProveedor" alignment="1" min="-2" pref="336" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="txtApellidosCliente" alignment="0" pref="337" max="32767" attributes="0"/>
-                                                      <Component id="txtNombreCliente" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="txtDNICliente" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtApellidosProveedor" alignment="0" pref="337" max="32767" attributes="0"/>
+                                                      <Component id="txtNombreProveedor" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtDNIProveedor" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace max="32767" attributes="0"/>
@@ -126,10 +126,10 @@
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="txtDireccionCliente" max="32767" attributes="0"/>
-                                                  <Component id="txtFechaNCliente" alignment="0" pref="337" max="32767" attributes="0"/>
-                                                  <Component id="txtEmailCliente" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtMovilCliente" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtDireccionProveedor" max="32767" attributes="0"/>
+                                                  <Component id="txtFechaNCProveedor" alignment="0" pref="337" max="32767" attributes="0"/>
+                                                  <Component id="txtEmailProveedor" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtMovilProveedor" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -151,10 +151,10 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtDNICliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtDNIProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel55" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtFechaNCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFechaNCProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -164,8 +164,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtNombreCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtDireccionCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNombreProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDireccionProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -173,17 +173,17 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="txtApellidosCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtApellidosProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel52" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtEmailCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtEmailProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel57" alignment="1" min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtTelefonoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTelefonoProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel59" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtMovilCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtMovilProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel60" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="71" max="32767" attributes="0"/>
@@ -224,7 +224,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtApellidosCliente">
+            <Component class="javax.swing.JTextField" name="txtApellidosProveedor">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -234,7 +234,7 @@
                 <Property name="text" type="java.lang.String" value="Apellidos :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombreCliente">
+            <Component class="javax.swing.JTextField" name="txtNombreProveedor">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -244,9 +244,9 @@
                 <Property name="text" type="java.lang.String" value="Direcci&#xf3;n :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtDireccionCliente">
+            <Component class="javax.swing.JTextField" name="txtDireccionProveedor">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDireccionClienteActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDireccionProveedorActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -257,9 +257,9 @@
                 <Property name="text" type="java.lang.String" value="Tel&#xe9;fono :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtTelefonoCliente">
+            <Component class="javax.swing.JTextField" name="txtTelefonoProveedor">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefonoClientejTextField3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefonoProveedorjTextField3ActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -270,25 +270,25 @@
                 <Property name="text" type="java.lang.String" value="M&#xf3;vil :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtMovilCliente">
+            <Component class="javax.swing.JTextField" name="txtMovilProveedor">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtDNICliente">
+            <Component class="javax.swing.JTextField" name="txtDNIProveedor">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDNIClienteActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDNIProveedorActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtFechaNCliente">
+            <Component class="javax.swing.JTextField" name="txtFechaNCProveedor">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEmailCliente">
+            <Component class="javax.swing.JTextField" name="txtEmailProveedor">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

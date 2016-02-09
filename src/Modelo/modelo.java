@@ -221,7 +221,7 @@ public class modelo extends Database{
     }
     
     //------------------------------Metodo Agregar----------------------------------
-    public boolean InsertarCliente (String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, Date Nacimiento, int CodigoPostal, String Provincia, Date Fecha, String Tipo) {
+    public boolean InsertarCliente (String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Nacimiento, int CodigoPostal, String Provincia, String Fecha, String Tipo) {
             //Consulta para insertar 
         
         String q=" INSERT INTO Cliente ( Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal )"
