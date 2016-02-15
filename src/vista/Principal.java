@@ -53,7 +53,6 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelBotones = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         btnCliente = new javax.swing.JButton();
         btnMascota = new javax.swing.JButton();
         btnProductos = new javax.swing.JButton();
@@ -61,6 +60,7 @@ public class Principal extends javax.swing.JFrame {
         btnFacturas = new javax.swing.JButton();
         btnAlimentacion = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         panelPestaña = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -75,22 +75,8 @@ public class Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1618, 900));
 
-        panelBotones.setLayout(new java.awt.GridLayout());
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 135, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 108, Short.MAX_VALUE)
-        );
-
-        panelBotones.add(jPanel4);
+        panelBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/usu1.jpg"))); // NOI18N
         btnCliente.setText("CLIENTE");
@@ -113,7 +99,7 @@ public class Principal extends javax.swing.JFrame {
                 btnClienteActionPerformed(evt);
             }
         });
-        panelBotones.add(btnCliente);
+        panelBotones.add(btnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 0, 135, 108));
 
         btnMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/MascotaC.png"))); // NOI18N
         btnMascota.setText("MASCOTAS");
@@ -131,7 +117,7 @@ public class Principal extends javax.swing.JFrame {
                 btnMascotaMouseEntered(evt);
             }
         });
-        panelBotones.add(btnMascota);
+        panelBotones.add(btnMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 135, 108));
 
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/prod1.png"))); // NOI18N
         btnProductos.setText("PRODUCTOS");
@@ -149,7 +135,7 @@ public class Principal extends javax.swing.JFrame {
                 btnProductosMouseEntered(evt);
             }
         });
-        panelBotones.add(btnProductos);
+        panelBotones.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 0, 135, 108));
 
         btnProveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/pro1.png"))); // NOI18N
         btnProveedores.setText("PROVEEDORES");
@@ -162,7 +148,7 @@ public class Principal extends javax.swing.JFrame {
         btnProveedores.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/pro2.png"))); // NOI18N
         btnProveedores.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnProveedores.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(btnProveedores);
+        panelBotones.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 135, 108));
 
         btnFacturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fac1.png"))); // NOI18N
         btnFacturas.setText("FACTURAS");
@@ -175,7 +161,7 @@ public class Principal extends javax.swing.JFrame {
         btnFacturas.setVerifyInputWhenFocusTarget(false);
         btnFacturas.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnFacturas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(btnFacturas);
+        panelBotones.add(btnFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(675, 0, 135, 108));
 
         btnAlimentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/ht1.jpg"))); // NOI18N
         btnAlimentacion.setText("ALIMENTACIÓN");
@@ -188,7 +174,7 @@ public class Principal extends javax.swing.JFrame {
         btnAlimentacion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/ht2.png"))); // NOI18N
         btnAlimentacion.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnAlimentacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(btnAlimentacion);
+        panelBotones.add(btnAlimentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, 135, 108));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
         jButton1.setText("TRABAJADORES");
@@ -200,10 +186,17 @@ public class Principal extends javax.swing.JFrame {
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador.png"))); // NOI18N
         jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(jButton1);
+        panelBotones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(945, 0, 135, 108));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fondoH_2.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        panelBotones.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 1300, 120));
+
+        panelPestaña.setBackground(new java.awt.Color(139, 220, 198));
         panelPestaña.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         panelPestaña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(1300, 21));
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -242,8 +235,10 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(panelPestaña)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,6 +311,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JButton btnProductos;
     public javax.swing.JButton btnProveedores;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -327,7 +323,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel panelBotones;
     public javax.swing.JTabbedPane panelPestaña;
     // End of variables declaration//GEN-END:variables

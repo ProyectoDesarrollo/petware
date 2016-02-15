@@ -339,10 +339,10 @@ public class controlador implements ActionListener, MouseListener {
         } else if (nombrePestaña.equals("Productos")) {
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaProducto);
 //
-        } //else if (nombrePestaña.equals("Proveedores")) {
+        } else if (nombrePestaña.equals("Proveedores")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ",);
 //
-//        } else if (nombrePestaña.equals("Facturas")) {
+        } //else if (nombrePestaña.equals("Facturas")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
 //
 //        } else if (nombrePestaña.equals("Alimentacion")) {
