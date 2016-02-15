@@ -452,7 +452,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarCliente;
+    public javax.swing.JButton btnAgregarCliente;
     private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton jButton1;

@@ -74,7 +74,7 @@ public class controlador implements ActionListener, MouseListener {
 
         this.vista.btnFacturas.setActionCommand("btnFactura");
         this.vista.btnFacturas.addActionListener(this);
-
+        
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
         
@@ -340,7 +340,7 @@ public class controlador implements ActionListener, MouseListener {
             this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaProducto);
 //
         } else if (nombrePestaña.equals("Proveedores")) {
-//            this.vista.panelPestaña.addTab(nombrePestaña + "    ",);
+            this.vista.panelPestaña.addTab(nombrePestaña + "    ",vistaProveedor);
 //
         } //else if (nombrePestaña.equals("Facturas")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
