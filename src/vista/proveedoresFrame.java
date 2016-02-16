@@ -59,6 +59,9 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
         scrollTableTrabajador = new javax.swing.JScrollPane();
         jTableProveedores = new javax.swing.JTable();
         btnAgregarTrabajador = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        setPreferredSize(new java.awt.Dimension(1300, 640));
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -148,33 +151,36 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                         .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
-                                .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel52))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
+                                        .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel52))
+                                        .addGap(30, 30, 30))
+                                    .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
+                                        .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtEmailProveedor)
                                     .addComponent(txtMovilProveedor)
                                     .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTrabajadorDatosLayout.createSequentialGroup()
                         .addGap(0, 94, Short.MAX_VALUE)
-                        .addComponent(scrollNotaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jToggleButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jToggleButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jToggleButton4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jToggleButton5))
+                            .addComponent(scrollNotaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(74, 74, 74))
-            .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton4)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton5)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelTrabajadorDatosLayout.setVerticalGroup(
             panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,16 +224,13 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                     .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(txtDireccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(108, 108, 108)
-                .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelTrabajadorDatosLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jToggleButton1)
-                            .addComponent(jToggleButton2)
-                            .addComponent(jToggleButton3)
-                            .addComponent(jToggleButton4)))
+                .addGap(113, 113, 113)
+                .addGroup(panelTrabajadorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jToggleButton1)
+                    .addComponent(jToggleButton2)
+                    .addComponent(jToggleButton3)
+                    .addComponent(jToggleButton4)
                     .addComponent(jToggleButton5))
                 .addGap(18, 18, 18)
                 .addComponent(scrollNotaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,6 +252,9 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("tab3", jPanel2);
 
+        panelListadoTrabajador.setPreferredSize(new java.awt.Dimension(425, 615));
+        panelListadoTrabajador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         txtBuscadorProveedores.setText("Buscar . . .");
         txtBuscadorProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -263,6 +269,7 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                 txtBuscadorProveedoresActionPerformed(evt);
             }
         });
+        panelListadoTrabajador.add(txtBuscadorProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 311, 36));
 
         scrollTableTrabajador.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollTableTrabajador.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -290,31 +297,13 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
         jTableProveedores.setOpaque(false);
         scrollTableTrabajador.setViewportView(jTableProveedores);
 
-        btnAgregarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
+        panelListadoTrabajador.add(scrollTableTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 49, 425, 590));
 
-        javax.swing.GroupLayout panelListadoTrabajadorLayout = new javax.swing.GroupLayout(panelListadoTrabajador);
-        panelListadoTrabajador.setLayout(panelListadoTrabajadorLayout);
-        panelListadoTrabajadorLayout.setHorizontalGroup(
-            panelListadoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelListadoTrabajadorLayout.createSequentialGroup()
-                .addComponent(txtBuscadorProveedores)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(panelListadoTrabajadorLayout.createSequentialGroup()
-                .addComponent(scrollTableTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        panelListadoTrabajadorLayout.setVerticalGroup(
-            panelListadoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelListadoTrabajadorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelListadoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAgregarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBuscadorProveedores))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollTableTrabajador))
-        );
+        btnAgregarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
+        panelListadoTrabajador.add(btnAgregarTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 11, 98, 36));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fondo2_1.jpg"))); // NOI18N
+        panelListadoTrabajador.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 49, 420, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -327,7 +316,7 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelListadoTrabajador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelListadoTrabajador, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
 
@@ -364,6 +353,7 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;

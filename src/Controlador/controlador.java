@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import javax.swing.table.DefaultTableCellRenderer;
 import sun.util.calendar.LocalGregorianCalendar.Date;
@@ -37,8 +38,8 @@ public class controlador implements ActionListener, MouseListener {
     proveedoresFrame vistaProveedor = new proveedoresFrame();
     productoFrame vistaProducto = new productoFrame();
     JDesktopPane cliente = new JDesktopPane();
-    int fila=0;
-    
+    int fila = 0;
+
     public controlador(Principal vista) {
 
         modelo = new modelo();
@@ -57,7 +58,6 @@ public class controlador implements ActionListener, MouseListener {
 
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(true);
-        
 
         //ActionCommand y ActionListener
         this.vista.btnCliente.setActionCommand("btnCliente");
@@ -74,12 +74,11 @@ public class controlador implements ActionListener, MouseListener {
 
         this.vista.btnFacturas.setActionCommand("btnFactura");
         this.vista.btnFacturas.addActionListener(this);
-        
+
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
-        
+
         //InternalFrame
-        
         this.vistaCliente.setVisible(false);
 
         //modificacion tabla cliente
@@ -96,29 +95,34 @@ public class controlador implements ActionListener, MouseListener {
                 tableClientesMouseClicked(evt);
             }
         });
-        
+
         this.vistaProducto.jTableProductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableProductosMouseClicked(evt);
-                
+
             }
         });
-        
+
         this.vistaProveedor.jTableProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableProveedoresMouseClicked(evt);
-                
+
             }
         });
-        
+
         this.vistaPaciente.jTablePacientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableClientesMouseClicked(evt);
             }
         });
-        
-        
-        
+
+        this.vista.panelPestaña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                int index = vista.panelPestaña.getSelectedIndex();
+
+            }
+
+        });
         //---------------------- Buscar--------------------------
         //---------------------- Buscar Cientes------------------
         this.vistaCliente.txtBuscadorCliente.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -164,7 +168,7 @@ public class controlador implements ActionListener, MouseListener {
                 vistaPaciente.txtBuscadorPaciente.setText("");
             }
         });
-        
+
     }
 
     @Override
@@ -174,130 +178,130 @@ public class controlador implements ActionListener, MouseListener {
         String comand = e.getActionCommand();
 
         if (comand.equals("btnCliente")) {
-            if (this.vistaCliente.isVisible() == false)  {
 
-                //Invocamos al metodo para crear las pestañas
-                crearPestaña("Clientes");
+            if (this.vista.panelPestaña.indexOfTab("Clientes   ") != -1) {
 
+                int ntab = this.vista.panelPestaña.indexOfTab("Clientes   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
                 //Quitamos el marco del jInternalFrame
 //                vistaCliente.setUI(null);
-            } else if (this.vistaCliente.isVisible() == true) {
-                /*
-                   En caso de que ya este creada la pestaña ,
-                   en vez de crear otra abre la pestaña con el nombre del boton.
-                
-                 */
-                int ntabCLiente = this.vista.panelPestaña.indexOfTab("Clientes");
-                this.vista.panelPestaña.setSelectedIndex(ntabCLiente);
+                // this.vista.btnCliente.setEnabled(false);
+            } else {
+                //Invocamos al metodo para crear las pestañas
+                crearPestaña("Clientes");
+                 int ntab = this.vista.panelPestaña.indexOfTab("Clientes   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
             }
 
         } else if (comand.equals("btnMascotas")) {
-            if (this.vista.panelPestaña.indexOfTab("Mascotas") < 0) {
-                crearPestaña("Mascotas");
+            if (this.vista.panelPestaña.indexOfTab("Mascotas   ") != -1) {
+                int ntab = this.vista.panelPestaña.indexOfTab("Mascotas   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
             } else {
-                int ntabMascota = this.vista.panelPestaña.indexOfTab("Mascotas");
-                this.vista.panelPestaña.setSelectedIndex(ntabMascota);
+                crearPestaña("Mascotas");
+                int ntab = this.vista.panelPestaña.indexOfTab("Mascotas   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
             }
 
         } else if (comand.equals("btnProductos")) {
-            if (this.vista.panelPestaña.indexOfTab("Productos") < 0) {
-                crearPestaña("Productos");
+            if (this.vista.panelPestaña.indexOfTab("Productos   ") != -1) {
+                int ntab = this.vista.panelPestaña.indexOfTab("Productos   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
+
             } else {
-                int ntabProductos = this.vista.panelPestaña.indexOfTab("Productos");
-                this.vista.panelPestaña.setSelectedIndex(ntabProductos);
+                crearPestaña("Productos");
+                 int ntab = this.vista.panelPestaña.indexOfTab("Productos   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
             }
 
         } else if (comand.equals("btnProveedores")) {
-            if (this.vista.panelPestaña.indexOfTab("Proveedores") < 0) {
-                crearPestaña("Proveedores");
+            if (this.vista.panelPestaña.indexOfTab("Proveedores   ") != -1) {
+                int ntab = this.vista.panelPestaña.indexOfTab("Proveedores   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
             } else {
-                int ntabProveedores = this.vista.panelPestaña.indexOfTab("Proveedores");
-                this.vista.panelPestaña.setSelectedIndex(ntabProveedores);
+                crearPestaña("Proveedores");
+                int ntab = this.vista.panelPestaña.indexOfTab("Proveedores   ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
             }
 
         } else if (comand.equals("btnFactura")) {
-            if (this.vista.panelPestaña.indexOfTab("Facturas") < 0) {
-                crearPestaña("Facturas");
-            } else {
-                int ntabFactura = this.vista.panelPestaña.indexOfTab("Facturas");
-                this.vista.panelPestaña.setSelectedIndex(ntabFactura);
-            }
+//            if (this.vista.panelPestaña.indexOfTab("Facturas") == -1) {
+////                crearPestaña("Facturas");
+//            } else {
+//                cambioPestaña(4);
+//            }
         } else if (comand.equals("btnAlimentacion")) {
-            if (this.vista.panelPestaña.indexOfTab("Alimentacion") < 0) {
-                crearPestaña("Alimentacion");
-            } else {
-                int ntabAlimentacion = this.vista.panelPestaña.indexOfTab("Alimentacion");
-                this.vista.panelPestaña.setSelectedIndex(ntabAlimentacion);
-            }
-        
+//            if (this.vista.panelPestaña.indexOfTab("Alimentacion") == -1) {
+////                crearPestaña("Alimentacion");
+//            } else {
+//                cambioPestaña(5);
+//            }
+
         } else if (comand.equals("btnAñadirCliente")) {
-            
+
             try {
 
-                    String dni = this.vistaCliente.txtDNICliente.getText();
-                    String Nombre = this.vistaCliente.txtNombreCliente.getText();
-                    String Apellidos = this.vistaCliente.txtApellidosCliente.getText();
-                    String Direccion = this.vistaCliente.txtDireccionCliente.getText();
-                    int Telefono = Integer.parseInt(this.vistaCliente.txtTelefonoCliente.getText());
-                    int Movil = Integer.parseInt(this.vistaCliente.txtMovilCliente.getText());
-                    String Email = this.vistaCliente.txtEmailCliente.getText();
-                    String Nacimiento= this.vistaCliente.txtFechaNCliente.getText();
-                    int CodigoPostal = Integer.parseInt(this.vistaCliente.txtCodigoPCliente.getText());
-                    String Provincia = this.vistaCliente.txtProvinciaCliente.getText();
-                    String Fecha= this.vistaCliente.txtProvinciaCliente.getText();
-                    String Tipo= this.vistaCliente.txtTipoCliente.getText();
-                    
-                    this.modelo.InsertarCliente(Nombre, Apellidos, Direccion, Telefono, Movil, Email, Nacimiento, CodigoPostal, Provincia, Fecha, Tipo);
-                    this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
-                    this.vistaCliente.txtDNICliente.setText("");
-                    this.vistaCliente.txtNombreCliente.setText("");
-                    this.vistaCliente.txtApellidosCliente.setText("");
-                    this.vistaCliente.txtDireccionCliente.setText("");
-                    this.vistaCliente.txtTelefonoCliente.setText("");
-                    this.vistaCliente.txtMovilCliente.setText("");
-                    this.vistaCliente.txtEmailCliente.setText("");
-                    this.vistaCliente.txtFechaNCliente.setText("");
-                    this.vistaCliente.txtFechaNCliente.setText("");
-                    this.vistaCliente.txtCodigoPCliente.setText("");
-                    this.vistaCliente.txtProvinciaCliente.setText("");
-                    this.vistaCliente.txtProvinciaCliente.setText("");
-                    this.vistaCliente.txtTipoCliente.setText("");
-                    
+                String dni = this.vistaCliente.txtDNICliente.getText();
+                String Nombre = this.vistaCliente.txtNombreCliente.getText();
+                String Apellidos = this.vistaCliente.txtApellidosCliente.getText();
+                String Direccion = this.vistaCliente.txtDireccionCliente.getText();
+                int Telefono = Integer.parseInt(this.vistaCliente.txtTelefonoCliente.getText());
+                int Movil = Integer.parseInt(this.vistaCliente.txtMovilCliente.getText());
+                String Email = this.vistaCliente.txtEmailCliente.getText();
+                String Nacimiento = this.vistaCliente.txtFechaNCliente.getText();
+                int CodigoPostal = Integer.parseInt(this.vistaCliente.txtCodigoPCliente.getText());
+                String Provincia = this.vistaCliente.txtProvinciaCliente.getText();
+                String Fecha = this.vistaCliente.txtProvinciaCliente.getText();
+                String Tipo = this.vistaCliente.txtTipoCliente.getText();
 
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-        
-        
+                this.modelo.InsertarCliente(Nombre, Apellidos, Direccion, Telefono, Movil, Email, Nacimiento, CodigoPostal, Provincia, Fecha, Tipo);
+                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+                this.vistaCliente.txtDNICliente.setText("");
+                this.vistaCliente.txtNombreCliente.setText("");
+                this.vistaCliente.txtApellidosCliente.setText("");
+                this.vistaCliente.txtDireccionCliente.setText("");
+                this.vistaCliente.txtTelefonoCliente.setText("");
+                this.vistaCliente.txtMovilCliente.setText("");
+                this.vistaCliente.txtEmailCliente.setText("");
+                this.vistaCliente.txtFechaNCliente.setText("");
+                this.vistaCliente.txtFechaNCliente.setText("");
+                this.vistaCliente.txtCodigoPCliente.setText("");
+                this.vistaCliente.txtProvinciaCliente.setText("");
+                this.vistaCliente.txtProvinciaCliente.setText("");
+                this.vistaCliente.txtTipoCliente.setText("");
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
         } else if (comand.equals("btnAñadirProveedor")) {
-            
+
             try {
 
-                    String dni = this.vistaProveedor.txtDNIProveedor.getText();
-                    String Nombre = this.vistaProveedor.txtNombreProveedor.getText();
-                    String Apellidos = this.vistaProveedor.txtApellidosProveedor.getText();
-                    String Direccion = this.vistaProveedor.txtDireccionProveedor.getText();
-                    int Telefono = Integer.parseInt(this.vistaProveedor.txtTelefonoProveedor.getText());
-                    int Movil = Integer.parseInt(this.vistaProveedor.txtMovilProveedor.getText());
-                    String Email = this.vistaProveedor.txtEmailProveedor.getText();
-                    
-                    this.modelo.InsertarProveedor (Nombre, Apellidos, Direccion, Telefono, Movil, Email);
-                    this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
-                    this.vistaCliente.txtDNICliente.setText("");
-                    this.vistaCliente.txtNombreCliente.setText("");
-                    this.vistaCliente.txtApellidosCliente.setText("");
-                    this.vistaCliente.txtDireccionCliente.setText("");
-                    this.vistaCliente.txtTelefonoCliente.setText("");
-                    this.vistaCliente.txtMovilCliente.setText("");
-                    this.vistaCliente.txtEmailCliente.setText("");
-                    
+                String dni = this.vistaProveedor.txtDNIProveedor.getText();
+                String Nombre = this.vistaProveedor.txtNombreProveedor.getText();
+                String Apellidos = this.vistaProveedor.txtApellidosProveedor.getText();
+                String Direccion = this.vistaProveedor.txtDireccionProveedor.getText();
+                int Telefono = Integer.parseInt(this.vistaProveedor.txtTelefonoProveedor.getText());
+                int Movil = Integer.parseInt(this.vistaProveedor.txtMovilProveedor.getText());
+                String Email = this.vistaProveedor.txtEmailProveedor.getText();
 
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-        
+                this.modelo.InsertarProveedor(Nombre, Apellidos, Direccion, Telefono, Movil, Email);
+                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+                this.vistaCliente.txtDNICliente.setText("");
+                this.vistaCliente.txtNombreCliente.setText("");
+                this.vistaCliente.txtApellidosCliente.setText("");
+                this.vistaCliente.txtDireccionCliente.setText("");
+                this.vistaCliente.txtTelefonoCliente.setText("");
+                this.vistaCliente.txtMovilCliente.setText("");
+                this.vistaCliente.txtEmailCliente.setText("");
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
         }
-        
+
     }
     //-----------------------------Metodo Buscar-------------------------------
 
@@ -305,22 +309,21 @@ public class controlador implements ActionListener, MouseListener {
         String buscar = this.vistaCliente.txtBuscadorCliente.getText();
         this.vistaCliente.jTableCliente.setModel(this.modelo.buscarCliente(buscar));
     }
-    
+
     private void BuscarProveedor(java.awt.event.KeyEvent evt) {//Busca Clientes            
         String buscar = this.vistaProveedor.txtBuscadorProveedores.getText();
         this.vistaProveedor.jTableProveedores.setModel(this.modelo.buscarProveedores(buscar));
     }
-    
+
     private void BuscarProductos(java.awt.event.KeyEvent evt) {//Busca Clientes            
         String buscar = this.vistaProducto.txtBuscadorProducto.getText();
         this.vistaProducto.jTableProductos.setModel(this.modelo.buscarProductos(buscar));
     }
-    
+
     private void BuscarPacientes(java.awt.event.KeyEvent evt) {//Busca Clientes            
         String buscar = this.vistaPaciente.txtBuscadorPaciente.getText();
         this.vistaPaciente.jTablePacientes.setModel(this.modelo.buscarPacientes(buscar));
     }
-    
 
     //-----------------------------Crear Cliente----------------------------------
     public void crearPestaña(String nombre) {
@@ -333,20 +336,24 @@ public class controlador implements ActionListener, MouseListener {
             *que añadimos a la pestaña
              */
 
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaCliente);
+            this.vista.panelPestaña.addTab("Clientes   ", vistaCliente);
+
         } else if (nombrePestaña.equals("Mascotas")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaPaciente);
+            this.vista.panelPestaña.addTab("Mascotas   ", vistaPaciente);
+
         } else if (nombrePestaña.equals("Productos")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ", vistaProducto);
-//
+            this.vista.panelPestaña.addTab("Productos   ", vistaProducto);
+
         } else if (nombrePestaña.equals("Proveedores")) {
-            this.vista.panelPestaña.addTab(nombrePestaña + "    ",vistaProveedor);
+            this.vista.panelPestaña.addTab("Proveedores   ", vistaProveedor);
+
 //
         } //else if (nombrePestaña.equals("Facturas")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
-//
+//        this.vista.panelPestaña.setSelectedIndex(5);
 //        } else if (nombrePestaña.equals("Alimentacion")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
+//        this.vista.panelPestaña.setSelectedIndex(6);
 //        }
 
     }
@@ -365,17 +372,16 @@ public class controlador implements ActionListener, MouseListener {
 
     public void mouseExited(MouseEvent e) {
     }
-    
-    
+
     //----------------------Permite la selección de elementos dentro de tablas---------------------------
     private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {
 
         fila = this.vistaCliente.jTableCliente.getSelectedRow();
         String dni = (String) this.vistaCliente.jTableCliente.getValueAt(fila, 0);
-    
+
         String[] Relleno = this.modelo.RellenarCliente(dni);
         this.vistaCliente.txtDNICliente.setText(dni);
-        this.vistaCliente.txtDNICliente.enable(false);        
+        this.vistaCliente.txtDNICliente.enable(false);
         this.vistaCliente.txtNombreCliente.setText(Relleno[1]);
         this.vistaCliente.txtApellidosCliente.setText(Relleno[2]);
         this.vistaCliente.txtDireccionCliente.setText(Relleno[3]);
@@ -388,49 +394,47 @@ public class controlador implements ActionListener, MouseListener {
         this.vistaCliente.txtFechaICliente.setText(Relleno[10]);
         this.vistaCliente.txtCodigoPCliente.setText(Relleno[11]);
     }
-    
+
     private void tableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {
 
         fila = this.vistaProveedor.jTableProveedores.getSelectedRow();
         String nif = (String) this.vistaProveedor.jTableProveedores.getValueAt(fila, 0);
-    
+
         String[] Relleno = this.modelo.RellenarProveedor(nif);
         this.vistaProveedor.txtDNIProveedor.setText(nif);
-        this.vistaProveedor.txtDNIProveedor.enable(false);        
+        this.vistaProveedor.txtDNIProveedor.enable(false);
         this.vistaProveedor.txtNombreProveedor.setText(Relleno[1]);
         this.vistaProveedor.txtApellidosProveedor.setText(Relleno[2]);
         this.vistaProveedor.txtDireccionProveedor.setText(Relleno[3]);
         this.vistaProveedor.txtTelefonoProveedor.setText(Relleno[4]);
         this.vistaProveedor.txtMovilProveedor.setText(Relleno[5]);
         this.vistaProveedor.txtEmailProveedor.setText(Relleno[6]);
-        this.vistaProveedor.txtFechaNCProveedor.setText(Relleno[8]);
+
     }
-    
+
     private void tableProductosMouseClicked(java.awt.event.MouseEvent evt) {
-        
+
         fila = this.vistaProducto.jTableProductos.getSelectedRow();
         String id = (String) this.vistaProducto.jTableProductos.getValueAt(fila, 0);
-    
-        String[] Relleno= this.modelo.RellenarProducto(id);
+
+        String[] Relleno = this.modelo.RellenarProducto(id);
         this.vistaProducto.txtIDProductos.setText(id);
-        this.vistaProducto.txtIDProductos.enable(false);        
+        this.vistaProducto.txtIDProductos.enable(false);
         this.vistaProducto.txtNombreProductos.setText(Relleno[1]);
         this.vistaProducto.jSpinner.setValue(Integer.parseInt(Relleno[2]));
         this.vistaProducto.txtPrecioProductos.setText(Relleno[3]);
         this.vistaProducto.jTextAreaProductos.setText(Relleno[4]);
     }
-    
+
     private void tablePacientesMouseClicked(java.awt.event.MouseEvent evt) {
-        
+
         fila = this.vistaPaciente.jTablePacientes.getSelectedRow();
         String codigo = (String) this.vistaPaciente.jTablePacientes.getValueAt(fila, 0);
-    
-        String[] Relleno= this.modelo.RellenarPaciente(codigo);
-        
-        
-    
+
+        String[] Relleno = this.modelo.RellenarPaciente(codigo);
+
     }
-    
+
     //Metodo para modificar las pestañas del JTabbedPanel
     class CustomTabbedPaneUI extends MetalTabbedPaneUI {
 
@@ -471,6 +475,7 @@ public class controlador implements ActionListener, MouseListener {
                 }
             }
         }
+
     }
 
 }

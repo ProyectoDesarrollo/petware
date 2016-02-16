@@ -33,8 +33,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
         jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        pestañaMascotaCliente = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         panelClienteDatos = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
@@ -70,6 +68,8 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jToggleButton5 = new javax.swing.JToggleButton();
         txtTipoCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        pestañaMascotaCliente = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         panelListadoCliente = new javax.swing.JPanel();
         txtBuscadorCliente = new javax.swing.JTextField();
         scrollTableCliente = new javax.swing.JScrollPane();
@@ -85,32 +85,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1160, 682));
-
-        javax.swing.GroupLayout pestañaMascotaClienteLayout = new javax.swing.GroupLayout(pestañaMascotaCliente);
-        pestañaMascotaCliente.setLayout(pestañaMascotaClienteLayout);
-        pestañaMascotaClienteLayout.setHorizontalGroup(
-            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 835, Short.MAX_VALUE)
-        );
-        pestañaMascotaClienteLayout.setVerticalGroup(
-            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Mascota", pestañaMascotaCliente);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 835, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel2);
 
         panelClienteDatos.setBackground(new java.awt.Color(117, 218, 193));
         panelClienteDatos.setPreferredSize(new java.awt.Dimension(840, 560));
@@ -264,13 +238,14 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
                         .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(121, 121, 121)
-                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDNICliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel53)
+                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelClienteDatosLayout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addComponent(txtProvinciaCliente)))
+                                .addComponent(txtProvinciaCliente))
+                            .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtDNICliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel53)))
                         .addGap(19, 19, 19)
                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,6 +308,32 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         );
 
         jTabbedPane1.addTab("Cliente", panelClienteDatos);
+
+        javax.swing.GroupLayout pestañaMascotaClienteLayout = new javax.swing.GroupLayout(pestañaMascotaCliente);
+        pestañaMascotaCliente.setLayout(pestañaMascotaClienteLayout);
+        pestañaMascotaClienteLayout.setHorizontalGroup(
+            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 835, Short.MAX_VALUE)
+        );
+        pestañaMascotaClienteLayout.setVerticalGroup(
+            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 654, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Mascota", pestañaMascotaCliente);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 835, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 654, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel2);
 
         panelListadoCliente.setMinimumSize(new java.awt.Dimension(500, 910));
         panelListadoCliente.setPreferredSize(new java.awt.Dimension(502, 914));

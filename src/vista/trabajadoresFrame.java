@@ -68,6 +68,7 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         txtBuscadorTrabajador = new javax.swing.JTextField();
         scrollTableTrabajador = new javax.swing.JScrollPane();
         jTableTrabajadores = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
         btnAgregarTrabajador = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1300, 640));
@@ -311,6 +312,8 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("tab3", jPanel2);
 
+        panelListadoTrabajador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         txtBuscadorTrabajador.setText("Buscar . . .");
         txtBuscadorTrabajador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -325,6 +328,7 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
                 txtBuscadorTrabajadorActionPerformed(evt);
             }
         });
+        panelListadoTrabajador.add(txtBuscadorTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 311, 36));
 
         scrollTableTrabajador.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollTableTrabajador.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -353,28 +357,13 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         jTableTrabajadores.setOpaque(false);
         scrollTableTrabajador.setViewportView(jTableTrabajadores);
 
-        btnAgregarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
+        panelListadoTrabajador.add(scrollTableTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, 560));
 
-        javax.swing.GroupLayout panelListadoTrabajadorLayout = new javax.swing.GroupLayout(panelListadoTrabajador);
-        panelListadoTrabajador.setLayout(panelListadoTrabajadorLayout);
-        panelListadoTrabajadorLayout.setHorizontalGroup(
-            panelListadoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelListadoTrabajadorLayout.createSequentialGroup()
-                .addComponent(txtBuscadorTrabajador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(scrollTableTrabajador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        panelListadoTrabajadorLayout.setVerticalGroup(
-            panelListadoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelListadoTrabajadorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelListadoTrabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAgregarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBuscadorTrabajador))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollTableTrabajador, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fondo2_1.jpg"))); // NOI18N
+        panelListadoTrabajador.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 420, 560));
+
+        btnAgregarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
+        panelListadoTrabajador.add(btnAgregarTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 11, 108, 36));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -429,6 +418,7 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
