@@ -46,7 +46,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         txtBuscadorProducto = new javax.swing.JTextField();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jTableProductos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
@@ -149,7 +149,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGap(0, 532, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Proveedores", jPanel1);
@@ -164,11 +164,10 @@ public class productoFrame extends javax.swing.JInternalFrame {
                 txtBuscadorProductoMouseEntered(evt);
             }
         });
-        jPanel4.add(txtBuscadorProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 461, -1));
+        jPanel4.add(txtBuscadorProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 30));
 
-        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane3.setOpaque(false);
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setOpaque(false);
 
         jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -178,7 +177,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Stock", "Precio"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -190,12 +189,12 @@ public class productoFrame extends javax.swing.JInternalFrame {
             }
         });
         jTableProductos.setOpaque(false);
-        jScrollPane3.setViewportView(jTableProductos);
+        jScrollPane2.setViewportView(jTableProductos);
 
-        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 34, 450, 430));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 450, 520));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fondo2_1.jpg"))); // NOI18N
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 34, 450, 430));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 34, 450, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -209,7 +208,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -240,7 +239,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JSpinner jSpinner;
     private javax.swing.JTabbedPane jTabbedPane2;
     public javax.swing.JTable jTableProductos;

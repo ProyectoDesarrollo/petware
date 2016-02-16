@@ -33,6 +33,8 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
         jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        pestañaMascotaCliente = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         panelClienteDatos = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
@@ -68,8 +70,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jToggleButton5 = new javax.swing.JToggleButton();
         txtTipoCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        pestañaMascotaCliente = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         panelListadoCliente = new javax.swing.JPanel();
         txtBuscadorCliente = new javax.swing.JTextField();
         scrollTableCliente = new javax.swing.JScrollPane();
@@ -85,6 +85,32 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1160, 682));
+
+        javax.swing.GroupLayout pestañaMascotaClienteLayout = new javax.swing.GroupLayout(pestañaMascotaCliente);
+        pestañaMascotaCliente.setLayout(pestañaMascotaClienteLayout);
+        pestañaMascotaClienteLayout.setHorizontalGroup(
+            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 835, Short.MAX_VALUE)
+        );
+        pestañaMascotaClienteLayout.setVerticalGroup(
+            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 654, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Mascota", pestañaMascotaCliente);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 835, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 654, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel2);
 
         panelClienteDatos.setBackground(new java.awt.Color(117, 218, 193));
         panelClienteDatos.setPreferredSize(new java.awt.Dimension(840, 560));
@@ -162,9 +188,42 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatosLayout.setHorizontalGroup(
             panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                        .addContainerGap(656, Short.MAX_VALUE)
+                        .addComponent(jToggleButton5))
+                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                                .addContainerGap(428, Short.MAX_VALUE)
+                                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel52)
+                                    .addComponent(jLabel51)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel54)
+                                    .addComponent(jLabel50)
+                                    .addComponent(jLabel53)))
+                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                                .addGap(0, 94, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jToggleButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jToggleButton3)
+                                .addGap(12, 12, 12)))
+                        .addGap(13, 13, 13)
+                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFechaICliente)
+                            .addComponent(txtFechaNCliente)
+                            .addComponent(jToggleButton4)
+                            .addComponent(txtTipoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                            .addComponent(txtEmailCliente)
+                            .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                            .addComponent(txtProvinciaCliente)))
+                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelClienteDatosLayout.createSequentialGroup()
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -190,48 +249,11 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtMovilCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
                                     .addComponent(txtTelefonoCliente))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
                         .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(scrollNotaCliente)
-                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jToggleButton5))))
-                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
-                                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel52)
-                                    .addComponent(jLabel51)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel54)
-                                    .addComponent(jLabel50)
-                                    .addComponent(jLabel53)))
-                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButton2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jToggleButton3)
-                                .addGap(12, 12, 12)))
-                        .addGap(13, 13, 13)
-                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFechaICliente)
-                            .addComponent(txtFechaNCliente)
-                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jToggleButton4)
-                                    .addComponent(txtTipoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                                    .addComponent(txtEmailCliente)
-                                    .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                                    .addComponent(txtProvinciaCliente))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(scrollNotaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(74, 74, 74))
         );
         panelClienteDatosLayout.setVerticalGroup(
@@ -241,12 +263,14 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
                         .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 54, Short.MAX_VALUE)
+                        .addGap(121, 121, 121)
                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDNICliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel53)
-                            .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(txtProvinciaCliente)))
                         .addGap(19, 19, 19)
                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -310,32 +334,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Cliente", panelClienteDatos);
 
-        javax.swing.GroupLayout pestañaMascotaClienteLayout = new javax.swing.GroupLayout(pestañaMascotaCliente);
-        pestañaMascotaCliente.setLayout(pestañaMascotaClienteLayout);
-        pestañaMascotaClienteLayout.setHorizontalGroup(
-            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
-        );
-        pestañaMascotaClienteLayout.setVerticalGroup(
-            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 587, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Mascota", pestañaMascotaCliente);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 587, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel2);
-
         panelListadoCliente.setMinimumSize(new java.awt.Dimension(500, 910));
         panelListadoCliente.setPreferredSize(new java.awt.Dimension(502, 914));
         panelListadoCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -382,7 +380,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jTableCliente.setOpaque(false);
         scrollTableCliente.setViewportView(jTableCliente);
 
-        panelListadoCliente.add(scrollTableCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 430, 570));
+        panelListadoCliente.add(scrollTableCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 440, 570));
 
         btnAgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
         btnAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
