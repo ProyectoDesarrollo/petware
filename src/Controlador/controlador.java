@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.modelo;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -10,17 +11,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.beans.PropertyVetoException;
 import javax.swing.JDesktopPane;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-import javax.swing.event.ChangeEvent;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
-import javax.swing.table.DefaultTableCellRenderer;
-import sun.util.calendar.LocalGregorianCalendar.Date;
+import vista.Login;
 import vista.Principal;
 import vista.clienteFrame;
 import vista.pacienteFrame;
@@ -40,9 +35,12 @@ public class controlador implements ActionListener, MouseListener {
     JDesktopPane cliente = new JDesktopPane();
     int fila = 0;
 
-    public controlador(Principal vista) {
+    Login login;
+
+    public controlador(Login login, Principal vista) {
 
         modelo = new modelo();
+        this.login = login;
         this.vista = vista;
     }
 
@@ -55,9 +53,41 @@ public class controlador implements ActionListener, MouseListener {
 
         } catch (Exception e) {
         }
+        //Login
+        this.login.setVisible(true);
+        this.login.setResizable(false);
 
+        this.login.btnAceptarLogin.setActionCommand("btnLogin");
+        this.login.btnAceptarLogin.addActionListener(this);
+         this.login.olviContra.addMouseListener(new java.awt.event.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent me) {
+
+                login.olviContra.setForeground(Color.red);
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+                login.olviContra.setForeground(Color.ORANGE);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+                login.olviContra.setForeground(Color.blue);
+            }
+        });
+        
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
-        this.vista.setVisible(true);
+        this.vista.setVisible(false);
 
         //ActionCommand y ActionListener
         this.vista.btnCliente.setActionCommand("btnCliente");
@@ -77,6 +107,10 @@ public class controlador implements ActionListener, MouseListener {
 
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
+        
+        this.vista.btnCerrar.setActionCommand("btnCerrar");
+        this.vista.btnCerrar.addActionListener(this);
+
 
         //InternalFrame
         this.vistaCliente.setVisible(false);
@@ -189,7 +223,7 @@ public class controlador implements ActionListener, MouseListener {
             } else {
                 //Invocamos al metodo para crear las pestañas
                 crearPestaña("Clientes");
-                 int ntab = this.vista.panelPestaña.indexOfTab("Clientes   ");
+                int ntab = this.vista.panelPestaña.indexOfTab("Clientes   ");
                 this.vista.panelPestaña.setSelectedIndex(ntab);
             }
 
@@ -210,7 +244,7 @@ public class controlador implements ActionListener, MouseListener {
 
             } else {
                 crearPestaña("Productos");
-                 int ntab = this.vista.panelPestaña.indexOfTab("Productos   ");
+                int ntab = this.vista.panelPestaña.indexOfTab("Productos   ");
                 this.vista.panelPestaña.setSelectedIndex(ntab);
             }
 
@@ -300,6 +334,20 @@ public class controlador implements ActionListener, MouseListener {
                 ex.printStackTrace();
             }
 
+        }else if (comand.equals("btnLogin")) {
+
+            int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
+            if (i == 0) {
+                this.login.setVisible(false);
+                this.vista.setVisible(true);
+
+            }
+        } else if (comand.equals("btnCerrar")) {
+            int i = JOptionPane.showConfirmDialog(cliente, "¿Estas seguro de que quieres cerrar sesión?", "Alerta", JOptionPane.YES_NO_OPTION);
+            if (i == 0) {
+                this.login.setVisible(true);
+                this.vista.setVisible(false);
+            }
         }
 
     }

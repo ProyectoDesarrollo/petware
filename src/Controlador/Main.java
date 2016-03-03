@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import vista.Login;
 import vista.Principal;
 
 /**
@@ -20,7 +21,8 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        new controlador(new Principal()).iniciar();
+         //main
+         new controlador(new Login(), new Principal()).iniciar();
+
     }
 }

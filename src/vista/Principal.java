@@ -59,7 +59,8 @@ public class Principal extends javax.swing.JFrame {
         btnProveedores = new javax.swing.JButton();
         btnFacturas = new javax.swing.JButton();
         btnAlimentacion = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnTrabajadores = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         panelPestaña = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -176,17 +177,31 @@ public class Principal extends javax.swing.JFrame {
         btnAlimentacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         panelBotones.add(btnAlimentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, 135, 108));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
-        jButton1.setText("TRABAJADORES");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador.png"))); // NOI18N
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(945, 0, 135, 108));
+        btnTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
+        btnTrabajadores.setText("TRABAJADORES");
+        btnTrabajadores.setBorder(null);
+        btnTrabajadores.setBorderPainted(false);
+        btnTrabajadores.setContentAreaFilled(false);
+        btnTrabajadores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTrabajadores.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
+        btnTrabajadores.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador.png"))); // NOI18N
+        btnTrabajadores.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnTrabajadores.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        panelBotones.add(btnTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 135, 108));
+
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/cerrar1.png"))); // NOI18N
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setDefaultCapable(false);
+        btnCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCerrar.setLabel("CERRAR SESION");
+        btnCerrar.setMaximumSize(new java.awt.Dimension(121, 95));
+        btnCerrar.setMinimumSize(new java.awt.Dimension(121, 95));
+        btnCerrar.setPreferredSize(new java.awt.Dimension(121, 95));
+        btnCerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/cerrar1.png"))); // NOI18N
+        btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/cerrar2.png"))); // NOI18N
+        btnCerrar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnCerrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        panelBotones.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 160, 110));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fondoH_2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -305,12 +320,13 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAlimentacion;
+    public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnCliente;
     public javax.swing.JButton btnFacturas;
     public javax.swing.JButton btnMascota;
     public javax.swing.JButton btnProductos;
     public javax.swing.JButton btnProveedores;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnTrabajadores;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

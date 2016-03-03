@@ -33,7 +33,7 @@ public class Login extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JTextField();
         txtUsuario = new javax.swing.JTextField();
         btnAceptarLogin = new javax.swing.JButton();
-        btnCancelarLogin = new javax.swing.JButton();
+        olviContra = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,7 +46,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Contraseña :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
         txtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,14 +56,20 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 250, 40));
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 250, 40));
 
-        btnAceptarLogin.setText("Aceptar");
-        jPanel1.add(btnAceptarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 190, -1));
+        btnAceptarLogin.setBackground(new java.awt.Color(0, 0, 0));
+        btnAceptarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.png"))); // NOI18N
+        jPanel1.add(btnAceptarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 90, 100));
 
-        btnCancelarLogin.setText("Cancelar");
-        jPanel1.add(btnCancelarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 190, -1));
+        olviContra.setEditable(false);
+        olviContra.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        olviContra.setForeground(new java.awt.Color(0, 51, 255));
+        olviContra.setText("He olvidado mi contraseña");
+        olviContra.setBorder(null);
+        olviContra.setOpaque(false);
+        jPanel1.add(olviContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 190, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.jpg"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 640, 360));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 620, 360));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,13 +125,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptarLogin;
-    private javax.swing.JButton btnCancelarLogin;
+    public javax.swing.JButton btnAceptarLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtContraseña;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField olviContra;
+    public javax.swing.JTextField txtContraseña;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
