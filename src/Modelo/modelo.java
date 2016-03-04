@@ -761,4 +761,29 @@ public class modelo extends Database{
         return confir;
         
     }
+     public boolean compararUsuarioTipo(String usuario){
+        boolean confir = false;
+        String[] Relleno= new String[1];
+
+         try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT Tipo FROM Usuario WHERE Nombre like '%"+usuario+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("Tipo");
+      
+         }           
+         res.close();
+         if(Integer.valueOf(Relleno[0]).equals(0) ){
+             confir = true;
+         }
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+    
+       
+        return confir;
+        
+    }
 }

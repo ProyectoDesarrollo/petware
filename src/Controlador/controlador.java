@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.modelo;
 import java.awt.Color;
+import java.awt.Dialog;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -12,11 +13,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JDesktopPane;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import vista.Login;
 import vista.Principal;
+import vista.Registro;
 import vista.clienteFrame;
 import vista.pacienteFrame;
 import vista.productoFrame;
@@ -38,11 +41,13 @@ public class controlador implements ActionListener, MouseListener {
     String usuario;
     Login login;
 
+    JDialog Registro;
     public controlador(Login login, Principal vista) {
 
         modelo = new modelo();
         this.login = login;
         this.vista = vista;
+        this.Registro = new Registro(login, true);
     }
 
     public void iniciar() {
@@ -60,6 +65,7 @@ public class controlador implements ActionListener, MouseListener {
 
         this.login.btnAceptarLogin.setActionCommand("btnLogin");
         this.login.btnAceptarLogin.addActionListener(this);
+        
         this.login.olviContra.addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent me) {
@@ -86,6 +92,9 @@ public class controlador implements ActionListener, MouseListener {
                 login.olviContra.setForeground(Color.blue);
             }
         });
+        this.login.olviContra.setActionCommand("Recuperar");
+        this.login.olviContra.addActionListener(this);
+        
         this.login.txtRegistrarse.addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent me) {
@@ -112,6 +121,10 @@ public class controlador implements ActionListener, MouseListener {
                 login.txtRegistrarse.setForeground(Color.blue);
             }
         });
+        this.login.txtRegistrarse.setActionCommand("Registrarse");
+        this.login.txtRegistrarse.addActionListener(this);
+        
+       
 
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(false);
@@ -134,6 +147,7 @@ public class controlador implements ActionListener, MouseListener {
 
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
+        
 
         this.vista.btnCerrar.setActionCommand("btnCerrar");
         this.vista.btnCerrar.addActionListener(this);
@@ -361,21 +375,41 @@ public class controlador implements ActionListener, MouseListener {
             }
 
         } else if (comand.equals("btnLogin")) {
-            boolean confir ;
+            boolean confir;
+            boolean admin;
             if (!this.login.txtUsuario.getText().equals("") && !this.login.txtContraseña.getText().equals("")) {
-                int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
-                if (i == 0) {
-                    int contra =Integer.valueOf(this.login.txtContraseña.getText().toString());
-                    usuario = this.login.txtUsuario.getText();
-                    confir = modelo.compararUsuario(usuario,contra);
-                    if(confir == true){
-                        this.login.setVisible(false);
-                        this.vista.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(cliente, "Usuario o Contraseña incorrecto");
+
+                int contra = Integer.valueOf(this.login.txtContraseña.getText().toString());
+                usuario = this.login.txtUsuario.getText();
+                
+                confir = modelo.compararUsuario(usuario, contra);
+                if (confir == true) {
+                    admin = modelo.compararUsuarioTipo(usuario);
+                    if (admin == true) {
+                        int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() +"- Administrador"+ "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
+                        if (i == 0) {
+                            this.login.setVisible(false);
+                            this.vista.setVisible(true);
+                            this.vista.btnProveedores.setEnabled(true);
+                            this.vista.btnMascota.setEnabled(true);
+                        }
+
+                    } else {
+                        int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
+                        if (i == 0) {
+                            this.login.setVisible(false);
+                            this.vista.btnProveedores.setEnabled(false);
+                            this.vista.btnMascota.setEnabled(false);
+
+                            this.vista.setVisible(true);
+                        }
+
                     }
+
+                } else {
+                    JOptionPane.showMessageDialog(cliente, "Usuario o Contraseña incorrecto");
                 }
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(cliente, "Debe ingresar un usuario y contraseña");
             }
         } else if (comand.equals("btnCerrar")) {
@@ -385,6 +419,12 @@ public class controlador implements ActionListener, MouseListener {
                 this.vista.setVisible(false);
                 this.vista.panelPestaña.removeAll();
             }
+        }else if (comand.equals("Recuperar")){
+            
+        }else if(comand.equals("Registrarse")){
+            
+            Registro.setVisible(true);
+            login.setVisible(false);
         }
 
     }
