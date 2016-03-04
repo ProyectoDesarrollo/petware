@@ -56,10 +56,11 @@ public class controlador implements ActionListener, MouseListener {
         //Login
         this.login.setVisible(true);
         this.login.setResizable(false);
+    
 
         this.login.btnAceptarLogin.setActionCommand("btnLogin");
         this.login.btnAceptarLogin.addActionListener(this);
-         this.login.olviContra.addMouseListener(new java.awt.event.MouseListener() {
+        this.login.olviContra.addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent me) {
 
@@ -85,7 +86,7 @@ public class controlador implements ActionListener, MouseListener {
                 login.olviContra.setForeground(Color.blue);
             }
         });
-        
+
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(false);
 
@@ -107,10 +108,9 @@ public class controlador implements ActionListener, MouseListener {
 
         this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
         this.vista.btnAlimentacion.addActionListener(this);
-        
+
         this.vista.btnCerrar.setActionCommand("btnCerrar");
         this.vista.btnCerrar.addActionListener(this);
-
 
         //InternalFrame
         this.vistaCliente.setVisible(false);
@@ -334,7 +334,7 @@ public class controlador implements ActionListener, MouseListener {
                 ex.printStackTrace();
             }
 
-        }else if (comand.equals("btnLogin")) {
+        } else if (comand.equals("btnLogin")) {
 
             int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
             if (i == 0) {
@@ -347,6 +347,7 @@ public class controlador implements ActionListener, MouseListener {
             if (i == 0) {
                 this.login.setVisible(true);
                 this.vista.setVisible(false);
+                this.vista.panelPestaña.removeAll();
             }
         }
 
