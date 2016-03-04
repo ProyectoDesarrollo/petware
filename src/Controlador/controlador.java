@@ -35,6 +35,7 @@ public class controlador implements ActionListener, MouseListener {
     JDesktopPane cliente = new JDesktopPane();
     int fila = 0;
 
+    String usuario;
     Login login;
 
     public controlador(Login login, Principal vista) {
@@ -56,7 +57,6 @@ public class controlador implements ActionListener, MouseListener {
         //Login
         this.login.setVisible(true);
         this.login.setResizable(false);
-    
 
         this.login.btnAceptarLogin.setActionCommand("btnLogin");
         this.login.btnAceptarLogin.addActionListener(this);
@@ -84,6 +84,32 @@ public class controlador implements ActionListener, MouseListener {
             @Override
             public void mouseExited(MouseEvent me) {
                 login.olviContra.setForeground(Color.blue);
+            }
+        });
+        this.login.txtRegistrarse.addMouseListener(new java.awt.event.MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent me) {
+
+                login.txtRegistrarse.setForeground(Color.red);
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+                login.txtRegistrarse.setForeground(Color.ORANGE);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+                login.txtRegistrarse.setForeground(Color.blue);
             }
         });
 
@@ -335,12 +361,22 @@ public class controlador implements ActionListener, MouseListener {
             }
 
         } else if (comand.equals("btnLogin")) {
-
-            int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
-            if (i == 0) {
-                this.login.setVisible(false);
-                this.vista.setVisible(true);
-
+            boolean confir ;
+            if (!this.login.txtUsuario.getText().equals("") && !this.login.txtContraseña.getText().equals("")) {
+                int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
+                if (i == 0) {
+                    int contra =Integer.valueOf(this.login.txtContraseña.getText().toString());
+                    usuario = this.login.txtUsuario.getText();
+                    confir = modelo.compararUsuario(usuario,contra);
+                    if(confir == true){
+                        this.login.setVisible(false);
+                        this.vista.setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(cliente, "Usuario o Contraseña incorrecto");
+                    }
+                }
+            }else{
+                JOptionPane.showMessageDialog(cliente, "Debe ingresar un usuario y contraseña");
             }
         } else if (comand.equals("btnCerrar")) {
             int i = JOptionPane.showConfirmDialog(cliente, "¿Estas seguro de que quieres cerrar sesión?", "Alerta", JOptionPane.YES_NO_OPTION);

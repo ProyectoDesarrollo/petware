@@ -34,6 +34,7 @@ public class Login extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         btnAceptarLogin = new javax.swing.JButton();
         olviContra = new javax.swing.JTextField();
+        txtRegistrarse = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,23 +43,23 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Usuario :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Contraseña :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         txtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContraseñaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 250, 40));
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 250, 40));
+        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 250, 40));
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 250, 40));
 
         btnAceptarLogin.setBackground(new java.awt.Color(0, 0, 0));
         btnAceptarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.png"))); // NOI18N
-        jPanel1.add(btnAceptarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 90, 100));
+        jPanel1.add(btnAceptarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 90, 100));
 
         olviContra.setEditable(false);
         olviContra.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -67,6 +68,14 @@ public class Login extends javax.swing.JFrame {
         olviContra.setBorder(null);
         olviContra.setOpaque(false);
         jPanel1.add(olviContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 190, -1));
+
+        txtRegistrarse.setEditable(false);
+        txtRegistrarse.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtRegistrarse.setForeground(new java.awt.Color(0, 51, 255));
+        txtRegistrarse.setText("Registrarse");
+        txtRegistrarse.setBorder(null);
+        txtRegistrarse.setOpaque(false);
+        jPanel1.add(txtRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.jpg"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 620, 360));
@@ -132,6 +141,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField olviContra;
     public javax.swing.JTextField txtContraseña;
+    public javax.swing.JTextField txtRegistrarse;
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

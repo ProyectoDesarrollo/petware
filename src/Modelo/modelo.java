@@ -732,4 +732,33 @@ public class modelo extends Database{
         }
         return Relleno; 
     }
+    
+    
+    //---------------------- OTROS --------------------------------------
+    public boolean compararUsuario(String usuario,int contrasenia){
+        boolean confir = false;
+        String[] Relleno= new String[2];
+
+         try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT Nombre , Contrasenia FROM Usuario WHERE Nombre like '%"+usuario+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+            Relleno[0]= res.getString("Nombre");
+            Relleno[1] = res.getString("Contrasenia");
+          
+         }           
+         res.close();
+         if(Relleno[0].equals(usuario) && Integer.valueOf(Relleno[1]).equals(contrasenia)){
+             confir = true;
+         }
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+    
+       
+        return confir;
+        
+    }
 }
