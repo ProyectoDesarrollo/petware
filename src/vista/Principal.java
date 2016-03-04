@@ -14,7 +14,6 @@ import java.awt.Point;
 import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,24 +63,9 @@ public class Principal extends javax.swing.JFrame {
         btnCerrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         panelPestaña = new javax.swing.JTabbedPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
+        setResizable(false);
 
         panelBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -207,66 +191,34 @@ public class Principal extends javax.swing.JFrame {
         btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/cerrar2.png"))); // NOI18N
         btnCerrar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnCerrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 160, 110));
+        panelBotones.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 90, 110));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fondoH_2.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        panelBotones.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 1300, 120));
+        jLabel2.setMinimumSize(new java.awt.Dimension(1200, 124));
+        jLabel2.setPreferredSize(new java.awt.Dimension(1200, 124));
+        panelBotones.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 1200, 120));
 
         panelPestaña.setBackground(new java.awt.Color(139, 220, 198));
         panelPestaña.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         panelPestaña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(1300, 21));
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        jMenu4.setText("Archivo");
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Visualizar");
-
-        jMenuItem1.setText("Cliente");
-        jMenu5.add(jMenuItem1);
-
-        jMenuItem2.setText("Mascota");
-        jMenu5.add(jMenuItem2);
-
-        jMenuItem3.setText("Productos");
-        jMenu5.add(jMenuItem3);
-
-        jMenuItem4.setText("Factura");
-        jMenu5.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu5);
-
-        jMenu6.setText("Ajustes");
-        jMenuBar1.add(jMenu6);
-
-        jMenu3.setText("Ayuda");
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPestaña)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelPestaña)
+                    .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 1195, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelPestaña, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE))
+                .addComponent(panelPestaña))
         );
 
         pack();
@@ -289,21 +241,6 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClienteActionPerformed
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        cerrar();
-    }//GEN-LAST:event_formWindowClosing
-
-    
-    public void cerrar() {
-        Object[] opciones = {"Aceptar", "Cancelar"};
-        int eleccion = JOptionPane.showOptionDialog(this, "¿Esta seguro de salir ? ,\n todos los datos que no esten guardados se perderan", "Mensaje de Confirmacion",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE, null, opciones, "Aceptar");
-        if (eleccion == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        } else {
-        }
-    }
     /**
      * @param args the command line arguments
      */
@@ -349,17 +286,6 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnTrabajadores;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel panelBotones;
     public javax.swing.JTabbedPane panelPestaña;
     // End of variables declaration//GEN-END:variables
