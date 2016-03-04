@@ -56,8 +56,8 @@ public class Olvido extends javax.swing.JFrame {
         btnCancelarOlvido.setText("Cancelar");
         jPanel1.add(btnCancelarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 150, -1));
 
-        jLabel4.setText("Rpetir Contaea :");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+        jLabel4.setText("Repetir Contraseña :");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
         jPanel1.add(txtRepetir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.jpg"))); // NOI18N

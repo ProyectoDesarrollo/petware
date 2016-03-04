@@ -221,11 +221,11 @@ public class modelo extends Database{
     }
     
     //------------------------------Metodo Agregar----------------------------------
-    public boolean InsertarCliente (String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Nacimiento, int CodigoPostal, String Provincia, String Fecha, String Tipo) {
+    public boolean InsertarCliente (String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Nacimiento, int CodigoPostal, String Provincia, String Fecha) {
             //Consulta para insertar 
         
         String q=" INSERT INTO Cliente ( Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal )"
-                    + "VALUES ( '" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "','" + Provincia + "','" + Nacimiento + "','" + Tipo + "','" + Fecha + "','" + CodigoPostal + "') ";
+                    + "VALUES ( '" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "','" + Provincia + "','" + Nacimiento + "','"  + Fecha + "','" + CodigoPostal + "') ";
             //se ejecuta la consulta
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);

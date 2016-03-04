@@ -19,7 +19,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import vista.Login;
 import vista.Principal;
-import vista.Registro;
+
 import vista.clienteFrame;
 import vista.pacienteFrame;
 import vista.productoFrame;
@@ -28,6 +28,7 @@ import vista.proveedoresFrame;
 public class controlador implements ActionListener, MouseListener {
 
     Principal vista;
+    
     modelo modelo;
     String nombrePestaña;
     JTabbedPane tabbedPane;
@@ -41,13 +42,13 @@ public class controlador implements ActionListener, MouseListener {
     String usuario;
     Login login;
 
-    JDialog Registro;
+
     public controlador(Login login, Principal vista) {
 
         modelo = new modelo();
         this.login = login;
         this.vista = vista;
-        this.Registro = new Registro(login, true);
+
     }
 
     public void iniciar() {
@@ -124,7 +125,7 @@ public class controlador implements ActionListener, MouseListener {
         this.login.txtRegistrarse.setActionCommand("Registrarse");
         this.login.txtRegistrarse.addActionListener(this);
         
-       
+//       
 
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(false);
@@ -326,9 +327,9 @@ public class controlador implements ActionListener, MouseListener {
                 int CodigoPostal = Integer.parseInt(this.vistaCliente.txtCodigoPCliente.getText());
                 String Provincia = this.vistaCliente.txtProvinciaCliente.getText();
                 String Fecha = this.vistaCliente.txtProvinciaCliente.getText();
-                String Tipo = this.vistaCliente.txtTipoCliente.getText();
+//                String Tipo = this.vistaCliente.txtTipoCliente.getText();
 
-                this.modelo.InsertarCliente(Nombre, Apellidos, Direccion, Telefono, Movil, Email, Nacimiento, CodigoPostal, Provincia, Fecha, Tipo);
+                this.modelo.InsertarCliente(Nombre, Apellidos, Direccion, Telefono, Movil, Email, Nacimiento, CodigoPostal, Provincia, Fecha);
                 this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
                 this.vistaCliente.txtDNICliente.setText("");
                 this.vistaCliente.txtNombreCliente.setText("");
@@ -342,7 +343,7 @@ public class controlador implements ActionListener, MouseListener {
                 this.vistaCliente.txtCodigoPCliente.setText("");
                 this.vistaCliente.txtProvinciaCliente.setText("");
                 this.vistaCliente.txtProvinciaCliente.setText("");
-                this.vistaCliente.txtTipoCliente.setText("");
+                
 
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -352,23 +353,23 @@ public class controlador implements ActionListener, MouseListener {
 
             try {
 
-                String dni = this.vistaProveedor.txtDNIProveedor.getText();
-                String Nombre = this.vistaProveedor.txtNombreProveedor.getText();
-                String Apellidos = this.vistaProveedor.txtApellidosProveedor.getText();
-                String Direccion = this.vistaProveedor.txtDireccionProveedor.getText();
-                int Telefono = Integer.parseInt(this.vistaProveedor.txtTelefonoProveedor.getText());
-                int Movil = Integer.parseInt(this.vistaProveedor.txtMovilProveedor.getText());
-                String Email = this.vistaProveedor.txtEmailProveedor.getText();
+//                String dni = this.vistaProveedor.txtDNIProveedor.getText();
+//                String Nombre = this.vistaProveedor.txtNombreProveedor.getText();
+//                String Apellidos = this.vistaProveedor.txtApellidosProveedor.getText();
+//                String Direccion = this.vistaProveedor.txtDireccionProveedor.getText();
+//                int Telefono = Integer.parseInt(this.vistaProveedor.txtTelefonoProveedor.getText());
+//                int Movil = Integer.parseInt(this.vistaProveedor.txtMovilProveedor.getText());
+//                String Email = this.vistaProveedor.txtEmailProveedor.getText();
 
-                this.modelo.InsertarProveedor(Nombre, Apellidos, Direccion, Telefono, Movil, Email);
-                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
-                this.vistaCliente.txtDNICliente.setText("");
-                this.vistaCliente.txtNombreCliente.setText("");
-                this.vistaCliente.txtApellidosCliente.setText("");
-                this.vistaCliente.txtDireccionCliente.setText("");
-                this.vistaCliente.txtTelefonoCliente.setText("");
-                this.vistaCliente.txtMovilCliente.setText("");
-                this.vistaCliente.txtEmailCliente.setText("");
+////                this.modelo.InsertarProveedor(Nombre, Apellidos, Direccion, Telefono, Movil, Email);
+//                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+//                this.vistaCliente.txtDNICliente.setText("");
+//                this.vistaCliente.txtNombreCliente.setText("");
+//                this.vistaCliente.txtApellidosCliente.setText("");
+//                this.vistaCliente.txtDireccionCliente.setText("");
+//                this.vistaCliente.txtTelefonoCliente.setText("");
+//                this.vistaCliente.txtMovilCliente.setText("");
+//                this.vistaCliente.txtEmailCliente.setText("");
 
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -423,7 +424,7 @@ public class controlador implements ActionListener, MouseListener {
             
         }else if(comand.equals("Registrarse")){
             
-            Registro.setVisible(true);
+       
             login.setVisible(false);
         }
 
@@ -515,9 +516,8 @@ public class controlador implements ActionListener, MouseListener {
         this.vistaCliente.txtEmailCliente.setText(Relleno[6]);
         this.vistaCliente.txtProvinciaCliente.setText(Relleno[7]);
         this.vistaCliente.txtFechaNCliente.setText(Relleno[8]);
-        this.vistaCliente.txtTipoCliente.setText(Relleno[9]);
-        this.vistaCliente.txtFechaICliente.setText(Relleno[10]);
-        this.vistaCliente.txtCodigoPCliente.setText(Relleno[11]);
+        this.vistaCliente.txtFechaICliente.setText(Relleno[9]);
+        this.vistaCliente.txtCodigoPCliente.setText(Relleno[10]);
     }
 
     private void tableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {
@@ -526,14 +526,14 @@ public class controlador implements ActionListener, MouseListener {
         String nif = (String) this.vistaProveedor.jTableProveedores.getValueAt(fila, 0);
 
         String[] Relleno = this.modelo.RellenarProveedor(nif);
-        this.vistaProveedor.txtDNIProveedor.setText(nif);
-        this.vistaProveedor.txtDNIProveedor.enable(false);
-        this.vistaProveedor.txtNombreProveedor.setText(Relleno[1]);
-        this.vistaProveedor.txtApellidosProveedor.setText(Relleno[2]);
-        this.vistaProveedor.txtDireccionProveedor.setText(Relleno[3]);
-        this.vistaProveedor.txtTelefonoProveedor.setText(Relleno[4]);
-        this.vistaProveedor.txtMovilProveedor.setText(Relleno[5]);
-        this.vistaProveedor.txtEmailProveedor.setText(Relleno[6]);
+//        this.vistaProveedor.txtDNIProveedor.setText(nif);
+//        this.vistaProveedor.txtDNIProveedor.enable(false);
+//        this.vistaProveedor.txtNombreProveedor.setText(Relleno[1]);
+//        this.vistaProveedor.txtApellidosProveedor.setText(Relleno[2]);
+//        this.vistaProveedor.txtDireccionProveedor.setText(Relleno[3]);
+//        this.vistaProveedor.txtTelefonoProveedor.setText(Relleno[4]);
+//        this.vistaProveedor.txtMovilProveedor.setText(Relleno[5]);
+//        this.vistaProveedor.txtEmailProveedor.setText(Relleno[6]);
 
     }
 
