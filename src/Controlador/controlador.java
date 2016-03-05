@@ -67,8 +67,6 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
 
         try {
 
-            
-            this.vistaProducto.jTableProductos.setModel(this.modelo.getTablaProductos());
             controladorCliente = new controladorCliente(vistaCliente);
             controladorCliente.iniciar();
             controladorFactura = new  controladorFactura(vistaFacturas);

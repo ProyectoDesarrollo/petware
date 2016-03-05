@@ -145,7 +145,7 @@ public class modelo extends Database{
         
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0; // Indica la cantidad de filas de la tabla.
-      String[] columNames = {"ID", "Nombre", "Stock", "Precio"}; // Indica el nombre de las columnas de la tabla.
+      String[] columNames = {"ID", "Nombre", "Stock", "Precio" ,"Tipo" ,"Descripcion"}; // Indica el nombre de las columnas de la tabla.
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
@@ -161,7 +161,7 @@ public class modelo extends Database{
         Object[][] data = new String[registros][6];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Stock, Precio , Tipo, DescripcionFROM Productos");
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Stock, Precio , Tipo , Descripcion FROM Productos");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
@@ -171,6 +171,7 @@ public class modelo extends Database{
                 data[i][3] = res.getString("Precio");
                 data[i][4] = res.getString("Tipo");
                 data[i][5] = res.getString("Descripcion");
+              
                 
             i++;
         }
@@ -803,4 +804,5 @@ public class modelo extends Database{
         return confir;
         
     }
+ 
 }
