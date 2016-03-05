@@ -51,11 +51,11 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jLabel60 = new javax.swing.JLabel();
         txtMovilCliente = new javax.swing.JTextField();
         txtDNICliente = new javax.swing.JTextField();
-        txtFechaNCliente = new javax.swing.JTextField();
+        txtProvinciaCliente = new javax.swing.JTextField();
         txtCodigoPCliente = new javax.swing.JTextField();
         txtEmailCliente = new javax.swing.JTextField();
         txtFechaICliente = new javax.swing.JTextField();
-        txtProvinciaCliente = new javax.swing.JTextField();
+        txtFechaCliente = new javax.swing.JTextField();
         btnGuardarCliente = new javax.swing.JButton();
         scrollNotaCliente = new javax.swing.JScrollPane();
         txtPCliente = new javax.swing.JTextPane();
@@ -200,9 +200,9 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtEmailCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaNCliente, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtFechaICliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                                    .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.Alignment.LEADING)))
+                                    .addComponent(txtFechaCliente, javax.swing.GroupLayout.Alignment.LEADING)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelClienteDatosLayout.createSequentialGroup()
                                 .addGap(44, 581, Short.MAX_VALUE)
                                 .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,7 +226,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                     .addComponent(txtDNICliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel53)
-                    .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,7 +244,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                     .addComponent(txtDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel58)
                     .addComponent(jLabel51)
-                    .addComponent(txtFechaNCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -477,8 +477,8 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtDNICliente;
     public javax.swing.JTextField txtDireccionCliente;
     public javax.swing.JTextField txtEmailCliente;
+    public javax.swing.JTextField txtFechaCliente;
     public javax.swing.JTextField txtFechaICliente;
-    public javax.swing.JTextField txtFechaNCliente;
     public javax.swing.JTextField txtMovilCliente;
     public javax.swing.JTextField txtNombreCliente;
     public javax.swing.JTextPane txtPCliente;

@@ -224,11 +224,11 @@ public class modelo extends Database{
     }
     
     //------------------------------Metodo Agregar----------------------------------
-    public boolean InsertarCliente (String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Nacimiento, int CodigoPostal, String Provincia, String Fecha) {
+    public boolean InsertarCliente (String DNI, String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Nacimiento, int CodigoPostal, String Provincia, String Fecha) {
             //Consulta para insertar 
         
-        String q=" INSERT INTO Cliente ( Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal )"
-                    + "VALUES ( '" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "','" + Provincia + "','" + Nacimiento + "','"  + Fecha + "','" + CodigoPostal + "') ";
+        String q=" INSERT INTO Cliente ( DNI, Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal )"
+                    + "VALUES ( '" + DNI + "','" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "','" + Provincia + "','" + Nacimiento + "','"  + Fecha + "','" + CodigoPostal + "') ";
             //se ejecuta la consulta
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
@@ -606,7 +606,7 @@ public class modelo extends Database{
         String[] Relleno= new String[12];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal FROM Cliente WHERE DNI like '%"+dni+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Nota FROM Cliente WHERE DNI like '%"+dni+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
@@ -619,9 +619,8 @@ public class modelo extends Database{
             Relleno[6] = res.getString("Email");
             Relleno[7]= res.getString("Provincia");
             Relleno[8]= res.getString("Nacimiento");
-            Relleno[9]= res.getString("Tipo");
-            Relleno[10]= res.getString("Desde");
-            Relleno[11]= res.getString("CodigoPostal");
+            Relleno[9]= res.getString("Nota");
+            Relleno[10]= res.getString("CodigoPostal");
           
          }           
          res.close();

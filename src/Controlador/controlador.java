@@ -332,41 +332,6 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
                 this.vista.panelPestaña.setSelectedIndex(ntab);
            }
 
-        } else if (comand.equals("btnAñadirCliente")) {
-
-            try {
-
-                String dni = this.vistaCliente.txtDNICliente.getText();
-                String Nombre = this.vistaCliente.txtNombreCliente.getText();
-                String Apellidos = this.vistaCliente.txtApellidosCliente.getText();
-                String Direccion = this.vistaCliente.txtDireccionCliente.getText();
-                int Telefono = Integer.parseInt(this.vistaCliente.txtTelefonoCliente.getText());
-                int Movil = Integer.parseInt(this.vistaCliente.txtMovilCliente.getText());
-                String Email = this.vistaCliente.txtEmailCliente.getText();
-                String Nacimiento = this.vistaCliente.txtFechaNCliente.getText();
-                int CodigoPostal = Integer.parseInt(this.vistaCliente.txtCodigoPCliente.getText());
-                String Provincia = this.vistaCliente.txtProvinciaCliente.getText();
-                String Fecha = this.vistaCliente.txtProvinciaCliente.getText();
-//                String Tipo = this.vistaCliente.txtTipoCliente.getText();
-
-                this.modelo.InsertarCliente(Nombre, Apellidos, Direccion, Telefono, Movil, Email, Nacimiento, CodigoPostal, Provincia, Fecha);
-                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
-                this.vistaCliente.txtDNICliente.setText("");
-                this.vistaCliente.txtNombreCliente.setText("");
-                this.vistaCliente.txtApellidosCliente.setText("");
-                this.vistaCliente.txtDireccionCliente.setText("");
-                this.vistaCliente.txtTelefonoCliente.setText("");
-                this.vistaCliente.txtMovilCliente.setText("");
-                this.vistaCliente.txtEmailCliente.setText("");
-                this.vistaCliente.txtFechaNCliente.setText("");
-                this.vistaCliente.txtFechaNCliente.setText("");
-                this.vistaCliente.txtCodigoPCliente.setText("");
-                this.vistaCliente.txtProvinciaCliente.setText("");
-                this.vistaCliente.txtProvinciaCliente.setText("");
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
 
         } else if (comand.equals("btnAñadirProveedor")) {
 
@@ -616,7 +581,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
         this.vistaCliente.txtMovilCliente.setText(Relleno[5]);
         this.vistaCliente.txtEmailCliente.setText(Relleno[6]);
         this.vistaCliente.txtProvinciaCliente.setText(Relleno[7]);
-        this.vistaCliente.txtFechaNCliente.setText(Relleno[8]);
+        
         this.vistaCliente.txtFechaICliente.setText(Relleno[9]);
         this.vistaCliente.txtCodigoPCliente.setText(Relleno[10]);
     }
