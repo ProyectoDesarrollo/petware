@@ -158,10 +158,10 @@ public class modelo extends Database{
            System.err.println( e.getMessage() );
         }
       //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][4];
+        Object[][] data = new String[registros][6];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Stock, Precio FROM Productos");
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Stock, Precio , Tipo, DescripcionFROM Productos");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
@@ -169,6 +169,8 @@ public class modelo extends Database{
                 data[i][1] = res.getString("Nombre");
                 data[i][2] = res.getString("Stock");
                 data[i][3] = res.getString("Precio");
+                data[i][4] = res.getString("Tipo");
+                data[i][5] = res.getString("Descripcion");
                 
             i++;
         }

@@ -19,27 +19,54 @@ import vista.facturasFrame;
 public class controladorFactura implements ActionListener {
 
   
-    facturasFrame frame = new facturasFrame();
+    facturasFrame frame ;
     modelo modelo;
-    public controladorFactura( ) {
+    int fila = 0;
+    
+    public controladorFactura(facturasFrame frame) {
         modelo = new modelo();
-       
+        this.frame =frame;
        
     }
     
     public void iniciar(){
-        
+           try {
+
+            this.frame.tableFactura.setModel(this.modelo.getTablaProductos());
+
+        } catch (Exception e) {
+        }
         this.frame.setVisible(true);
+        
         this.frame.btnAñadirCarrito.setActionCommand("Añadir");
         this.frame.btnAñadirCarrito.addActionListener(this);
     }
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
-        String comand = ae.getActionCommand();
+    public void actionPerformed(ActionEvent e) {
+        String comand = e.getActionCommand();
         
         if(comand.equals("Añadir")){
-            JOptionPane.showMessageDialog(frame, "Hola");
+            
         }
+    }
+    
+    
+    
+    private void tableProductosMouseClicked(java.awt.event.MouseEvent evt) {
+
+        fila = this.frame.tableFactura.getSelectedRow();
+        String id = (String) this.frame.tableFactura.getValueAt(fila, 0);
+
+        String[] Relleno = this.modelo.RellenarProducto(id);
+        this.frame.txtIDProductoFacctura.setText(id);
+        this.frame.txtIDProductoFacctura.enable(false);
+        this.frame.txtNombreProductoFactura.setText(Relleno[1]);
+        this.frame.stock.setValue(Integer.parseInt(Relleno[2]));
+        this.frame.txtPrecioProductoFactura.setText(Relleno[3]);
+        this.frame.txtPrecioProductoFactura.setText(Relleno[3]);
+        this.frame.txtTipoProductoFactura.setText(Relleno[4]);
+        this.frame.txtTipoProductoFactura.setText(Relleno[5]);
+
     }
 }

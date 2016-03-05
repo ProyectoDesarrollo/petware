@@ -44,6 +44,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     proveedoresFrame vistaProveedor = new proveedoresFrame();
     productoFrame vistaProducto = new productoFrame();
     facturasFrame vistaFacturas = new facturasFrame();
+;
     JDesktopPane cliente = new JDesktopPane();
     int fila = 0;
 
@@ -57,7 +58,8 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
         this.login = login;
         this.vista = vista;
         registro = new registro();
-
+        
+        
     }
 
     public void iniciar() {
@@ -68,7 +70,9 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
             this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
             this.vistaProducto.jTableProductos.setModel(this.modelo.getTablaProductos());
             controlClientes = new controladorCliente(vista);
-            controladorCliente.iniciar();
+//            controladorCliente.iniciar();
+            controladorFactura = new  controladorFactura(vistaFacturas);
+            controladorFactura.iniciar();
             
         } catch (Exception e) {
         }

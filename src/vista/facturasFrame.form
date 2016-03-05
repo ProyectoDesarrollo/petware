@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane2" alignment="0" max="32767" attributes="0"/>
+          <Component id="jTabbedPane2" alignment="0" pref="1213" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -74,7 +74,7 @@
                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtNombreFactura" min="-2" pref="231" max="-2" attributes="0"/>
+                              <Component id="buscadorFactura" min="-2" pref="231" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -97,9 +97,9 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txtProveedorFactura" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtTipoFactura" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtPrecioFactura" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                          <Component id="txtProveedorProductoFactura" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtTipoProductoFactura" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtPrecioProductoFactura" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -110,19 +110,20 @@
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="txtIDFactura" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtIDProductoFacctura" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="stock" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Component id="btnAñadirCarrito" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane5" alignment="0" min="-2" pref="347" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane5" alignment="0" min="-2" pref="347" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="btnAceptarFactura" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -133,12 +134,12 @@
                               <Component id="comboUsuarioF" min="-2" pref="268" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="910" max="-2" attributes="0"/>
-                          <Component id="txtBuscadorFactura" min="-2" pref="276" max="-2" attributes="0"/>
+                          <Component id="txtNombreProductoFactura" min="-2" pref="276" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -147,11 +148,11 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtNombreFactura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="buscadorFactura" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -167,14 +168,14 @@
                               <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtTipoFactura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTipoProductoFactura" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtIDFactura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtIDProductoFacctura" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtPrecioFactura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPrecioProductoFactura" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel70" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   <Component id="stock" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel65" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
@@ -188,7 +189,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtProveedorFactura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtProveedorProductoFactura" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -200,10 +201,12 @@
                               <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jScrollPane5" min="-2" pref="111" max="-2" attributes="0"/>
-                              <EmptySpace pref="65" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnAceptarFactura" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="62" max="32767" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="187" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           </Group>
@@ -212,7 +215,7 @@
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                          <Component id="txtBuscadorFactura" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombreProductoFactura" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="359" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -235,7 +238,7 @@
                 <Property name="text" type="java.lang.String" value="Usuario: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombreFactura">
+            <Component class="javax.swing.JTextField" name="buscadorFactura">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -245,7 +248,7 @@
                 <Property name="text" type="java.lang.String" value="Stock :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtPrecioFactura">
+            <Component class="javax.swing.JTextField" name="txtPrecioProductoFactura">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -299,7 +302,7 @@
                 <Property name="text" type="java.lang.String" value="Tipo :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtTipoFactura">
+            <Component class="javax.swing.JTextField" name="txtTipoProductoFactura">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -309,7 +312,7 @@
                 <Property name="text" type="java.lang.String" value="ID :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtIDFactura">
+            <Component class="javax.swing.JTextField" name="txtIDProductoFacctura">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -337,12 +340,12 @@
                 <Property name="text" type="java.lang.String" value="NIF Proveedor :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtProveedorFactura">
+            <Component class="javax.swing.JTextField" name="txtProveedorProductoFactura">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtBuscadorFactura">
+            <Component class="javax.swing.JTextField" name="txtNombreProductoFactura">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -390,6 +393,16 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
+            <Component class="javax.swing.JButton" name="btnAceptarFactura">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ImagenesBotones/guardar_1.png"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="panelFClientes">
@@ -407,7 +420,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" alignment="0" pref="1177" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" alignment="0" pref="1178" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
