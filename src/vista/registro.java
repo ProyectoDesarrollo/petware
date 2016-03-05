@@ -12,7 +12,7 @@ package vista;
 public class registro extends javax.swing.JFrame {
 
     /**
-     * Creates new form registro
+     * Creates new form Olvido
      */
     public registro() {
         initComponents();
@@ -30,10 +30,12 @@ public class registro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JTextField();
-        btnAceptar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        txtUsuarioOlvido = new javax.swing.JTextField();
+        txtContraseñaOlvido = new javax.swing.JTextField();
+        btnAceptarOlvido = new javax.swing.JButton();
+        btnCancelarOlvido = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtRepetir = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,18 +43,22 @@ public class registro extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Usuario :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 68, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 20));
 
         jLabel2.setText("Contraseña :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 123, -1, -1));
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 68, 200, -1));
-        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 200, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+        jPanel1.add(txtUsuarioOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 200, -1));
+        jPanel1.add(txtContraseñaOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 200, -1));
 
-        btnAceptar.setText("Aceptar");
-        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 150, -1));
+        btnAceptarOlvido.setText("Aceptar");
+        jPanel1.add(btnAceptarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 150, -1));
 
-        btnCancelar.setText("Cancelar");
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 150, -1));
+        btnCancelarOlvido.setText("Cancelar");
+        jPanel1.add(btnCancelarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 150, -1));
+
+        jLabel4.setText("Repetir Contraseña :");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        jPanel1.add(txtRepetir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.jpg"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 250));
@@ -65,7 +71,7 @@ public class registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -97,6 +103,7 @@ public class registro extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -107,13 +114,15 @@ public class registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAceptar;
-    public javax.swing.JButton btnCancelar;
+    public javax.swing.JButton btnAceptarOlvido;
+    public javax.swing.JButton btnCancelarOlvido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField txtContraseña;
-    public javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField txtContraseñaOlvido;
+    private javax.swing.JTextField txtRepetir;
+    public javax.swing.JTextField txtUsuarioOlvido;
     // End of variables declaration//GEN-END:variables
 }

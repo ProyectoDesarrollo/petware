@@ -174,10 +174,10 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, -1, -1));
 
         jLabel11.setText("Forma de Abdomen :");
-        panelClienteDatos5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 1560, -1, 40));
+        panelClienteDatos5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1680, 130, 40));
 
         jLabel12.setText("Palpación Abdominal :");
-        panelClienteDatos5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1730, -1, 40));
+        panelClienteDatos5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 1730, -1, 40));
 
         jLabel13.setText("DNI :");
         panelClienteDatos5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, -1, -1));
@@ -204,43 +204,43 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1010, -1, 20));
 
         jLabel21.setText("Ano :");
-        panelClienteDatos5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1560, -1, 40));
+        panelClienteDatos5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 1560, -1, 40));
 
         jLabel22.setText("Orina :");
-        panelClienteDatos5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1580, -1, 40));
+        panelClienteDatos5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 1580, -1, 40));
 
         jLabel23.setText("Abdomen Profundo :");
-        panelClienteDatos5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 1730, -1, 40));
+        panelClienteDatos5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 1730, -1, 40));
 
         jLabel24.setText("Percusión intestinal :");
-        panelClienteDatos5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1700, -1, 40));
+        panelClienteDatos5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 1700, -1, 40));
 
         jLabel25.setText("Auscultación intestinal :");
-        panelClienteDatos5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1700, -1, 40));
+        panelClienteDatos5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1700, -1, 40));
 
         jLabel26.setText("Ondulación intestinal :");
-        panelClienteDatos5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1700, -1, 40));
+        panelClienteDatos5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 1700, -1, 40));
 
         jLabel27.setText("Extremidades :");
-        panelClienteDatos5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1550, -1, 40));
+        panelClienteDatos5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1670, 100, 40));
 
         jLabel28.setText("Sistema Nervioso :");
-        panelClienteDatos5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1530, -1, 40));
+        panelClienteDatos5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1650, 120, 40));
 
         jLabel29.setText("Genitales :");
-        panelClienteDatos5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1500, -1, 40));
+        panelClienteDatos5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 1740, -1, 40));
 
         jLabel30.setText("Recto :");
-        panelClienteDatos5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1530, -1, 40));
+        panelClienteDatos5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 1530, -1, 40));
 
         jLabel31.setText("Torax :");
-        panelClienteDatos5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1610, -1, 40));
+        panelClienteDatos5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1730, 60, 40));
 
         jLabel32.setText("Aparato Locomotor :");
-        panelClienteDatos5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1590, -1, 40));
+        panelClienteDatos5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1710, 130, 40));
 
         jLabel33.setText("Conciencia :");
-        panelClienteDatos5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 1660, -1, 40));
+        panelClienteDatos5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 1660, -1, 40));
 
         jLabel34.setText("Cuello :");
         panelClienteDatos5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1100, -1, 20));
@@ -255,48 +255,48 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1360, -1, 40));
 
         jLabel38.setText("Lengua :");
-        panelClienteDatos5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1530, -1, 40));
+        panelClienteDatos5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1470, -1, 20));
 
         jLabel39.setText("Boca :");
-        panelClienteDatos5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 1660, -1, 40));
+        panelClienteDatos5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 1660, -1, 40));
 
         jLabel40.setText("Masticadores :");
-        panelClienteDatos5.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1580, -1, 40));
+        panelClienteDatos5.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 1700, 100, 40));
         panelClienteDatos5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 270, -1));
         panelClienteDatos5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 270, -1));
 
         jLabel41.setText("Heces :");
-        panelClienteDatos5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1520, -1, 40));
+        panelClienteDatos5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1640, 60, 40));
 
         jLabel42.setText("Notas :");
-        panelClienteDatos5.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1510, -1, 40));
+        panelClienteDatos5.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 1730, -1, 40));
 
         jLabel43.setText("Enfermedades :");
-        panelClienteDatos5.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1540, -1, 40));
+        panelClienteDatos5.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1660, 100, 40));
 
         jLabel44.setText("Cirugias Previas :");
-        panelClienteDatos5.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1570, -1, 40));
+        panelClienteDatos5.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1690, 110, 40));
 
         jLabel45.setText("Esterilización :");
-        panelClienteDatos5.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1600, -1, 40));
+        panelClienteDatos5.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1720, 90, 40));
 
         jLabel46.setText("Vacunación :");
-        panelClienteDatos5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1620, -1, 40));
+        panelClienteDatos5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 1620, -1, 40));
 
         jLabel47.setText("Desparasitación :");
-        panelClienteDatos5.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1650, -1, 40));
+        panelClienteDatos5.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1650, -1, 40));
 
         jLabel48.setText("Leishmaniosis :");
-        panelClienteDatos5.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1670, -1, 40));
+        panelClienteDatos5.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 1670, -1, 40));
 
         jLabel49.setText("Habitat :");
-        panelClienteDatos5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 1610, -1, 40));
+        panelClienteDatos5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 1730, 70, 40));
 
         jLabel50.setText("Entorno :");
-        panelClienteDatos5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1620, -1, 40));
+        panelClienteDatos5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1740, 70, 40));
 
         jLabel51.setText("Viajes :");
-        panelClienteDatos5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1640, -1, 40));
+        panelClienteDatos5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 1640, -1, 40));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);

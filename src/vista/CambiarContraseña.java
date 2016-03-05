@@ -9,12 +9,12 @@ package vista;
  *
  * @author Alejandro
  */
-public class Olvido extends javax.swing.JFrame {
+public class CambiarContraseña extends javax.swing.JFrame {
 
     /**
-     * Creates new form Olvido
+     * Creates new form registro
      */
-    public Olvido() {
+    public CambiarContraseña() {
         initComponents();
     }
 
@@ -42,11 +42,11 @@ public class Olvido extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Usuario :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 20));
+        jLabel1.setText("Contraseña Antigua :");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 20));
 
-        jLabel2.setText("Contraseña :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+        jLabel2.setText("Nueva Contraseña :");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
         jPanel1.add(txtUsuarioOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 200, -1));
         jPanel1.add(txtContraseñaOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 200, -1));
 
@@ -57,7 +57,7 @@ public class Olvido extends javax.swing.JFrame {
         jPanel1.add(btnCancelarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 150, -1));
 
         jLabel4.setText("Repetir Contraseña :");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
         jPanel1.add(txtRepetir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.jpg"))); // NOI18N
@@ -94,20 +94,21 @@ public class Olvido extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Olvido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CambiarContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Olvido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CambiarContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Olvido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CambiarContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Olvido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CambiarContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Olvido().setVisible(true);
+                new CambiarContraseña().setVisible(true);
             }
         });
     }
