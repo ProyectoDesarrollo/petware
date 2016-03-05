@@ -237,12 +237,27 @@ public class modelo extends Database{
         }
             return false;      
     }
-    
     public boolean InsertarProveedor (String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email) {
             //Consulta para insertar 
         
         String q=" INSERT INTO Proveedores ( Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email )"
                     + "VALUES ( '" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "') ";
+            //se ejecuta la consulta
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            return true;
+        }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+            return false;      
+    }
+    public boolean InsertarUsuario (String Nombre, String Contraseña, int Tipo) {
+            //Consulta para insertar 
+        
+        String q=" INSERT INTO Usuario ( Nombre , Contrasenia ,Tipo )"
+                    + "VALUES ( '" + Nombre + "', '" + Contraseña +  "','" + Tipo + "') ";
             //se ejecuta la consulta
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
@@ -735,7 +750,7 @@ public class modelo extends Database{
     
     
     //---------------------- OTROS --------------------------------------
-    public boolean compararUsuario(String usuario,int contrasenia){
+    public boolean compararUsuario(String usuario,String contrasenia){
         boolean confir = false;
         String[] Relleno= new String[2];
 
@@ -750,7 +765,7 @@ public class modelo extends Database{
           
          }           
          res.close();
-         if(Relleno[0].equals(usuario) && Integer.valueOf(Relleno[1]).equals(contrasenia)){
+         if(Relleno[0].equals(usuario) && Relleno[1].equals(contrasenia)){
              confir = true;
          }
          }catch(SQLException e){

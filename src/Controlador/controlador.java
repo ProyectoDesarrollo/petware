@@ -9,6 +9,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -24,11 +26,12 @@ import vista.clienteFrame;
 import vista.pacienteFrame;
 import vista.productoFrame;
 import vista.proveedoresFrame;
+import vista.registro;
 
-public class controlador implements ActionListener, MouseListener {
+public class controlador implements ActionListener, MouseListener ,ItemListener {
 
     Principal vista;
-    
+    registro registro;
     modelo modelo;
     String nombrePestaña;
     JTabbedPane tabbedPane;
@@ -41,13 +44,14 @@ public class controlador implements ActionListener, MouseListener {
 
     String usuario;
     Login login;
-
+    String adminContraseña ="1111";
 
     public controlador(Login login, Principal vista) {
 
         modelo = new modelo();
         this.login = login;
         this.vista = vista;
+        registro = new registro();
 
     }
 
@@ -66,7 +70,7 @@ public class controlador implements ActionListener, MouseListener {
 
         this.login.btnAceptarLogin.setActionCommand("btnLogin");
         this.login.btnAceptarLogin.addActionListener(this);
-        
+
         this.login.olviContra.addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent me) {
@@ -95,13 +99,15 @@ public class controlador implements ActionListener, MouseListener {
         });
         this.login.olviContra.setActionCommand("Recuperar");
         this.login.olviContra.addActionListener(this);
-        
+
         this.login.txtRegistrarse.addMouseListener(new java.awt.event.MouseListener() {
             @Override
             public void mouseClicked(MouseEvent me) {
 
                 login.txtRegistrarse.setForeground(Color.red);
-
+                registro.setVisible(true);
+                login.setVisible(false);
+               
             }
 
             @Override
@@ -122,10 +128,20 @@ public class controlador implements ActionListener, MouseListener {
                 login.txtRegistrarse.setForeground(Color.blue);
             }
         });
-        this.login.txtRegistrarse.setActionCommand("Registrarse");
-        this.login.txtRegistrarse.addActionListener(this);
-        
-//       
+       
+
+        //Registro 
+        registro = new registro();
+        this.registro.setVisible(false);
+        this.registro.tipo.addItemListener(this);
+
+        this.registro.btnAceptarRegistro.setActionCommand("A Registro");
+        this.registro.btnAceptarRegistro.addActionListener(this);
+
+        this.registro.btnCancelarRegistro.setActionCommand("C Registro");
+        this.registro.btnCancelarRegistro.addActionListener(this);
+        this.registro.labelAdmin.setVisible(false);
+        this.registro.txtContraAdmin.setVisible(false);
 
         this.vista.panelPestaña.setUI(new CustomTabbedPaneUI());
         this.vista.setVisible(false);
@@ -145,10 +161,6 @@ public class controlador implements ActionListener, MouseListener {
 
         this.vista.btnFacturas.setActionCommand("btnFactura");
         this.vista.btnFacturas.addActionListener(this);
-
-        this.vista.btnAlimentacion.setActionCommand("btnAlimentacion");
-        this.vista.btnAlimentacion.addActionListener(this);
-        
 
         this.vista.btnCerrar.setActionCommand("btnCerrar");
         this.vista.btnCerrar.addActionListener(this);
@@ -305,12 +317,6 @@ public class controlador implements ActionListener, MouseListener {
 //            } else {
 //                cambioPestaña(4);
 //            }
-        } else if (comand.equals("btnAlimentacion")) {
-//            if (this.vista.panelPestaña.indexOfTab("Alimentacion") == -1) {
-////                crearPestaña("Alimentacion");
-//            } else {
-//                cambioPestaña(5);
-//            }
 
         } else if (comand.equals("btnAñadirCliente")) {
 
@@ -343,7 +349,6 @@ public class controlador implements ActionListener, MouseListener {
                 this.vistaCliente.txtCodigoPCliente.setText("");
                 this.vistaCliente.txtProvinciaCliente.setText("");
                 this.vistaCliente.txtProvinciaCliente.setText("");
-                
 
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -360,7 +365,6 @@ public class controlador implements ActionListener, MouseListener {
 //                int Telefono = Integer.parseInt(this.vistaProveedor.txtTelefonoProveedor.getText());
 //                int Movil = Integer.parseInt(this.vistaProveedor.txtMovilProveedor.getText());
 //                String Email = this.vistaProveedor.txtEmailProveedor.getText();
-
 ////                this.modelo.InsertarProveedor(Nombre, Apellidos, Direccion, Telefono, Movil, Email);
 //                this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
 //                this.vistaCliente.txtDNICliente.setText("");
@@ -370,7 +374,6 @@ public class controlador implements ActionListener, MouseListener {
 //                this.vistaCliente.txtTelefonoCliente.setText("");
 //                this.vistaCliente.txtMovilCliente.setText("");
 //                this.vistaCliente.txtEmailCliente.setText("");
-
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -380,14 +383,14 @@ public class controlador implements ActionListener, MouseListener {
             boolean admin;
             if (!this.login.txtUsuario.getText().equals("") && !this.login.txtContraseña.getText().equals("")) {
 
-                int contra = Integer.valueOf(this.login.txtContraseña.getText().toString());
+                String contra = this.login.txtContraseña.getText().toString();
                 usuario = this.login.txtUsuario.getText();
-                
+
                 confir = modelo.compararUsuario(usuario, contra);
                 if (confir == true) {
                     admin = modelo.compararUsuarioTipo(usuario);
                     if (admin == true) {
-                        int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() +"- Administrador"+ "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
+                        int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha logear como " + this.login.txtUsuario.getText() + "- Administrador" + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
                         if (i == 0) {
                             this.login.setVisible(false);
                             this.vista.setVisible(true);
@@ -420,12 +423,95 @@ public class controlador implements ActionListener, MouseListener {
                 this.vista.setVisible(false);
                 this.vista.panelPestaña.removeAll();
             }
-        }else if (comand.equals("Recuperar")){
-            
-        }else if(comand.equals("Registrarse")){
-            
+     
+
        
-            login.setVisible(false);
+        } else if (comand.equals("A Registro")) {
+            String usuario = this.registro.txtUsuarioRegistro.getText().toString();
+            String contrasenia = this.registro.txtContraseñaRegistro.getText().toString();
+            String repContrat = this.registro.txtRepetirContraRegistro.getText().toString();
+            String adminContr = this.registro.txtContraAdmin.getText().toString();
+            String tipo = (String) this.registro.tipo.getSelectedItem();
+
+            if (usuario.equals("") || contrasenia.equals("") || repContrat.equals("")) {
+                if(tipo.equals("Administrador") && adminContr.equals("")){
+                     JOptionPane.showMessageDialog(cliente, "Debe rellenar todos los campos");
+                }else{
+                      JOptionPane.showMessageDialog(cliente, "Debe rellenar todos los campos");
+                }
+               
+            } else {
+                if(tipo.equals("Administrador")){
+                    int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha Registrar como " + usuario +" \n Con la contraseña: "+ contrasenia + "- Administrador" + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
+                    if (i == 0) {
+                        if (contrasenia.equals(repContrat)) {
+                           if(adminContr.equals(adminContraseña)){
+                               boolean confirUsuario =  this.modelo.InsertarUsuario(usuario, contrasenia, 0);
+                                if(confirUsuario){
+                                    JOptionPane.showMessageDialog(cliente, "Te has registrado con exito ");
+                                    this.registro.txtUsuarioRegistro.setText("");
+                                    this.registro.txtContraseñaRegistro.setText("");
+                                    this.registro.txtRepetirContraRegistro.setText("");
+                                    this.registro.txtContraAdmin.setText("");
+                                }else{
+                                    JOptionPane.showMessageDialog(cliente, "Fallo en el  registrado ");
+                                }
+                               
+                           }else{
+                               JOptionPane.showMessageDialog(cliente, "Contraseña de Administrador incorrecta");
+                           }
+                           
+                           
+                          
+                            
+                        } else {
+                            JOptionPane.showMessageDialog(cliente, "Las contraseñas no coinciden");
+                        }
+
+
+
+                    }else{
+                        this.registro.txtUsuarioRegistro.setText("");
+                        this.registro.txtContraseñaRegistro.setText("");
+                        this.registro.txtRepetirContraRegistro.setText("");
+                        this.registro.txtContraAdmin.setText("");
+                    }
+                }else{
+                    int i = JOptionPane.showConfirmDialog(cliente, "Te vas ha Registrar como " + usuario +" \n Con la contraseña: "+ contrasenia + "- Usuario" + "\n ¿Continuar?", "Alerta", JOptionPane.YES_NO_OPTION);
+                    if (i == 0) {
+                        if (contrasenia.equals(repContrat)) {
+                          
+                           boolean confirUsuario =  this.modelo.InsertarUsuario(usuario, contrasenia, 1);
+                           
+                           if(confirUsuario){
+                               JOptionPane.showMessageDialog(cliente, "Te has registrado con exito ");
+                               this.registro.txtUsuarioRegistro.setText("");
+                               this.registro.txtContraseñaRegistro.setText("");
+                               this.registro.txtRepetirContraRegistro.setText("");
+                           }else{
+                               JOptionPane.showMessageDialog(cliente, "Fallo en el  registrado ");
+                           }
+                            
+                        } else {
+                            JOptionPane.showMessageDialog(cliente, "Las contraseñas no coinciden");
+                        }
+
+
+
+                    }else{
+                        this.registro.txtUsuarioRegistro.setText("");
+                        this.registro.txtContraseñaRegistro.setText("");
+                        this.registro.txtRepetirContraRegistro.setText("");
+                        
+                    }
+                }
+                
+            }
+
+        } else if (comand.endsWith("C Registro")) {
+            this.registro.setVisible(false);
+            this.login.setVisible(true);
+
         }
 
     }
@@ -548,7 +634,7 @@ public class controlador implements ActionListener, MouseListener {
         this.vistaProducto.txtNombreProductos.setText(Relleno[1]);
         this.vistaProducto.jSpinner.setValue(Integer.parseInt(Relleno[2]));
         this.vistaProducto.txtPrecioProductos.setText(Relleno[3]);
-        this.vistaProducto.jTextAreaProductos.setText(Relleno[4]);
+
     }
 
     private void tablePacientesMouseClicked(java.awt.event.MouseEvent evt) {
@@ -558,6 +644,20 @@ public class controlador implements ActionListener, MouseListener {
 
         String[] Relleno = this.modelo.RellenarPaciente(codigo);
 
+    }
+
+    //Cambio Combobox
+    @Override
+    public void itemStateChanged(ItemEvent ie) {
+            if(registro.tipo.getSelectedIndex() ==  1){
+                registro.labelAdmin.setVisible(true);
+                registro.txtContraAdmin.setVisible(true);
+            }else{
+                registro.labelAdmin.setVisible(false);
+                registro.txtContraAdmin.setVisible(false);
+                registro.txtContraAdmin.setText("");
+            }
+    
     }
 
     //Metodo para modificar las pestañas del JTabbedPanel

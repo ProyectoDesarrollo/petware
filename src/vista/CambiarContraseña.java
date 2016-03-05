@@ -30,12 +30,12 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtUsuarioOlvido = new javax.swing.JTextField();
-        txtContraseñaOlvido = new javax.swing.JTextField();
+        txtContraseñaAntigua = new javax.swing.JTextField();
+        txtContraseñaNueva = new javax.swing.JTextField();
         btnAceptarOlvido = new javax.swing.JButton();
         btnCancelarOlvido = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txtRepetir = new javax.swing.JTextField();
+        txtRepetirContraseñaCambiar = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,12 +43,12 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Contraseña Antigua :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, 20));
 
         jLabel2.setText("Nueva Contraseña :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
-        jPanel1.add(txtUsuarioOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 200, -1));
-        jPanel1.add(txtContraseñaOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 200, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        jPanel1.add(txtContraseñaAntigua, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 200, -1));
+        jPanel1.add(txtContraseñaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 200, -1));
 
         btnAceptarOlvido.setText("Aceptar");
         jPanel1.add(btnAceptarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 150, -1));
@@ -57,8 +57,8 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jPanel1.add(btnCancelarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 150, -1));
 
         jLabel4.setText("Repetir Contraseña :");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
-        jPanel1.add(txtRepetir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        jPanel1.add(txtRepetirContraseñaCambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.jpg"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 250));
@@ -121,8 +121,8 @@ public class CambiarContraseña extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField txtContraseñaOlvido;
-    private javax.swing.JTextField txtRepetir;
-    public javax.swing.JTextField txtUsuarioOlvido;
+    public javax.swing.JTextField txtContraseñaAntigua;
+    public javax.swing.JTextField txtContraseñaNueva;
+    private javax.swing.JTextField txtRepetirContraseñaCambiar;
     // End of variables declaration//GEN-END:variables
 }

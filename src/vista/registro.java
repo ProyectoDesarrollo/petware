@@ -30,12 +30,15 @@ public class registro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtUsuarioOlvido = new javax.swing.JTextField();
-        txtContraseñaOlvido = new javax.swing.JTextField();
-        btnAceptarOlvido = new javax.swing.JButton();
-        btnCancelarOlvido = new javax.swing.JButton();
+        txtUsuarioRegistro = new javax.swing.JTextField();
+        txtContraseñaRegistro = new javax.swing.JTextField();
+        btnAceptarRegistro = new javax.swing.JButton();
+        btnCancelarRegistro = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txtRepetir = new javax.swing.JTextField();
+        txtRepetirContraRegistro = new javax.swing.JTextField();
+        tipo = new javax.swing.JComboBox<>();
+        labelAdmin = new javax.swing.JLabel();
+        txtContraAdmin = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,25 +46,32 @@ public class registro extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Usuario :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, 20));
 
         jLabel2.setText("Contraseña :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
-        jPanel1.add(txtUsuarioOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 200, -1));
-        jPanel1.add(txtContraseñaOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 200, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        jPanel1.add(txtUsuarioRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 200, -1));
+        jPanel1.add(txtContraseñaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 200, -1));
 
-        btnAceptarOlvido.setText("Aceptar");
-        jPanel1.add(btnAceptarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 150, -1));
+        btnAceptarRegistro.setText("Aceptar");
+        jPanel1.add(btnAceptarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 150, -1));
 
-        btnCancelarOlvido.setText("Cancelar");
-        jPanel1.add(btnCancelarOlvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 150, -1));
+        btnCancelarRegistro.setText("Cancelar");
+        jPanel1.add(btnCancelarRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 150, -1));
 
         jLabel4.setText("Repetir Contraseña :");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
-        jPanel1.add(txtRepetir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 200, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+        jPanel1.add(txtRepetirContraRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 200, -1));
+
+        tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
+        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 200, -1));
+
+        labelAdmin.setText("Contraseña Admin: ");
+        jPanel1.add(labelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        jPanel1.add(txtContraAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 200, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/login.jpg"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 250));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,7 +81,7 @@ public class registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -114,15 +124,18 @@ public class registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAceptarOlvido;
-    public javax.swing.JButton btnCancelarOlvido;
+    public javax.swing.JButton btnAceptarRegistro;
+    public javax.swing.JButton btnCancelarRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField txtContraseñaOlvido;
-    private javax.swing.JTextField txtRepetir;
-    public javax.swing.JTextField txtUsuarioOlvido;
+    public javax.swing.JLabel labelAdmin;
+    public javax.swing.JComboBox<String> tipo;
+    public javax.swing.JTextField txtContraAdmin;
+    public javax.swing.JTextField txtContraseñaRegistro;
+    public javax.swing.JTextField txtRepetirContraRegistro;
+    public javax.swing.JTextField txtUsuarioRegistro;
     // End of variables declaration//GEN-END:variables
 }
