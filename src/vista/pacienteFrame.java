@@ -44,7 +44,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -56,7 +55,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -87,7 +85,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaNotas = new javax.swing.JTextArea();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
@@ -98,7 +96,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextAreaCaracter = new javax.swing.JTextArea();
         jTextField14 = new javax.swing.JTextField();
         jTextField15 = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
@@ -112,6 +110,69 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jTextArea6 = new javax.swing.JTextArea();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextArea7 = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea8 = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTextArea9 = new javax.swing.JTextArea();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTextArea10 = new javax.swing.JTextArea();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextArea11 = new javax.swing.JTextArea();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTextArea12 = new javax.swing.JTextArea();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jTextArea13 = new javax.swing.JTextArea();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jTextArea14 = new javax.swing.JTextArea();
+        jLabel52 = new javax.swing.JLabel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jTextArea15 = new javax.swing.JTextArea();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jTextArea16 = new javax.swing.JTextArea();
+        jLabel53 = new javax.swing.JLabel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jTextArea17 = new javax.swing.JTextArea();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        jTextArea18 = new javax.swing.JTextArea();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        jTextArea19 = new javax.swing.JTextArea();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        jTextArea20 = new javax.swing.JTextArea();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        jTextArea21 = new javax.swing.JTextArea();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        jTextArea22 = new javax.swing.JTextArea();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        jTextArea23 = new javax.swing.JTextArea();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        jTextArea24 = new javax.swing.JTextArea();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        jTextArea25 = new javax.swing.JTextArea();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        jTextArea26 = new javax.swing.JTextArea();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        jTextArea27 = new javax.swing.JTextArea();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        jTextArea28 = new javax.swing.JTextArea();
+        jScrollPane30 = new javax.swing.JScrollPane();
+        jTextArea29 = new javax.swing.JTextArea();
+        jScrollPane31 = new javax.swing.JScrollPane();
+        jTextArea30 = new javax.swing.JTextArea();
+        jScrollPane32 = new javax.swing.JScrollPane();
+        jTextArea31 = new javax.swing.JTextArea();
+        jScrollPane33 = new javax.swing.JScrollPane();
+        jTextArea32 = new javax.swing.JTextArea();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        jTextArea33 = new javax.swing.JTextArea();
+        jScrollPane35 = new javax.swing.JScrollPane();
+        jTextArea34 = new javax.swing.JTextArea();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        jTextArea35 = new javax.swing.JTextArea();
+        jScrollPane37 = new javax.swing.JScrollPane();
+        jTextArea36 = new javax.swing.JTextArea();
+        jScrollPane38 = new javax.swing.JScrollPane();
+        jTextArea37 = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -140,11 +201,12 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(txtNombreProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 270, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/guardar_1.png"))); // NOI18N
+        jButton4.setPreferredSize(new java.awt.Dimension(105, 36));
         panelClienteDatos5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 86, -1));
-        panelClienteDatos5.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 20, 1440));
+        panelClienteDatos5.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 16, 4110));
 
         jButton1.setText("Foto");
-        panelClienteDatos5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 202, -1));
+        panelClienteDatos5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 202, -1));
 
         jLabel2.setText("Especie :");
         panelClienteDatos5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, -1));
@@ -174,10 +236,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, -1, -1));
 
         jLabel11.setText("Forma de Abdomen :");
-        panelClienteDatos5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1680, 130, 40));
-
-        jLabel12.setText("Palpación Abdominal :");
-        panelClienteDatos5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 1730, -1, 40));
+        panelClienteDatos5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2000, 100, 20));
 
         jLabel13.setText("DNI :");
         panelClienteDatos5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, -1, -1));
@@ -204,46 +263,43 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1010, -1, 20));
 
         jLabel21.setText("Ano :");
-        panelClienteDatos5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 1560, -1, 40));
+        panelClienteDatos5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 2900, -1, 20));
 
         jLabel22.setText("Orina :");
-        panelClienteDatos5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 1580, -1, 40));
+        panelClienteDatos5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 2990, -1, 20));
 
-        jLabel23.setText("Abdomen Profundo :");
-        panelClienteDatos5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 1730, -1, 40));
-
-        jLabel24.setText("Percusión intestinal :");
-        panelClienteDatos5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 1700, -1, 40));
+        jLabel23.setText("Abdomen Palpación :");
+        panelClienteDatos5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2090, -1, 20));
 
         jLabel25.setText("Auscultación intestinal :");
-        panelClienteDatos5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1700, -1, 40));
+        panelClienteDatos5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 2360, -1, 20));
 
         jLabel26.setText("Ondulación intestinal :");
-        panelClienteDatos5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 1700, -1, 40));
+        panelClienteDatos5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2450, -1, 30));
 
         jLabel27.setText("Extremidades :");
-        panelClienteDatos5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1670, 100, 40));
+        panelClienteDatos5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2540, 80, 20));
 
         jLabel28.setText("Sistema Nervioso :");
-        panelClienteDatos5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1650, 120, 40));
+        panelClienteDatos5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2630, 90, 20));
 
         jLabel29.setText("Genitales :");
-        panelClienteDatos5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 1740, -1, 40));
+        panelClienteDatos5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2720, -1, 20));
 
         jLabel30.setText("Recto :");
-        panelClienteDatos5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 1530, -1, 40));
+        panelClienteDatos5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 2810, -1, 20));
 
         jLabel31.setText("Torax :");
-        panelClienteDatos5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1730, 60, 40));
+        panelClienteDatos5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1730, 40, -1));
 
         jLabel32.setText("Aparato Locomotor :");
-        panelClienteDatos5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1710, 130, 40));
+        panelClienteDatos5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1820, 100, 20));
 
         jLabel33.setText("Conciencia :");
-        panelClienteDatos5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 1660, -1, 40));
+        panelClienteDatos5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1910, -1, 20));
 
         jLabel34.setText("Cuello :");
-        panelClienteDatos5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1100, -1, 20));
+        panelClienteDatos5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1100, -1, 10));
 
         jLabel35.setText("Oidos :");
         panelClienteDatos5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1190, -1, 20));
@@ -252,57 +308,57 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1270, -1, 40));
 
         jLabel37.setText("Dientes :");
-        panelClienteDatos5.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1360, -1, 40));
+        panelClienteDatos5.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 1360, -1, 40));
 
         jLabel38.setText("Lengua :");
-        panelClienteDatos5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1470, -1, 20));
+        panelClienteDatos5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 1460, -1, 20));
 
         jLabel39.setText("Boca :");
-        panelClienteDatos5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 1660, -1, 40));
+        panelClienteDatos5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1550, -1, 20));
 
         jLabel40.setText("Masticadores :");
-        panelClienteDatos5.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 1700, 100, 40));
+        panelClienteDatos5.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1640, 70, 20));
         panelClienteDatos5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 270, -1));
         panelClienteDatos5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 270, -1));
 
         jLabel41.setText("Heces :");
-        panelClienteDatos5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1640, 60, 40));
+        panelClienteDatos5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 3080, -1, 20));
 
         jLabel42.setText("Notas :");
-        panelClienteDatos5.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 1730, -1, 40));
+        panelClienteDatos5.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 3980, -1, 20));
 
         jLabel43.setText("Enfermedades :");
-        panelClienteDatos5.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1660, 100, 40));
+        panelClienteDatos5.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3170, 80, 20));
 
         jLabel44.setText("Cirugias Previas :");
-        panelClienteDatos5.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1690, 110, 40));
+        panelClienteDatos5.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3260, 90, 20));
 
         jLabel45.setText("Esterilización :");
-        panelClienteDatos5.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 1720, 90, 40));
+        panelClienteDatos5.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 3350, 70, 20));
 
         jLabel46.setText("Vacunación :");
-        panelClienteDatos5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 1620, -1, 40));
+        panelClienteDatos5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 3440, -1, 20));
 
         jLabel47.setText("Desparasitación :");
-        panelClienteDatos5.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1650, -1, 40));
+        panelClienteDatos5.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3530, -1, 20));
 
         jLabel48.setText("Leishmaniosis :");
-        panelClienteDatos5.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 1670, -1, 40));
+        panelClienteDatos5.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 3620, -1, 20));
 
         jLabel49.setText("Habitat :");
-        panelClienteDatos5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 1730, 70, 40));
+        panelClienteDatos5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3710, 50, 20));
 
         jLabel50.setText("Entorno :");
-        panelClienteDatos5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1740, 70, 40));
+        panelClienteDatos5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3800, 50, 20));
 
         jLabel51.setText("Viajes :");
-        panelClienteDatos5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 1640, -1, 40));
+        panelClienteDatos5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 3890, -1, 20));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaNotas.setColumns(20);
+        jTextAreaNotas.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaNotas);
 
-        panelClienteDatos5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1370, 400, 80));
+        panelClienteDatos5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3980, 400, 80));
         panelClienteDatos5.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 270, -1));
         panelClienteDatos5.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, 270, -1));
         panelClienteDatos5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 270, -1));
@@ -313,9 +369,9 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 980, 270, -1));
         panelClienteDatos5.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 660, 270, -1));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        jTextAreaCaracter.setColumns(20);
+        jTextAreaCaracter.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaCaracter);
 
         panelClienteDatos5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 700, 400, 80));
         panelClienteDatos5.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 800, 270, -1));
@@ -352,17 +408,216 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
 
         panelClienteDatos5.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1280, 400, 80));
 
+        jTextArea8.setColumns(20);
+        jTextArea8.setRows(5);
+        jScrollPane9.setViewportView(jTextArea8);
+
+        panelClienteDatos5.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1370, 400, 80));
+
+        jTextArea9.setColumns(20);
+        jTextArea9.setRows(5);
+        jScrollPane10.setViewportView(jTextArea9);
+
+        panelClienteDatos5.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1460, 400, 80));
+
+        jTextArea10.setColumns(20);
+        jTextArea10.setRows(5);
+        jScrollPane11.setViewportView(jTextArea10);
+
+        panelClienteDatos5.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1550, 400, 80));
+
+        jTextArea11.setColumns(20);
+        jTextArea11.setRows(5);
+        jScrollPane12.setViewportView(jTextArea11);
+
+        panelClienteDatos5.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1640, 400, 80));
+
+        jTextArea12.setColumns(20);
+        jTextArea12.setRows(5);
+        jScrollPane13.setViewportView(jTextArea12);
+
+        panelClienteDatos5.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1730, 400, 80));
+
+        jTextArea13.setColumns(20);
+        jTextArea13.setRows(5);
+        jScrollPane14.setViewportView(jTextArea13);
+
+        panelClienteDatos5.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1820, 400, 80));
+
+        jTextArea14.setColumns(20);
+        jTextArea14.setRows(5);
+        jScrollPane15.setViewportView(jTextArea14);
+
+        panelClienteDatos5.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1910, 400, 80));
+
+        jLabel52.setText("Intestino Percusión :");
+        panelClienteDatos5.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2270, -1, 20));
+
+        jTextArea15.setColumns(20);
+        jTextArea15.setRows(5);
+        jScrollPane16.setViewportView(jTextArea15);
+
+        panelClienteDatos5.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2000, 400, 80));
+
+        jTextArea16.setColumns(20);
+        jTextArea16.setRows(5);
+        jScrollPane17.setViewportView(jTextArea16);
+
+        panelClienteDatos5.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2090, 400, 80));
+
+        jLabel53.setText("Abdomen Profundo :");
+        panelClienteDatos5.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2180, -1, 20));
+
+        jTextArea17.setColumns(20);
+        jTextArea17.setRows(5);
+        jScrollPane18.setViewportView(jTextArea17);
+
+        panelClienteDatos5.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2180, 400, 80));
+
+        jTextArea18.setColumns(20);
+        jTextArea18.setRows(5);
+        jScrollPane19.setViewportView(jTextArea18);
+
+        panelClienteDatos5.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2270, 400, 80));
+
+        jTextArea19.setColumns(20);
+        jTextArea19.setRows(5);
+        jScrollPane20.setViewportView(jTextArea19);
+
+        panelClienteDatos5.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2360, 400, 80));
+
+        jTextArea20.setColumns(20);
+        jTextArea20.setRows(5);
+        jScrollPane21.setViewportView(jTextArea20);
+
+        panelClienteDatos5.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2450, 400, 80));
+
+        jTextArea21.setColumns(20);
+        jTextArea21.setRows(5);
+        jScrollPane22.setViewportView(jTextArea21);
+
+        panelClienteDatos5.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2540, 400, 80));
+
+        jTextArea22.setColumns(20);
+        jTextArea22.setRows(5);
+        jScrollPane23.setViewportView(jTextArea22);
+
+        panelClienteDatos5.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2630, 400, 80));
+
+        jTextArea23.setColumns(20);
+        jTextArea23.setRows(5);
+        jScrollPane24.setViewportView(jTextArea23);
+
+        panelClienteDatos5.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2720, 400, 80));
+
+        jTextArea24.setColumns(20);
+        jTextArea24.setRows(5);
+        jScrollPane25.setViewportView(jTextArea24);
+
+        panelClienteDatos5.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2810, 400, 80));
+
+        jTextArea25.setColumns(20);
+        jTextArea25.setRows(5);
+        jScrollPane26.setViewportView(jTextArea25);
+
+        panelClienteDatos5.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2900, 400, 80));
+
+        jTextArea26.setColumns(20);
+        jTextArea26.setRows(5);
+        jScrollPane27.setViewportView(jTextArea26);
+
+        panelClienteDatos5.add(jScrollPane27, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2990, 400, 80));
+
+        jTextArea27.setColumns(20);
+        jTextArea27.setRows(5);
+        jScrollPane28.setViewportView(jTextArea27);
+
+        panelClienteDatos5.add(jScrollPane28, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 2990, 400, 80));
+
+        jTextArea28.setColumns(20);
+        jTextArea28.setRows(5);
+        jScrollPane29.setViewportView(jTextArea28);
+
+        panelClienteDatos5.add(jScrollPane29, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3080, 400, 80));
+
+        jTextArea29.setColumns(20);
+        jTextArea29.setRows(5);
+        jScrollPane30.setViewportView(jTextArea29);
+
+        panelClienteDatos5.add(jScrollPane30, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3170, 400, 80));
+
+        jTextArea30.setColumns(20);
+        jTextArea30.setRows(5);
+        jScrollPane31.setViewportView(jTextArea30);
+
+        panelClienteDatos5.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3260, 400, 80));
+
+        jTextArea31.setColumns(20);
+        jTextArea31.setRows(5);
+        jScrollPane32.setViewportView(jTextArea31);
+
+        panelClienteDatos5.add(jScrollPane32, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3350, 400, 80));
+
+        jTextArea32.setColumns(20);
+        jTextArea32.setRows(5);
+        jScrollPane33.setViewportView(jTextArea32);
+
+        panelClienteDatos5.add(jScrollPane33, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3440, 400, 80));
+
+        jTextArea33.setColumns(20);
+        jTextArea33.setRows(5);
+        jScrollPane34.setViewportView(jTextArea33);
+
+        panelClienteDatos5.add(jScrollPane34, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3530, 400, 80));
+
+        jTextArea34.setColumns(20);
+        jTextArea34.setRows(5);
+        jScrollPane35.setViewportView(jTextArea34);
+
+        panelClienteDatos5.add(jScrollPane35, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3620, 400, 80));
+
+        jTextArea35.setColumns(20);
+        jTextArea35.setRows(5);
+        jScrollPane36.setViewportView(jTextArea35);
+
+        panelClienteDatos5.add(jScrollPane36, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3710, 400, 80));
+
+        jTextArea36.setColumns(20);
+        jTextArea36.setRows(5);
+        jScrollPane37.setViewportView(jTextArea36);
+
+        panelClienteDatos5.add(jScrollPane37, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3800, 400, 80));
+
+        jTextArea37.setColumns(20);
+        jTextArea37.setRows(5);
+        jScrollPane38.setViewportView(jTextArea37);
+
+        panelClienteDatos5.add(jScrollPane38, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3890, 400, 80));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+
+        panelClienteDatos5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 200, 150));
+
         jTabbedPane2.addTab("Paciente", panelClienteDatos5);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 968, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
+            .addGap(0, 4106, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Proveedores", jPanel1);
@@ -437,7 +692,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, Short.MAX_VALUE)
             .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
@@ -468,7 +723,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -481,7 +735,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -512,31 +765,94 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollBar jScrollBar1;
+    public javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
     public javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane30;
+    private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane32;
+    private javax.swing.JScrollPane jScrollPane33;
+    private javax.swing.JScrollPane jScrollPane34;
+    private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
+    private javax.swing.JScrollPane jScrollPane37;
+    private javax.swing.JScrollPane jScrollPane38;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    public javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane2;
     public javax.swing.JTable jTablePacientes;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
+    public javax.swing.JTextArea jTextArea10;
+    public javax.swing.JTextArea jTextArea11;
+    public javax.swing.JTextArea jTextArea12;
+    public javax.swing.JTextArea jTextArea13;
+    public javax.swing.JTextArea jTextArea14;
+    public javax.swing.JTextArea jTextArea15;
+    public javax.swing.JTextArea jTextArea16;
+    public javax.swing.JTextArea jTextArea17;
+    public javax.swing.JTextArea jTextArea18;
+    public javax.swing.JTextArea jTextArea19;
+    public javax.swing.JTextArea jTextArea20;
+    public javax.swing.JTextArea jTextArea21;
+    public javax.swing.JTextArea jTextArea22;
+    public javax.swing.JTextArea jTextArea23;
+    public javax.swing.JTextArea jTextArea24;
+    public javax.swing.JTextArea jTextArea25;
+    public javax.swing.JTextArea jTextArea26;
+    private javax.swing.JTextArea jTextArea27;
+    public javax.swing.JTextArea jTextArea28;
+    public javax.swing.JTextArea jTextArea29;
+    public javax.swing.JTextArea jTextArea3;
+    public javax.swing.JTextArea jTextArea30;
+    public javax.swing.JTextArea jTextArea31;
+    public javax.swing.JTextArea jTextArea32;
+    public javax.swing.JTextArea jTextArea33;
+    public javax.swing.JTextArea jTextArea34;
+    public javax.swing.JTextArea jTextArea35;
+    public javax.swing.JTextArea jTextArea36;
+    public javax.swing.JTextArea jTextArea37;
+    public javax.swing.JTextArea jTextArea4;
+    public javax.swing.JTextArea jTextArea5;
+    public javax.swing.JTextArea jTextArea6;
+    public javax.swing.JTextArea jTextArea7;
+    private javax.swing.JTextArea jTextArea8;
+    public javax.swing.JTextArea jTextArea9;
+    public javax.swing.JTextArea jTextAreaCaracter;
+    public javax.swing.JTextArea jTextAreaNotas;
     public javax.swing.JTextField jTextField10;
     public javax.swing.JTextField jTextField11;
     public javax.swing.JTextField jTextField12;
