@@ -23,6 +23,7 @@ public class Main {
         }
          //main
          new controlador(new Login(), new Principal()).iniciar();
+         
 
     }
 }

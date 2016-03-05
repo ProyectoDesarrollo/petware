@@ -23,6 +23,7 @@ import vista.Login;
 import vista.Principal;
 
 import vista.clienteFrame;
+import vista.facturasFrame;
 import vista.pacienteFrame;
 import vista.productoFrame;
 import vista.proveedoresFrame;
@@ -33,12 +34,14 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     Principal vista;
     registro registro;
     modelo modelo;
+    controladorFactura controladorFactura; 
     String nombrePestaña;
     JTabbedPane tabbedPane;
     clienteFrame vistaCliente = new clienteFrame();
     pacienteFrame vistaPaciente = new pacienteFrame();
     proveedoresFrame vistaProveedor = new proveedoresFrame();
     productoFrame vistaProducto = new productoFrame();
+    facturasFrame vistaFacturas = new facturasFrame();
     JDesktopPane cliente = new JDesktopPane();
     int fila = 0;
 
@@ -56,6 +59,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     }
 
     public void iniciar() {
+
 
         try {
 
@@ -312,11 +316,15 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
             }
 
         } else if (comand.equals("btnFactura")) {
-//            if (this.vista.panelPestaña.indexOfTab("Facturas") == -1) {
-////                crearPestaña("Facturas");
-//            } else {
-//                cambioPestaña(4);
-//            }
+            if (this.vista.panelPestaña.indexOfTab("Facturas   ") != -1) {
+                
+                int ntab = this.vista.panelPestaña.indexOfTab("Facturas    ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
+            } else {
+               crearPestaña("Facturas");
+               int ntab = this.vista.panelPestaña.indexOfTab("Facturas    ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
+           }
 
         } else if (comand.equals("btnAñadirCliente")) {
 
@@ -560,9 +568,10 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
             this.vista.panelPestaña.addTab("Proveedores   ", vistaProveedor);
 
 //
-        } //else if (nombrePestaña.equals("Facturas")) {
-//            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
-//        this.vista.panelPestaña.setSelectedIndex(5);
+        } else if (nombrePestaña.equals("Facturas")) {
+            this.vista.panelPestaña.addTab("Facturas    ",vistaFacturas);
+          
+        }
 //        } else if (nombrePestaña.equals("Alimentacion")) {
 //            this.vista.panelPestaña.addTab(nombrePestaña + "    ", );
 //        this.vista.panelPestaña.setSelectedIndex(6);
