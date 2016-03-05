@@ -418,8 +418,8 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarCliente;
-    private javax.swing.JButton btnEliminarCliente;
-    private javax.swing.JButton btnGuardarCliente;
+    public javax.swing.JButton btnEliminarCliente;
+    public javax.swing.JButton btnGuardarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -440,7 +440,7 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTableClienteMascota;
     public javax.swing.JTable jTableProveedores;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField1;
     public javax.swing.JPanel panelClienteDatos;
     private javax.swing.JPanel panelListadoCliente;
     private javax.swing.JScrollPane scrollNotaCliente;
@@ -455,7 +455,7 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtFechaNProveedor;
     public javax.swing.JTextField txtMovilProveedor;
     public javax.swing.JTextField txtNombreProveedor;
-    private javax.swing.JTextPane txtPCliente;
+    public javax.swing.JTextPane txtPCliente;
     public javax.swing.JTextField txtProvinciaProveedor;
     public javax.swing.JTextField txtTelefonoProveedor;
     // End of variables declaration//GEN-END:variables

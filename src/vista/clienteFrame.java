@@ -442,8 +442,8 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarCliente;
-    private javax.swing.JButton btnEliminarCliente;
-    private javax.swing.JButton btnGuardarCliente;
+    public javax.swing.JButton btnEliminarCliente;
+    public javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -481,7 +481,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtFechaNCliente;
     public javax.swing.JTextField txtMovilCliente;
     public javax.swing.JTextField txtNombreCliente;
-    private javax.swing.JTextPane txtPCliente;
+    public javax.swing.JTextPane txtPCliente;
     public javax.swing.JTextField txtProvinciaCliente;
     public javax.swing.JTextField txtTelefonoCliente;
     // End of variables declaration//GEN-END:variables

@@ -295,7 +295,7 @@ public class productoFrame extends javax.swing.JInternalFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     public javax.swing.JTable jTableProductoProveedor;
     public javax.swing.JTable jTableProductos;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField1;
     private javax.swing.JPanel panelClienteDatos5;
     public javax.swing.JTextField txtBuscadorProducto;
     public javax.swing.JTextField txtIDProductos;

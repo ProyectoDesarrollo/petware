@@ -378,10 +378,10 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextPane TextAreaTrabajadores;
+    public javax.swing.JTextPane TextAreaTrabajadores;
     public javax.swing.JButton btnAgregarCliente;
-    private javax.swing.JButton btnEliminarCliente;
-    private javax.swing.JButton btnGuardarCliente;
+    public javax.swing.JButton btnEliminarCliente;
+    public javax.swing.JButton btnGuardarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -399,22 +399,22 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTableTrabajadores;
-    private javax.swing.JPanel panelClienteDatos;
+    public javax.swing.JPanel panelClienteDatos;
     private javax.swing.JPanel panelListadoCliente;
     private javax.swing.JScrollPane scrollNotaCliente;
     public javax.swing.JScrollPane scrollTableCliente;
-    private javax.swing.JTextField txtApellidosTrabajadores;
+    public javax.swing.JTextField txtApellidosTrabajadores;
     public javax.swing.JTextField txtBuscadorTrabajadores;
-    private javax.swing.JTextField txtCodigoPTrabajadores;
-    private javax.swing.JTextField txtDNITrabajadores;
-    private javax.swing.JTextField txtDireccionTrabajadores;
-    private javax.swing.JTextField txtEmailTrabajadores;
-    private javax.swing.JTextField txtFechaITrabajadores;
-    private javax.swing.JTextField txtFechaNTrabajadores;
-    private javax.swing.JTextField txtMovilTrabajadores;
-    private javax.swing.JTextField txtNombreTrabajadores;
-    private javax.swing.JTextField txtProvinciaTrabajadores;
-    private javax.swing.JTextField txtSalarioTrabajadores;
-    private javax.swing.JTextField txtTelefonoTrabajadores;
+    public javax.swing.JTextField txtCodigoPTrabajadores;
+    public javax.swing.JTextField txtDNITrabajadores;
+    public javax.swing.JTextField txtDireccionTrabajadores;
+    public javax.swing.JTextField txtEmailTrabajadores;
+    public javax.swing.JTextField txtFechaITrabajadores;
+    public javax.swing.JTextField txtFechaNTrabajadores;
+    public javax.swing.JTextField txtMovilTrabajadores;
+    public javax.swing.JTextField txtNombreTrabajadores;
+    public javax.swing.JTextField txtProvinciaTrabajadores;
+    public javax.swing.JTextField txtSalarioTrabajadores;
+    public javax.swing.JTextField txtTelefonoTrabajadores;
     // End of variables declaration//GEN-END:variables
 }
