@@ -43,21 +43,21 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        txtApellidosCliente = new javax.swing.JTextField();
+        txtApellidosProveedor = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
-        txtNombreCliente = new javax.swing.JTextField();
+        txtNombreProveedor = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        txtDireccionCliente = new javax.swing.JTextField();
+        txtDireccionProveedor = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
-        txtTelefonoCliente = new javax.swing.JTextField();
+        txtTelefonoProveedor = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
-        txtMovilCliente = new javax.swing.JTextField();
-        txtDNICliente = new javax.swing.JTextField();
-        txtFechaNCliente = new javax.swing.JTextField();
-        txtCodigoPCliente = new javax.swing.JTextField();
-        txtEmailCliente = new javax.swing.JTextField();
-        txtFechaICliente = new javax.swing.JTextField();
-        txtProvinciaCliente = new javax.swing.JTextField();
+        txtMovilProveedor = new javax.swing.JTextField();
+        txtDNIProveedor = new javax.swing.JTextField();
+        txtFechaNProveedor = new javax.swing.JTextField();
+        txtCodigoPProveedor = new javax.swing.JTextField();
+        txtEmailProveedor = new javax.swing.JTextField();
+        txtFechaIProveedor = new javax.swing.JTextField();
+        txtProvinciaProveedor = new javax.swing.JTextField();
         btnGuardarCliente = new javax.swing.JButton();
         scrollNotaCliente = new javax.swing.JScrollPane();
         txtPCliente = new javax.swing.JTextPane();
@@ -160,31 +160,31 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
 
         jLabel58.setText("Dirección :");
 
-        txtDireccionCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtDireccionProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDireccionClienteActionPerformed(evt);
+                txtDireccionProveedorActionPerformed(evt);
             }
         });
 
         jLabel59.setText("Teléfono :");
 
-        txtTelefonoCliente.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefonoProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefonoClientejTextField3ActionPerformed(evt);
+                txtTelefonoProveedorjTextField3ActionPerformed(evt);
             }
         });
 
         jLabel60.setText("Móvil :");
 
-        txtDNICliente.addActionListener(new java.awt.event.ActionListener() {
+        txtDNIProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDNIClienteActionPerformed(evt);
+                txtDNIProveedorActionPerformed(evt);
             }
         });
 
-        txtFechaICliente.addActionListener(new java.awt.event.ActionListener() {
+        txtFechaIProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaIClienteActionPerformed(evt);
+                txtFechaIProveedorActionPerformed(evt);
             }
         });
 
@@ -225,12 +225,12 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                                             .addComponent(jLabel59))))
                                 .addGap(28, 28, 28)
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDireccionCliente)
-                                    .addComponent(txtApellidosCliente)
-                                    .addComponent(txtNombreCliente)
-                                    .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtMovilCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(txtDNICliente))
+                                    .addComponent(txtDireccionProveedor)
+                                    .addComponent(txtApellidosProveedor)
+                                    .addComponent(txtNombreProveedor)
+                                    .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtMovilProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(txtDNIProveedor))
                                 .addGap(89, 89, 89)
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
@@ -249,11 +249,11 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmailCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaNCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaICliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                    .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.Alignment.LEADING)))
+                                    .addComponent(txtCodigoPProveedor, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEmailProveedor, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtFechaNProveedor, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtFechaIProveedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                                    .addComponent(txtProvinciaProveedor, javax.swing.GroupLayout.Alignment.LEADING)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelClienteDatosLayout.createSequentialGroup()
                                 .addGap(44, 596, Short.MAX_VALUE)
                                 .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -274,37 +274,37 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
                 .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDNICliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDNIProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel53)
-                    .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtProvinciaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel50)
-                    .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodigoPProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtApellidosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtApellidosProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmailProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDireccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel58)
                     .addComponent(jLabel51)
-                    .addComponent(txtFechaNCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaNProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel59)
                     .addComponent(jLabel54)
-                    .addComponent(txtFechaICliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaIProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMovilCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMovilProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addComponent(jLabel1)
@@ -377,21 +377,21 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarClienteActionPerformed
 
-    private void txtDireccionClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionClienteActionPerformed
+    private void txtDireccionProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDireccionClienteActionPerformed
+    }//GEN-LAST:event_txtDireccionProveedorActionPerformed
 
-    private void txtTelefonoClientejTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoClientejTextField3ActionPerformed
+    private void txtTelefonoProveedorjTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoProveedorjTextField3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefonoClientejTextField3ActionPerformed
+    }//GEN-LAST:event_txtTelefonoProveedorjTextField3ActionPerformed
 
-    private void txtDNIClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIClienteActionPerformed
+    private void txtDNIProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDNIClienteActionPerformed
+    }//GEN-LAST:event_txtDNIProveedorActionPerformed
 
-    private void txtFechaIClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaIClienteActionPerformed
+    private void txtFechaIProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaIProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaIClienteActionPerformed
+    }//GEN-LAST:event_txtFechaIProveedorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -420,18 +420,18 @@ public class proveedoresFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pestañaMascotaCliente;
     private javax.swing.JScrollPane scrollNotaCliente;
     public javax.swing.JScrollPane scrollTableCliente;
-    public javax.swing.JTextField txtApellidosCliente;
+    public javax.swing.JTextField txtApellidosProveedor;
     public javax.swing.JTextField txtBuscadorProveedores;
-    public javax.swing.JTextField txtCodigoPCliente;
-    public javax.swing.JTextField txtDNICliente;
-    public javax.swing.JTextField txtDireccionCliente;
-    public javax.swing.JTextField txtEmailCliente;
-    public javax.swing.JTextField txtFechaICliente;
-    public javax.swing.JTextField txtFechaNCliente;
-    public javax.swing.JTextField txtMovilCliente;
-    public javax.swing.JTextField txtNombreCliente;
+    public javax.swing.JTextField txtCodigoPProveedor;
+    public javax.swing.JTextField txtDNIProveedor;
+    public javax.swing.JTextField txtDireccionProveedor;
+    public javax.swing.JTextField txtEmailProveedor;
+    public javax.swing.JTextField txtFechaIProveedor;
+    public javax.swing.JTextField txtFechaNProveedor;
+    public javax.swing.JTextField txtMovilProveedor;
+    public javax.swing.JTextField txtNombreProveedor;
     private javax.swing.JTextPane txtPCliente;
-    public javax.swing.JTextField txtProvinciaCliente;
-    public javax.swing.JTextField txtTelefonoCliente;
+    public javax.swing.JTextField txtProvinciaProveedor;
+    public javax.swing.JTextField txtTelefonoProveedor;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,6 +28,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
         panelClienteDatos5 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
@@ -35,7 +36,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         txtNombreProductos = new javax.swing.JTextField();
         txtIDProductos = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
         jScrollBar1 = new javax.swing.JScrollBar();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -112,7 +112,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jTextField31 = new javax.swing.JTextField();
         jTextField32 = new javax.swing.JTextField();
         jTextField33 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTablePacientes = new javax.swing.JTable();
@@ -127,15 +126,29 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         jTabbedPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 760, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1196, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Proveedores", jPanel1);
+
         panelClienteDatos5.setBackground(new java.awt.Color(147, 175, 93));
         panelClienteDatos5.setEnabled(false);
         panelClienteDatos5.setFocusCycleRoot(true);
         panelClienteDatos5.setMaximumSize(new java.awt.Dimension(750, 665));
+        panelClienteDatos5.setMinimumSize(new java.awt.Dimension(750, 665));
         panelClienteDatos5.setPreferredSize(new java.awt.Dimension(750, 665));
         panelClienteDatos5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel60.setText("Descripción :");
-        panelClienteDatos5.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, 34));
+        panelClienteDatos5.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, 34));
 
         jLabel66.setText("ID :");
         panelClienteDatos5.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, -1, 34));
@@ -146,12 +159,8 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.add(txtIDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 201, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/guardar_1.png"))); // NOI18N
-        panelClienteDatos5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 38, 86, -1));
-
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        panelClienteDatos5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 1110, 70, 70));
-        panelClienteDatos5.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(941, 0, -1, 1196));
+        panelClienteDatos5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 86, -1));
+        panelClienteDatos5.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, 20, 1196));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -166,10 +175,10 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
             .addGap(0, 230, Short.MAX_VALUE)
         );
 
-        panelClienteDatos5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, -1));
+        panelClienteDatos5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, -1, -1));
 
         jButton1.setText("Foto");
-        panelClienteDatos5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 426, 202, -1));
+        panelClienteDatos5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 202, -1));
 
         jLabel1.setText("Código:");
         panelClienteDatos5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, -1, -1));
@@ -326,19 +335,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
 
         jTabbedPane2.addTab("Productos", panelClienteDatos5);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 958, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Proveedores", jPanel1);
-
         jPanel4.setOpaque(false);
         jPanel4.setPreferredSize(new java.awt.Dimension(500, 410));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -486,7 +482,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane2;
     public javax.swing.JTable jTablePacientes;

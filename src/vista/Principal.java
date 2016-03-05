@@ -65,6 +65,8 @@ public class Principal extends javax.swing.JFrame {
         panelPestaña = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1195, 710));
+        setPreferredSize(new java.awt.Dimension(1195, 710));
         setResizable(false);
 
         panelBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
