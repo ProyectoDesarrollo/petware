@@ -65,8 +65,6 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         jScrollBar1 = new javax.swing.JScrollBar();
         jLabel2 = new javax.swing.JLabel();
         txtSalarioTrabajadores = new javax.swing.JTextField();
-        pestañaMascotaCliente = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(1190, 570));
         setPreferredSize(new java.awt.Dimension(1190, 570));
@@ -325,33 +323,7 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
             .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Cliente", panelClienteDatos);
-
-        javax.swing.GroupLayout pestañaMascotaClienteLayout = new javax.swing.GroupLayout(pestañaMascotaCliente);
-        pestañaMascotaCliente.setLayout(pestañaMascotaClienteLayout);
-        pestañaMascotaClienteLayout.setHorizontalGroup(
-            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
-        );
-        pestañaMascotaClienteLayout.setVerticalGroup(
-            pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Mascota", pestañaMascotaCliente);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel2);
+        jTabbedPane1.addTab("Trabajadores", panelClienteDatos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -388,21 +360,21 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarClienteActionPerformed
 
-    private void txtDireccionTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionTrabajadoresActionPerformed
+    private void txtFechaITrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaITrabajadoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDireccionTrabajadoresActionPerformed
-
-    private void txtTelefonoTrabajadoresjTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoTrabajadoresjTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefonoTrabajadoresjTextField3ActionPerformed
+    }//GEN-LAST:event_txtFechaITrabajadoresActionPerformed
 
     private void txtDNITrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNITrabajadoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDNITrabajadoresActionPerformed
 
-    private void txtFechaITrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaITrabajadoresActionPerformed
+    private void txtTelefonoTrabajadoresjTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoTrabajadoresjTextField3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaITrabajadoresActionPerformed
+    }//GEN-LAST:event_txtTelefonoTrabajadoresjTextField3ActionPerformed
+
+    private void txtDireccionTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionTrabajadoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionTrabajadoresActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -424,27 +396,25 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTableTrabajadores;
-    public javax.swing.JPanel panelClienteDatos;
+    private javax.swing.JPanel panelClienteDatos;
     private javax.swing.JPanel panelListadoCliente;
-    private javax.swing.JPanel pestañaMascotaCliente;
     private javax.swing.JScrollPane scrollNotaCliente;
     public javax.swing.JScrollPane scrollTableCliente;
-    public javax.swing.JTextField txtApellidosTrabajadores;
+    private javax.swing.JTextField txtApellidosTrabajadores;
     public javax.swing.JTextField txtBuscadorTrabajadores;
-    public javax.swing.JTextField txtCodigoPTrabajadores;
-    public javax.swing.JTextField txtDNITrabajadores;
-    public javax.swing.JTextField txtDireccionTrabajadores;
-    public javax.swing.JTextField txtEmailTrabajadores;
-    public javax.swing.JTextField txtFechaITrabajadores;
-    public javax.swing.JTextField txtFechaNTrabajadores;
-    public javax.swing.JTextField txtMovilTrabajadores;
-    public javax.swing.JTextField txtNombreTrabajadores;
-    public javax.swing.JTextField txtProvinciaTrabajadores;
+    private javax.swing.JTextField txtCodigoPTrabajadores;
+    private javax.swing.JTextField txtDNITrabajadores;
+    private javax.swing.JTextField txtDireccionTrabajadores;
+    private javax.swing.JTextField txtEmailTrabajadores;
+    private javax.swing.JTextField txtFechaITrabajadores;
+    private javax.swing.JTextField txtFechaNTrabajadores;
+    private javax.swing.JTextField txtMovilTrabajadores;
+    private javax.swing.JTextField txtNombreTrabajadores;
+    private javax.swing.JTextField txtProvinciaTrabajadores;
     private javax.swing.JTextField txtSalarioTrabajadores;
-    public javax.swing.JTextField txtTelefonoTrabajadores;
+    private javax.swing.JTextField txtTelefonoTrabajadores;
     // End of variables declaration//GEN-END:variables
 }

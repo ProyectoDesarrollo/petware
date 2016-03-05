@@ -62,7 +62,11 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollBar1 = new javax.swing.JScrollBar();
         pestañaMascotaCliente = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableClienteMascota = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        txtClienteMascota = new javax.swing.JTextField();
         panelListadoCliente = new javax.swing.JPanel();
         txtBuscadorCliente = new javax.swing.JTextField();
         scrollTableCliente = new javax.swing.JScrollPane();
@@ -173,7 +177,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                                     .addComponent(txtApellidosCliente)
                                     .addComponent(txtNombreCliente)
                                     .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtMovilCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(txtMovilCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                                     .addComponent(txtDNICliente))
                                 .addGap(89, 89, 89)
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,10 +200,10 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                                     .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtEmailCliente, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtFechaNCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaICliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                                    .addComponent(txtFechaICliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                                     .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.Alignment.LEADING)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelClienteDatosLayout.createSequentialGroup()
-                                .addGap(44, 596, Short.MAX_VALUE)
+                                .addGap(44, 581, Short.MAX_VALUE)
                                 .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelClienteDatosLayout.createSequentialGroup()
                                 .addGap(48, 48, 48)
@@ -260,31 +264,62 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Cliente", panelClienteDatos);
 
+        jTableClienteMascota.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTableClienteMascota.setOpaque(false);
+        jScrollPane1.setViewportView(jTableClienteMascota);
+
+        jLabel2.setText("Buscar :");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(txtClienteMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtClienteMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pestañaMascotaClienteLayout = new javax.swing.GroupLayout(pestañaMascotaCliente);
         pestañaMascotaCliente.setLayout(pestañaMascotaClienteLayout);
         pestañaMascotaClienteLayout.setHorizontalGroup(
             pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
+            .addGroup(pestañaMascotaClienteLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pestañaMascotaClienteLayout.setVerticalGroup(
             pestañaMascotaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 513, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Mascota", pestañaMascotaCliente);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 513, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel2);
 
         panelListadoCliente.setMinimumSize(new java.awt.Dimension(500, 410));
         panelListadoCliente.setPreferredSize(new java.awt.Dimension(500, 410));
@@ -358,13 +393,13 @@ public class clienteFrame extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelListadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelListadoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+            .addComponent(panelListadoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
@@ -410,6 +445,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
@@ -422,10 +458,12 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTableCliente;
+    public javax.swing.JTable jTableClienteMascota;
     public javax.swing.JPanel panelClienteDatos;
     private javax.swing.JPanel panelListadoCliente;
     private javax.swing.JPanel pestañaMascotaCliente;
@@ -433,6 +471,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JScrollPane scrollTableCliente;
     public javax.swing.JTextField txtApellidosCliente;
     public javax.swing.JTextField txtBuscadorCliente;
+    public javax.swing.JTextField txtClienteMascota;
     public javax.swing.JTextField txtCodigoPCliente;
     public javax.swing.JTextField txtDNICliente;
     public javax.swing.JTextField txtDireccionCliente;

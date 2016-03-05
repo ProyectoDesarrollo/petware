@@ -58,7 +58,6 @@ public class Principal extends javax.swing.JFrame {
         btnProductos = new javax.swing.JButton();
         btnProveedores = new javax.swing.JButton();
         btnFacturas = new javax.swing.JButton();
-        btnAlimentacion = new javax.swing.JButton();
         btnTrabajadores = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -156,19 +155,6 @@ public class Principal extends javax.swing.JFrame {
         btnFacturas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         panelBotones.add(btnFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(675, 0, 135, 108));
 
-        btnAlimentacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/ht1.jpg"))); // NOI18N
-        btnAlimentacion.setText("ALIMENTACIÓN");
-        btnAlimentacion.setBorder(null);
-        btnAlimentacion.setBorderPainted(false);
-        btnAlimentacion.setContentAreaFilled(false);
-        btnAlimentacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnAlimentacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAlimentacion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/ht1.jpg"))); // NOI18N
-        btnAlimentacion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/ht2.png"))); // NOI18N
-        btnAlimentacion.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btnAlimentacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(btnAlimentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, 135, 108));
-
         btnTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador1.png"))); // NOI18N
         btnTrabajadores.setText("TRABAJADORES");
         btnTrabajadores.setBorder(null);
@@ -179,7 +165,7 @@ public class Principal extends javax.swing.JFrame {
         btnTrabajadores.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/trabajador.png"))); // NOI18N
         btnTrabajadores.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnTrabajadores.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        panelBotones.add(btnTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 0, 135, 108));
+        panelBotones.add(btnTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 135, 108));
 
         btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/cerrar1.png"))); // NOI18N
         btnCerrar.setContentAreaFilled(false);
@@ -279,7 +265,6 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAlimentacion;
     public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnCliente;
     public javax.swing.JButton btnFacturas;

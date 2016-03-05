@@ -28,18 +28,12 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
         panelClienteDatos5 = new javax.swing.JPanel();
-        jLabel60 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         txtNombreProductos = new javax.swing.JTextField();
-        txtIDProductos = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jScrollBar1 = new javax.swing.JScrollBar();
-        jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -79,10 +73,21 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
@@ -92,26 +97,22 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jTextField14 = new javax.swing.JTextField();
         jTextField15 = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
-        jTextField33 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTablePacientes = new javax.swing.JTable();
@@ -126,19 +127,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         jTabbedPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1196, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Proveedores", jPanel1);
-
         panelClienteDatos5.setBackground(new java.awt.Color(147, 175, 93));
         panelClienteDatos5.setEnabled(false);
         panelClienteDatos5.setFocusCycleRoot(true);
@@ -147,193 +135,237 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
         panelClienteDatos5.setPreferredSize(new java.awt.Dimension(750, 665));
         panelClienteDatos5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel60.setText("Descripción :");
-        panelClienteDatos5.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, 34));
-
-        jLabel66.setText("ID :");
-        panelClienteDatos5.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, -1, 34));
-
         jLabel67.setText("Nombre :");
-        panelClienteDatos5.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 34));
-        panelClienteDatos5.add(txtNombreProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 201, -1));
-        panelClienteDatos5.add(txtIDProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 201, -1));
+        panelClienteDatos5.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, 20));
+        panelClienteDatos5.add(txtNombreProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 270, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/guardar_1.png"))); // NOI18N
         panelClienteDatos5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 86, -1));
-        panelClienteDatos5.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, 20, 1196));
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-        );
-
-        panelClienteDatos5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, -1, -1));
+        panelClienteDatos5.add(jScrollBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 20, 1440));
 
         jButton1.setText("Foto");
-        panelClienteDatos5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 202, -1));
+        panelClienteDatos5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 202, -1));
 
-        jLabel1.setText("Código:");
-        panelClienteDatos5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, -1, -1));
+        jLabel2.setText("Especie :");
+        panelClienteDatos5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, -1));
 
-        jLabel2.setText("jLabel2");
-        panelClienteDatos5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
+        jLabel3.setText("Raza :");
+        panelClienteDatos5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
 
-        jLabel3.setText("jLabel3");
-        panelClienteDatos5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, -1));
+        jLabel4.setText("Sexo :");
+        panelClienteDatos5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
 
-        jLabel4.setText("jLabel4");
-        panelClienteDatos5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 650, -1, -1));
+        jLabel5.setText("Edad :");
+        panelClienteDatos5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, -1));
 
-        jLabel5.setText("jLabel5");
-        panelClienteDatos5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
+        jLabel6.setText("Peso :");
+        panelClienteDatos5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
 
-        jLabel6.setText("jLabel6");
-        panelClienteDatos5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 720, -1, -1));
+        jLabel7.setText("Nacimiento :");
+        panelClienteDatos5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
 
-        jLabel7.setText("jLabel7");
-        panelClienteDatos5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, -1));
+        jLabel8.setText("Fecha :");
+        panelClienteDatos5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, -1, -1));
 
-        jLabel8.setText("jLabel8");
-        panelClienteDatos5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, -1, -1));
+        jLabel9.setText("Desde :");
+        panelClienteDatos5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 600, -1, -1));
 
-        jLabel9.setText("jLabel9");
-        panelClienteDatos5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 800, -1, -1));
+        jLabel10.setText("Hasta :");
+        panelClienteDatos5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 630, -1, -1));
 
-        jLabel10.setText("jLabel10");
-        panelClienteDatos5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 830, -1, -1));
+        jLabel11.setText("Forma de Abdomen :");
+        panelClienteDatos5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 1560, -1, 40));
 
-        jLabel11.setText("jLabel9");
-        panelClienteDatos5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 770, -1, -1));
+        jLabel12.setText("Palpación Abdominal :");
+        panelClienteDatos5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1730, -1, 40));
 
-        jLabel12.setText("jLabel10");
-        panelClienteDatos5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 800, -1, -1));
+        jLabel13.setText("DNI :");
+        panelClienteDatos5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, -1, -1));
 
-        jLabel13.setText("jLabel1");
-        panelClienteDatos5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 870, -1, -1));
+        jLabel14.setText("Caracter :");
+        panelClienteDatos5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 700, -1, -1));
 
-        jLabel14.setText("jLabel2");
-        panelClienteDatos5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 900, -1, -1));
+        jLabel15.setText("Ejercicio :");
+        panelClienteDatos5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 800, -1, -1));
 
-        jLabel15.setText("jLabel3");
-        panelClienteDatos5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 930, -1, -1));
+        jLabel16.setText("Alimentación :");
+        panelClienteDatos5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 830, -1, -1));
 
-        jLabel16.setText("jLabel4");
-        panelClienteDatos5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 960, -1, -1));
+        jLabel17.setText("Color :");
+        panelClienteDatos5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 920, -1, -1));
 
-        jLabel17.setText("jLabel5");
-        panelClienteDatos5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 990, -1, -1));
+        jLabel18.setText("Piel :");
+        panelClienteDatos5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 950, -1, -1));
 
-        jLabel18.setText("jLabel6");
-        panelClienteDatos5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1020, -1, -1));
+        jLabel19.setText("Pelo :");
+        panelClienteDatos5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 980, -1, -1));
 
-        jLabel19.setText("jLabel7");
-        panelClienteDatos5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1050, -1, -1));
+        jLabel20.setText("Cabeza :");
+        panelClienteDatos5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1010, -1, 20));
 
-        jLabel20.setText("jLabel8");
-        panelClienteDatos5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1090, -1, -1));
+        jLabel21.setText("Ano :");
+        panelClienteDatos5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1560, -1, 40));
 
-        jLabel21.setText("jLabel9");
-        panelClienteDatos5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1070, -1, -1));
+        jLabel22.setText("Orina :");
+        panelClienteDatos5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1580, -1, 40));
 
-        jLabel22.setText("jLabel10");
-        panelClienteDatos5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1090, -1, -1));
+        jLabel23.setText("Abdomen Profundo :");
+        panelClienteDatos5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 1730, -1, 40));
 
-        jLabel23.setText("jLabel1");
-        panelClienteDatos5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 830, -1, -1));
+        jLabel24.setText("Percusión intestinal :");
+        panelClienteDatos5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1700, -1, 40));
 
-        jLabel24.setText("jLabel2");
-        panelClienteDatos5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 860, -1, -1));
+        jLabel25.setText("Auscultación intestinal :");
+        panelClienteDatos5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1700, -1, 40));
 
-        jLabel25.setText("jLabel3");
-        panelClienteDatos5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 890, -1, -1));
+        jLabel26.setText("Ondulación intestinal :");
+        panelClienteDatos5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1700, -1, 40));
 
-        jLabel26.setText("jLabel4");
-        panelClienteDatos5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 920, -1, -1));
+        jLabel27.setText("Extremidades :");
+        panelClienteDatos5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1550, -1, 40));
 
-        jLabel27.setText("jLabel5");
-        panelClienteDatos5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 950, -1, -1));
+        jLabel28.setText("Sistema Nervioso :");
+        panelClienteDatos5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1530, -1, 40));
 
-        jLabel28.setText("jLabel6");
-        panelClienteDatos5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 980, -1, -1));
+        jLabel29.setText("Genitales :");
+        panelClienteDatos5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1500, -1, 40));
 
-        jLabel29.setText("jLabel7");
-        panelClienteDatos5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1010, -1, -1));
+        jLabel30.setText("Recto :");
+        panelClienteDatos5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1530, -1, 40));
 
-        jLabel30.setText("jLabel8");
-        panelClienteDatos5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1040, -1, -1));
+        jLabel31.setText("Torax :");
+        panelClienteDatos5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1610, -1, 40));
 
-        jLabel31.setText("jLabel8");
-        panelClienteDatos5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 700, -1, -1));
+        jLabel32.setText("Aparato Locomotor :");
+        panelClienteDatos5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1590, -1, 40));
 
-        jLabel32.setText("jLabel9");
-        panelClienteDatos5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 720, -1, -1));
+        jLabel33.setText("Conciencia :");
+        panelClienteDatos5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 1660, -1, 40));
 
-        jLabel33.setText("jLabel10");
-        panelClienteDatos5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 750, -1, -1));
+        jLabel34.setText("Cuello :");
+        panelClienteDatos5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1100, -1, 20));
 
-        jLabel34.setText("jLabel1");
-        panelClienteDatos5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, -1, -1));
+        jLabel35.setText("Oidos :");
+        panelClienteDatos5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1190, -1, 20));
 
-        jLabel35.setText("jLabel2");
-        panelClienteDatos5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, -1, -1));
+        jLabel36.setText("Labios :");
+        panelClienteDatos5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1270, -1, 40));
 
-        jLabel36.setText("jLabel3");
-        panelClienteDatos5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 550, -1, -1));
+        jLabel37.setText("Dientes :");
+        panelClienteDatos5.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1360, -1, 40));
 
-        jLabel37.setText("jLabel4");
-        panelClienteDatos5.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 580, -1, -1));
+        jLabel38.setText("Lengua :");
+        panelClienteDatos5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1530, -1, 40));
 
-        jLabel38.setText("jLabel5");
-        panelClienteDatos5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 610, -1, -1));
+        jLabel39.setText("Boca :");
+        panelClienteDatos5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 1660, -1, 40));
 
-        jLabel39.setText("jLabel6");
-        panelClienteDatos5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 640, -1, -1));
+        jLabel40.setText("Masticadores :");
+        panelClienteDatos5.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1580, -1, 40));
+        panelClienteDatos5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 270, -1));
+        panelClienteDatos5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 270, -1));
 
-        jLabel40.setText("jLabel7");
-        panelClienteDatos5.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 670, -1, -1));
-        panelClienteDatos5.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 540, 201, -1));
-        panelClienteDatos5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, 201, -1));
-        panelClienteDatos5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 610, 201, -1));
-        panelClienteDatos5.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 650, 201, -1));
-        panelClienteDatos5.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 680, 201, -1));
-        panelClienteDatos5.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 720, 201, -1));
-        panelClienteDatos5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 750, 201, -1));
-        panelClienteDatos5.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 780, 201, -1));
-        panelClienteDatos5.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 820, 201, -1));
-        panelClienteDatos5.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 860, 201, -1));
-        panelClienteDatos5.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 900, 201, -1));
-        panelClienteDatos5.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 940, 201, -1));
-        panelClienteDatos5.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 970, 201, -1));
-        panelClienteDatos5.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1010, 201, -1));
-        panelClienteDatos5.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1050, 201, -1));
-        panelClienteDatos5.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1090, 201, -1));
-        panelClienteDatos5.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 790, 201, -1));
-        panelClienteDatos5.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 820, 201, -1));
-        panelClienteDatos5.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 860, 201, -1));
-        panelClienteDatos5.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 890, 201, -1));
-        panelClienteDatos5.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 930, 201, -1));
-        panelClienteDatos5.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 970, 201, -1));
-        panelClienteDatos5.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 1000, 201, -1));
-        panelClienteDatos5.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 1040, 201, -1));
-        panelClienteDatos5.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 1080, 201, -1));
-        panelClienteDatos5.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, 220, -1));
-        panelClienteDatos5.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, 220, -1));
-        panelClienteDatos5.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 220, -1));
-        panelClienteDatos5.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 220, -1));
-        panelClienteDatos5.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 630, 220, -1));
-        panelClienteDatos5.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 220, -1));
-        panelClienteDatos5.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 710, 220, -1));
-        panelClienteDatos5.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 740, 220, -1));
+        jLabel41.setText("Heces :");
+        panelClienteDatos5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1520, -1, 40));
 
-        jTabbedPane2.addTab("Productos", panelClienteDatos5);
+        jLabel42.setText("Notas :");
+        panelClienteDatos5.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1510, -1, 40));
+
+        jLabel43.setText("Enfermedades :");
+        panelClienteDatos5.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1540, -1, 40));
+
+        jLabel44.setText("Cirugias Previas :");
+        panelClienteDatos5.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1570, -1, 40));
+
+        jLabel45.setText("Esterilización :");
+        panelClienteDatos5.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1600, -1, 40));
+
+        jLabel46.setText("Vacunación :");
+        panelClienteDatos5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1620, -1, 40));
+
+        jLabel47.setText("Desparasitación :");
+        panelClienteDatos5.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1650, -1, 40));
+
+        jLabel48.setText("Leishmaniosis :");
+        panelClienteDatos5.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1670, -1, 40));
+
+        jLabel49.setText("Habitat :");
+        panelClienteDatos5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 1610, -1, 40));
+
+        jLabel50.setText("Entorno :");
+        panelClienteDatos5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 1620, -1, 40));
+
+        jLabel51.setText("Viajes :");
+        panelClienteDatos5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1640, -1, 40));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        panelClienteDatos5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1370, 400, 80));
+        panelClienteDatos5.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 270, -1));
+        panelClienteDatos5.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, 270, -1));
+        panelClienteDatos5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 270, -1));
+        panelClienteDatos5.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, 270, -1));
+        panelClienteDatos5.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 570, 270, -1));
+        panelClienteDatos5.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 600, 270, -1));
+        panelClienteDatos5.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 630, 270, -1));
+        panelClienteDatos5.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 980, 270, -1));
+        panelClienteDatos5.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 660, 270, -1));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        panelClienteDatos5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 700, 400, 80));
+        panelClienteDatos5.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 800, 270, -1));
+        panelClienteDatos5.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 920, 270, -1));
+        panelClienteDatos5.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 950, 270, -1));
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane4.setViewportView(jTextArea3);
+
+        panelClienteDatos5.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 830, 400, 80));
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane5.setViewportView(jTextArea4);
+
+        panelClienteDatos5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1010, 400, 80));
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jScrollPane6.setViewportView(jTextArea5);
+
+        panelClienteDatos5.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1100, 400, 80));
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jScrollPane7.setViewportView(jTextArea6);
+
+        panelClienteDatos5.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1190, 400, 80));
+
+        jTextArea7.setColumns(20);
+        jTextArea7.setRows(5);
+        jScrollPane8.setViewportView(jTextArea7);
+
+        panelClienteDatos5.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1280, 400, 80));
+
+        jTabbedPane2.addTab("Paciente", panelClienteDatos5);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 968, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 515, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Proveedores", jPanel1);
 
         jPanel4.setOpaque(false);
         jPanel4.setPreferredSize(new java.awt.Dimension(500, 410));
@@ -401,8 +433,7 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 973, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,7 +466,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton jButton1;
     public javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -470,22 +500,43 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane2;
     public javax.swing.JTable jTablePacientes;
-    public javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea7;
     public javax.swing.JTextField jTextField10;
     public javax.swing.JTextField jTextField11;
     public javax.swing.JTextField jTextField12;
@@ -493,26 +544,8 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField jTextField14;
     public javax.swing.JTextField jTextField15;
     public javax.swing.JTextField jTextField16;
-    public javax.swing.JTextField jTextField17;
-    public javax.swing.JTextField jTextField18;
-    public javax.swing.JTextField jTextField19;
     public javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField jTextField20;
-    public javax.swing.JTextField jTextField21;
-    public javax.swing.JTextField jTextField22;
-    public javax.swing.JTextField jTextField23;
-    public javax.swing.JTextField jTextField24;
-    public javax.swing.JTextField jTextField25;
-    public javax.swing.JTextField jTextField26;
-    public javax.swing.JTextField jTextField27;
-    public javax.swing.JTextField jTextField28;
-    public javax.swing.JTextField jTextField29;
     public javax.swing.JTextField jTextField3;
-    public javax.swing.JTextField jTextField30;
-    public javax.swing.JTextField jTextField31;
-    public javax.swing.JTextField jTextField32;
-    public javax.swing.JTextField jTextField33;
-    public javax.swing.JTextField jTextField4;
     public javax.swing.JTextField jTextField5;
     public javax.swing.JTextField jTextField6;
     public javax.swing.JTextField jTextField7;
@@ -520,7 +553,6 @@ public class pacienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField jTextField9;
     private javax.swing.JPanel panelClienteDatos5;
     public javax.swing.JTextField txtBuscadorPaciente;
-    public javax.swing.JTextField txtIDProductos;
     public javax.swing.JTextField txtNombreProductos;
     // End of variables declaration//GEN-END:variables
 }
