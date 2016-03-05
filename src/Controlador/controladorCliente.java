@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import vista.Principal;
 import vista.clienteFrame;
 
@@ -20,14 +21,30 @@ import vista.clienteFrame;
 public class controladorCliente implements ActionListener, MouseListener {
   
 
-    clienteFrame vista;
+    clienteFrame vistaCliente = new clienteFrame();
     modelo modelo = new modelo();
-
-    controladorCliente(Principal vista) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     public enum AccionMVC {
+        
+        btnAñadirCliente,
+        btnEliminarCliente,
+        btnGuardarCliente
+    }
+    
+    public controladorCliente(clienteFrame vistaCliente) {
+        this.vistaCliente = vistaCliente;
+
+    }
+    
+    public void iniciar() {
+
+        try {
+
+            this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+            
+
+        } catch (Exception e) {
+        }
     }
     
     @Override

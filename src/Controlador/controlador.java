@@ -35,7 +35,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     registro registro;
     modelo modelo;
     controladorFactura controladorFactura;
-    controladorCliente controlClientes;
+    controladorCliente controladorCliente;
     String nombrePestaña;
     JTabbedPane tabbedPane;
     
@@ -67,10 +67,10 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
 
         try {
 
-            this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
+            
             this.vistaProducto.jTableProductos.setModel(this.modelo.getTablaProductos());
-            controlClientes = new controladorCliente(vista);
-//            controladorCliente.iniciar();
+            controladorCliente = new controladorCliente(vistaCliente);
+            controladorCliente.iniciar();
             controladorFactura = new  controladorFactura(vistaFacturas);
             controladorFactura.iniciar();
             
