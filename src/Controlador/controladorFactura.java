@@ -88,8 +88,8 @@ public class controladorFactura implements ActionListener, ItemListener {
         this.frame.btnEleminarProductof.setActionCommand("Eliminar");
         this.frame.btnEleminarProductof.addActionListener(this);
 
-        this.frame.btnEleminarProductof.setActionCommand("Modificar");
-        this.frame.btnEleminarProductof.addActionListener(this);
+        this.frame.btnModificarProductoF.setActionCommand("Modificar");
+        this.frame.btnModificarProductoF.addActionListener(this);
 
         this.frame.btnCrearFactura.setActionCommand("Crear");
         this.frame.btnCrearFactura.addActionListener(this);
@@ -174,7 +174,6 @@ public class controladorFactura implements ActionListener, ItemListener {
 
             if (!dni.equals("") && !idFactura.equals("") && !idProducto.equals("") && !nombre.equals(e)
                     && !stock.equals("") && !precio.equals("") && stockTotal >= Integer.valueOf(stock) && Integer.valueOf(stock) > 0) {
-                this.frame.tableCarrito.setModel(this.modelo.getTablaCarrito(Integer.valueOf(idFactura)));
                 boolean conf = this.modelo.InsertarCarrito(Integer.valueOf(idFactura), Integer.valueOf(idProducto), nombre, Integer.valueOf(stock), Double.valueOf(precio), tipo, descripcion);
                 if (conf) {
                     stockTotal = stockTotal - Integer.valueOf(stock);
@@ -205,50 +204,96 @@ public class controladorFactura implements ActionListener, ItemListener {
 
         } else if (comand.equals("Eliminar")) {
 
+            dni = this.frame.txtUsuarioFactura.getText();
             idFactura = this.frame.txtFacturaFactura.getText();
-            String idProducto = this.frame.txtIDProductoFactura.getText();
-            int stockTotal = this.modelo.getStock(Integer.valueOf(idProducto));
-            String stock = String.valueOf(this.frame.stock.getValue());
-            String precio = this.frame.txtPrecioProductoFactura.getText();
+            if (!dni.equals("") && !idFactura.equals("")) {
+                String idProducto = this.frame.txtIDProductoFactura.getText();
+                int stockTotal = this.modelo.getStock(Integer.valueOf(idProducto));
+                String stock = String.valueOf(this.frame.stock.getValue());
+                String precio = this.frame.txtPrecioProductoFactura.getText();
 
+                boolean conf = this.modelo.EliminarCarrito(Integer.valueOf(idFactura), Integer.valueOf(idProducto));
+                if (conf) {
+                    stockTotal = stockTotal + Integer.valueOf(stock);
+                    this.modelo.modificarProducto(Integer.valueOf(idProducto), stockTotal, Double.valueOf(precio));
+                    this.frame.tableFactura.setModel(this.modelo.getTablaProductos());
+                    this.frame.tableCarrito.setModel(this.modelo.getTablaCarrito(Integer.valueOf(idFactura)));
 
-            boolean conf = this.modelo.EliminarCarrito(Integer.valueOf(idFactura),Integer.valueOf(idProducto));
-            if (conf) {
-                stockTotal = stockTotal + Integer.valueOf(stock);
-                this.modelo.modificarProducto(Integer.valueOf(idProducto), stockTotal, Double.valueOf(precio));
-                this.frame.tableFactura.setModel(this.modelo.getTablaProductos());
-                this.frame.tableCarrito.setModel(this.modelo.getTablaCarrito(Integer.valueOf(idFactura)));
+                    this.frame.txtFacturaClientes.setText(" ");
+                    this.frame.txtUsuarioFactura.setText(" ");
+                    this.frame.txtFacturaFactura.setText(" ");
+                    this.frame.txtIDProductoFactura.setText(" ");
+                    this.frame.txtNombreProductoFactura.setText(" ");
+                    this.frame.txtPrecioProductoFactura.setText(" ");
+                    this.frame.txtTipoProductoFactura.setText(" ");
+                    this.frame.TextAreaFactura.setText(" ");
+                    this.frame.stock.setValue(0);
+                    this.frame.btnAñadirCarrito.setEnabled(false);
+                    this.frame.btnEleminarProductof.setEnabled(false);
+                    this.frame.btnModificarProductoF.setEnabled(false);
 
-                this.frame.txtFacturaClientes.setText(" ");
-                this.frame.txtUsuarioFactura.setText(" ");
-                this.frame.txtFacturaFactura.setText(" ");
-                this.frame.txtIDProductoFactura.setText(" ");
-                this.frame.txtNombreProductoFactura.setText(" ");
-                this.frame.txtPrecioProductoFactura.setText(" ");
-                this.frame.txtTipoProductoFactura.setText(" ");
-                this.frame.TextAreaFactura.setText(" ");
-                this.frame.stock.setValue(0);
-                this.frame.btnAñadirCarrito.setEnabled(false);
-                this.frame.btnEleminarProductof.setEnabled(false);
-                this.frame.btnModificarProductoF.setEnabled(false);
+                } else {
+                    JOptionPane.showMessageDialog(crear, "Fallo al eliminar");
+                }
             } else {
-                JOptionPane.showMessageDialog(crear, "Fallo al eliminar");
+                JOptionPane.showMessageDialog(crear, "Rellene todos los campos");
             }
 
         } else if (comand.equals("Modificar")) {
-//          
-//            Object [] productoA = new String[6];
-//            productoA[0] = this.frame.txtIDProductoFactura.getText().toString();
-//            productoA[1] = this.frame.txtNombreProductoFactura.getText().toString();
-//            productoA[2] = String.valueOf(this.frame.stock.getValue());
-//            productoA[3] = this.frame.txtPrecioProductoFactura.getText().toString();
-//            productoA[4] = this.frame.txtTipoProductoFactura.getText().toString();
-//            productoA[5] = this.frame.TextAreaFactura.getText().toString();
-//            
-//            model.addRow(productoA);
-//            
-//            this.frame.tableCarrito.setModel(model);
-//            this.frame.btnAñadirCarrito.setEnabled(false);
+
+            dni = this.frame.txtUsuarioFactura.getText().toString();
+            idFactura = this.frame.txtFacturaFactura.getText().toString();
+            String idProducto = this.frame.txtIDProductoFactura.getText().toString();
+            String nombre = this.frame.txtNombreProductoFactura.getText().toString();
+            String stock = String.valueOf(this.frame.stock.getValue());
+            String precio = this.frame.txtPrecioProductoFactura.getText();
+            String tipo = this.frame.txtTipoProductoFactura.getText();
+            String descripcion = this.frame.TextAreaFactura.getText().toString();
+            int stockBD = this.modelo.getStock(Integer.valueOf(idProducto));
+            int stockActual = this.modelo.getStockCarrito(Integer.valueOf(idFactura), Integer.valueOf(idProducto));
+            int stockTotal = stockBD + stockActual;
+
+            if (!dni.equals("") && !idFactura.equals("") && !idProducto.equals("") && !nombre.equals(e)
+                    && !stock.equals("") && !precio.equals("") && stockTotal >= Integer.valueOf(stock) && Integer.valueOf(stock) > 0) {
+                boolean conf = this.modelo.modificarCarrito(Integer.valueOf(idFactura), Integer.valueOf(idProducto), Integer.valueOf(stock), Double.valueOf(precio));
+                if (conf) {
+
+                    if (stockActual > Integer.valueOf(stock)) {
+                        stockActual = stockActual - Integer.valueOf(stock);
+
+                    } else {
+                        stockActual = Integer.valueOf(stock) - stockActual;
+                    }
+                    stockBD = stockActual - stockTotal;
+                    if (stockBD < 0) {
+                        stockBD = 0;
+                    }
+
+                    this.modelo.modificarProducto(Integer.valueOf(idProducto), stockBD, Double.valueOf(precio));
+
+                    this.frame.tableFactura.setModel(this.modelo.getTablaProductos());
+                    this.frame.tableCarrito.setModel(this.modelo.getTablaCarrito(Integer.valueOf(idFactura)));
+
+                    this.frame.txtFacturaClientes.setText(" ");
+                    this.frame.txtUsuarioFactura.setText(" ");
+                    this.frame.txtFacturaFactura.setText(" ");
+                    this.frame.txtIDProductoFactura.setText(" ");
+                    this.frame.txtNombreProductoFactura.setText(" ");
+                    this.frame.txtPrecioProductoFactura.setText(" ");
+                    this.frame.txtTipoProductoFactura.setText(" ");
+                    this.frame.TextAreaFactura.setText(" ");
+                    this.frame.stock.setValue(0);
+                    this.frame.btnAñadirCarrito.setEnabled(false);
+                    this.frame.btnEleminarProductof.setEnabled(false);
+                    this.frame.btnModificarProductoF.setEnabled(false);
+
+                } else {
+                    JOptionPane.showMessageDialog(crear, "Fallo al modificar");
+                }
+            } else {
+                JOptionPane.showMessageDialog(crear, "Datos incorrectos");
+            }
+
         } else if (comand.equals("Crear")) {
             this.crear.setVisible(true);
 

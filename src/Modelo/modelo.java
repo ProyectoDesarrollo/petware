@@ -177,7 +177,7 @@ public class modelo extends Database {
                 data[i][4] = res.getString("Tipo");
                 data[i][5] = res.getString("Descripcion");
 
-                i++;
+                
             }
             res.close();
             //se añade la matriz de datos en el DefaultTableModel
@@ -689,6 +689,7 @@ public class modelo extends Database {
             ResultSet res = pstm.executeQuery();
 
             while (res.next()) {
+            
                 Relleno[0] = res.getString("idProducto");
                 Relleno[1] = res.getString("Nombre");
                 Relleno[2] = res.getString("Stock");
@@ -855,6 +856,30 @@ public class modelo extends Database {
             ResultSet res = stmt.executeQuery(q);
             res.next();
             r = res.getInt("Stock");
+            res.close();
+
+        } catch (SQLException e) {
+
+            System.err.println(e.getMessage());
+
+        }
+
+        return r;
+
+    }
+    public int getStockCarrito(int idFactura,int idProducto) {
+
+        int r = 0;
+        String q = "SELECT Cantidad FROM Carrito WHERE idProducto = " + idProducto+" &&  idFactura= "+idFactura+"" ;
+
+        // Se sacara de la base de datos la información correspondiente al articulo indicado.
+        try {
+
+            Statement stmt = this.getConnection().createStatement();
+
+            ResultSet res = stmt.executeQuery(q);
+            res.next();
+            r = res.getInt("Cantidad");
             res.close();
 
         } catch (SQLException e) {
@@ -1046,7 +1071,7 @@ public class modelo extends Database {
 
     public void modificarProducto(int idProducto, int stock, double precio) {
 
-        String q = "Update Productos set Stock='" + stock +"',Precio='" + precio + "' where idProducto='"+idProducto+"';";
+        String q = "Update Productos set Stock='" + stock +"',Precio='" + precio + "' where idProducto='"+idProducto+"'";
 
         try {
 
@@ -1064,9 +1089,10 @@ public class modelo extends Database {
         }
     }
 
-    public void modificarCarrito(int idFactura, int stock, double precio) {
+    public boolean modificarCarrito(int idFactura, int idProducto, int stock, double precio) {
 
-        String q = "Update Carrito set Cantidad='" + stock + "',Precio='" + precio + "' where idProducto='" + idFactura + "';";
+        
+        String q = "Update Carrito set Cantidad='" + stock + "',Precio='" + precio + "' where idProducto='" + idProducto + "' && idFactura='" + idFactura + "'";
 
         try {
 
@@ -1074,7 +1100,7 @@ public class modelo extends Database {
             PreparedStatement pstm1 = this.getConnection().prepareStatement(q);
             pstm1.execute();
             pstm1.close();
-
+            return true;
         } catch (SQLException e) {
             System.err.println(e.getMessage());
             JOptionPane.showMessageDialog(null, "No se ha podido conectar con la base de datos.");
@@ -1082,6 +1108,7 @@ public class modelo extends Database {
 
             JOptionPane.showMessageDialog(null, "No se ha encontrado la matricula en la base de datos");
         }
+        return false;
     }
 
 }
