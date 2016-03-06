@@ -291,11 +291,11 @@ public class modelo2 extends Database{
             return false;      
     }
     
-    public boolean InsertarPacientes (String Especie, String Nombre, String Raza, String Sexo, int Edad, int Peso, int Codigo, Date Nacimiento, Date Fecha, Date Hasta, String DNICliente, String Caracter,String Ejercicio, String Alimentacion, String Color, String Piel, String Pelo, String Cabeza, String Cuello, String Oidos, String Labios, String Dientes, String Lengua, String Boca, String Masticadores, String Torax, String AparatoLocomotor, String Conciencia, String AbdomenForma, String  AbdomenPalpacion, String AbdomenProfunda, String AbdomenAuscultacion, String IntestinoPercusion, String IntestinoAuscultacion, String IntestinoOndulacion, String Extremidades, String SistemaNervioso, String Genitales, String Recto, String Ano, String Orina, String Heces, String Notas, String Enfermedades, String CirugiasPrevias, Boolean Esterilizacion, String Vacunacion, String Desparasitacion, String Leishmaniosis, String Habitat, String Entorno, String Viajes) {
+    public boolean InsertarPacientes (String Especie, String Nombre, String Raza, String Sexo, int Edad, int Peso, int Codigo, String Nacimiento, String Fecha, String Desde, String DNICliente, String Caracter,String Ejercicio, String Alimentacion, String Color, String Piel, String Pelo, String Cabeza, String Cuello, String Oidos, String Labios, String Dientes, String Lengua, String Boca, String Masticadores, String Torax, String AparatoLocomotor, String Conciencia, String AbdomenForma, String  AbdomenPalpacion, String AbdomenProfunda, String AbdomenAuscultacion, String IntestinoPercusion, String IntestinoAuscultacion, String IntestinoOndulacion, String Extremidades, String SistemaNervioso, String Genitales, String Recto, String Ano, String Orina, String Heces, String Enfermedades, String CirugiasPrevias, Boolean Esterilizacion, String Vacunacion, String Desparasitacion, String Leishmaniosis, String Habitat, String Entorno, String Viajes, String Notas) {
             //Consulta para insertar 
         
-        String q=" INSERT INTO Proveedores ( Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email )"
-                    + "VALUES ( '" + Especie + "','" + Nombre + "','" + Raza + "','" + Sexo + "','" + Edad + "','" + Peso + "','" + Codigo + "','" + Nacimiento + "','" + Fecha + "','" + Hasta + "','" + DNICliente + "','" + Caracter + "','" + Ejercicio + "','" + Alimentacion + "','" + Color + "','" + Piel + "','" + Pelo + "','" + Cabeza + "','" + Cuello + "','" + Oidos + "','" + Labios + "','" + Dientes + "','" + Lengua + "','" + Boca + "','" + Masticadores + "','" + Torax + "','" + AparatoLocomotor + "','" + Conciencia + "','" + AbdomenForma + "','" +AbdomenPalpacion + "','" + AbdomenProfunda + "','" + AbdomenAuscultacion + "','" + IntestinoPercusion + "','" + IntestinoAuscultacion + "','" + IntestinoOndulacion + "','" + Extremidades + "','" + SistemaNervioso + "','" + Genitales + "','" + Ano + "','" + Orina + "','" + Heces + "','" + Notas + "','" + Enfermedades + "','" + CirugiasPrevias + "','" + Esterilizacion + "','" + Desparasitacion + "','" + Leishmaniosis + "','" + Habitat + "','" + Entorno + "','" + Viajes + "') ";
+        String q=" INSERT INTO Pacientes ( Especie, Nombre, Raza, Sexo, Edad, Peso, Codigo, Nacimiento, Fecha, Desde, DNICliente, Caracter,Ejercicio, Alimentacion, Color, Piel, Pelo, Cabeza, Cuello, Oidos, Labios, Dientes, Lengua, Boca, Masticadores, Torax, AparatoLocomotor, Conciencia, AbdomenForma, AbdomenPalpacion, AbdomenProfunda, AbdomenAuscultacion, IntestinoPercusion, IntestinoAuscultacion, IntestinoOndulacion, Extremidades, SistemaNervioso, Genitales, Recto, Ano, Orina, Heces, Notas, Enfermedades, CirugiasPrevias, Esterilizacion, Vacunacion, Desparasitacion, Leishmaniosis, Habitat, Entorno, Viajes, Nota )"
+                    + "VALUES ( '" + Especie + "','" + Nombre + "','" + Raza + "','" + Sexo + "','" + Edad + "','" + Peso + "','" + Codigo + "','" + Nacimiento + "','" + Fecha + "','" + Desde + "','" + DNICliente + "','" + Caracter + "','" + Ejercicio + "','" + Alimentacion + "','" + Color + "','" + Piel + "','" + Pelo + "','" + Cabeza + "','" + Cuello + "','" + Oidos + "','" + Labios + "','" + Dientes + "','" + Lengua + "','" + Boca + "','" + Masticadores + "','" + Torax + "','" + AparatoLocomotor + "','" + Conciencia + "','" + AbdomenForma + "','" +AbdomenPalpacion + "','" + AbdomenProfunda + "','" + AbdomenAuscultacion + "','" + IntestinoPercusion + "','" + IntestinoAuscultacion + "','" + IntestinoOndulacion + "','" + Extremidades + "','" + SistemaNervioso + "','" + Genitales + "','" + Ano + "','" + Orina + "','" + Heces + "','" + Enfermedades + "','" + CirugiasPrevias + "','" + Esterilizacion + "','" + Desparasitacion + "','" + Leishmaniosis + "','" + Habitat + "','" + Entorno + "','" + Viajes + "','" + Notas + "') ";
             //se ejecuta la consulta
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
@@ -312,6 +312,26 @@ public class modelo2 extends Database{
     public void modificarCliente(String DNI, String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Provincia, String Nacimiento, int CodigoPostal, String Nota) {
 
         String q = "Update Cliente set Nombre='" + Nombre + "', Apellidos='" + Apellidos + "', Direccion='" + Direccion + "', Telefono='" + Telefono + "', Movil='" + Movil + "', Email='" + Email + "', Provincia='" + Provincia + "',Nacimiento='" + Nacimiento + "',CodigoPostal='" + CodigoPostal + "',Nota='" + Nota + "' where DNI='" + DNI + "';";
+
+        try {
+
+            //Se mete en la base de datos
+            PreparedStatement pstm1 = this.getConnection().prepareStatement(q);
+            pstm1.execute();
+            pstm1.close();
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "No se ha podido conectar con la base de datos.");
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la matricula en la base de datos");
+        }
+    }
+    
+    public void modificarPaciente(String Especie, String Nombre, String Raza, String Sexo, int Edad, int Peso, int Codigo, String Nacimiento, String Fecha, String Desde, String DNICliente, String Caracter,String Ejercicio, String Alimentacion, String Color, String Piel, String Pelo, String Cabeza, String Cuello, String Oidos, String Labios, String Dientes, String Lengua, String Boca, String Masticadores, String Torax, String AparatoLocomotor, String Conciencia, String AbdomenForma, String  AbdomenPalpacion, String AbdomenProfunda, String AbdomenAuscultacion, String IntestinoPercusion, String IntestinoAuscultacion, String IntestinoOndulacion, String Extremidades, String SistemaNervioso, String Genitales, String Recto, String Ano, String Orina, String Heces, String Enfermedades, String CirugiasPrevias, Boolean Esterilizacion, String Vacunacion, String Desparasitacion, String Leishmaniosis, String Habitat, String Entorno, String Viajes, String Notas) {
+
+        String q = "Update Pacientes set Especie='" + Especie + "', Nombre='" + Nombre + "', Raza='" + Raza + "', Sexo='" + Sexo + "', Edad='" + Edad + "', Peso='" + Peso + "', Codigo='" + Codigo + "',Nacimiento='" + Nacimiento + "',Fecha='" + Fecha + "',Desde='" + Desde + "',DNICliente='" + DNICliente + "',Caracter='" + Caracter + "',Ejercicio='" + Ejercicio + "',Alimentacion='" + Alimentacion + "',Color='" + Color + "',Piel='" + Piel + "',Pelo='" + Pelo + "',Cabeza='" + Cabeza + "',Cuello='" + Cuello + "',Oidos='" + Oidos + "',Labios='" + Labios + "',Dientes='" + Dientes + "',Lengua='" + Lengua + "',Boca='" + Boca + "',Masticadores='" + Masticadores + "',Torax='" + Torax + "',AparatoLocomotor='" + AparatoLocomotor + "',Conciencia='" + Conciencia + "',AbdomenForma='" + AbdomenForma + "',AbdomenPalpacion='" + AbdomenPalpacion + "',AbdomenProfunda='" + AbdomenProfunda + "',IntestinoPercusion='" + IntestinoPercusion + "',IntestinoAuscultacion='" + IntestinoAuscultacion + "',IntestinoOndulacion='" + IntestinoOndulacion + "',Extremidades='" + Extremidades + "',SistemaNervioso='" + SistemaNervioso + "',Genitales='" +Genitales + "',Recto='" + Recto + "',Ano='" + Ano + "',Orina='" + Orina + "',Heces='" + Heces + "',Enfermedades='" + Enfermedades + "',CirugiasPrevias='" + CirugiasPrevias + "',Esterilizacion='" + Esterilizacion + "',Vacunacion='" + Vacunacion + "',Desparasitacion='" + Desparasitacion + "',Leishmaniosis='" + Leishmaniosis + "',Habitat='" + Habitat + "',Entorno='" + Entorno + "',Viajes='" + Viajes + "',Notas='" + Notas + "' where Codigo='" + Codigo + "';";
 
         try {
 
@@ -714,7 +734,7 @@ public class modelo2 extends Database{
         String[] Relleno= new String[5];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono FROM Pacientes WHERE Codigo like '%"+codigo+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT Especie, Nombre, Raza, Sexo, Edad, Peso, Codigo, Nacimiento, Fecha, Desde, DNICliente, Caracter,Ejercicio, Alimentacion, Color, Piel, Pelo, Cabeza, Cuello, Oidos, Labios, Dientes, Lengua, Boca, Masticadores, Torax, AparatoLocomotor, Conciencia, AbdomenForma, AbdomenPalpacion, AbdomenProfunda, AbdomenAuscultacion, IntestinoPercusion, IntestinoAuscultacion, IntestinoOndulacion, Extremidades, SistemaNervioso, Genitales, Recto, Ano, Orina, Heces, Notas, Enfermedades, CirugiasPrevias, Esterilizacion, Vacunacion, Desparasitacion, Leishmaniosis, Habitat, Entorno, Viajes, Nota WHERE Codigo like '%"+codigo+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
@@ -723,6 +743,52 @@ public class modelo2 extends Database{
             Relleno[2]= res.getString("Apellidos");
             Relleno[3]= res.getString("Direccion");
             Relleno[4]= res.getString("Telefono");
+            Relleno[5]= res.getString("DNI");
+            Relleno[6] = res.getString("Nombre");
+            Relleno[7]= res.getString("Apellidos");
+            Relleno[8]= res.getString("Direccion");
+            Relleno[9]= res.getString("Telefono");
+            Relleno[10]= res.getString("DNI");
+            Relleno[11] = res.getString("Nombre");
+            Relleno[12]= res.getString("Apellidos");
+            Relleno[13]= res.getString("Direccion");
+            Relleno[14]= res.getString("Telefono");
+            Relleno[15]= res.getString("DNI");
+            Relleno[16] = res.getString("Nombre");
+            Relleno[17]= res.getString("Apellidos");
+            Relleno[18]= res.getString("Direccion");
+            Relleno[19]= res.getString("Telefono");
+            Relleno[20]= res.getString("DNI");
+            Relleno[21] = res.getString("Nombre");
+            Relleno[22]= res.getString("Apellidos");
+            Relleno[23]= res.getString("Direccion");
+            Relleno[24]= res.getString("Telefono");
+            Relleno[25]= res.getString("DNI");
+            Relleno[26] = res.getString("Nombre");
+            Relleno[27]= res.getString("Apellidos");
+            Relleno[28]= res.getString("Direccion");
+            Relleno[29]= res.getString("Telefono");
+            Relleno[30]= res.getString("DNI");
+            Relleno[31] = res.getString("Nombre");
+            Relleno[32]= res.getString("Apellidos");
+            Relleno[33]= res.getString("Direccion");
+            Relleno[34]= res.getString("Telefono");
+            Relleno[35]= res.getString("DNI");
+            Relleno[36] = res.getString("Nombre");
+            Relleno[37]= res.getString("Apellidos");
+            Relleno[38]= res.getString("Direccion");
+            Relleno[39]= res.getString("Telefono");
+            Relleno[40]= res.getString("DNI");
+            Relleno[41] = res.getString("Nombre");
+            Relleno[42]= res.getString("Apellidos");
+            Relleno[43]= res.getString("Direccion");
+            Relleno[44]= res.getString("Telefono");
+            Relleno[45]= res.getString("DNI");
+            Relleno[46] = res.getString("Nombre");
+            Relleno[47]= res.getString("Apellidos");
+            Relleno[48]= res.getString("Direccion");
+            Relleno[49]= res.getString("Telefono");
+            Relleno[50]= res.getString("Telefono");
           
          }           
          res.close();
