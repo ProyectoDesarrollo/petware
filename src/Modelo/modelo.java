@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sun.util.calendar.LocalGregorianCalendar.Date;
@@ -750,6 +751,39 @@ public class modelo extends Database{
         }
         return Relleno; 
     }
+    public ArrayList<String> usuarios(){     
+       ArrayList<String> ls = new ArrayList<String>();
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI FROM Cliente");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+           ls.add(res.getString("DNI"));
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return ls; 
+    }
+      public ArrayList<String> factura(String dni ){     
+       ArrayList<String> ls = new ArrayList<String>();
+      try{
+         
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura FROM Facturas where  DNI like '%"+dni+"%'");
+         ResultSet res = pstm.executeQuery();
+         
+         while(res.next()){ 
+           ls.add(res.getString("idFactura"));
+         }           
+         res.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+        return ls; 
+    }
+    
     
     
     //---------------------- OTROS --------------------------------------
