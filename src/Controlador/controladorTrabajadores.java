@@ -47,13 +47,13 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
         } catch (Exception e) {
         }
         
-        this.vistaTrabajador.btnAgregarTrabajadores.setActionCommand("btnAgregarCliente");
+        this.vistaTrabajador.btnAgregarTrabajadores.setActionCommand("btnAgregarTrabajadores");
         this.vistaTrabajador.btnAgregarTrabajadores.addActionListener(this);
 
-        this.vistaTrabajador.btnEliminarTrabajadores.setActionCommand("btnEliminarCliente");
+        this.vistaTrabajador.btnEliminarTrabajadores.setActionCommand("btnEliminarTrabajadores");
         this.vistaTrabajador.btnEliminarTrabajadores.addActionListener(this);
 
-        this.vistaTrabajador.btnGuardarTrabajadores.setActionCommand("btnGuardarCliente");
+        this.vistaTrabajador.btnGuardarTrabajadores.setActionCommand("btnGuardarTrabajadores");
         this.vistaTrabajador.btnGuardarTrabajadores.addActionListener(this);
         
         //modificacion tabla cliente
