@@ -37,6 +37,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     modelo modelo;
     controladorFactura controladorFactura;
     controladorCliente controladorCliente;
+    controladorPaciente controladorPaciente;
     controladorTrabajadores controladorTrabajadores;
     String nombrePestaña;
     JTabbedPane tabbedPane;
@@ -71,6 +72,8 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
 
             controladorCliente = new controladorCliente(vistaCliente);
             controladorCliente.iniciar();
+            controladorPaciente = new controladorPaciente(vistaPaciente);
+            controladorPaciente.iniciar();
             controladorFactura = new  controladorFactura(vistaFacturas);
             controladorFactura.iniciar();
             controladorTrabajadores = new controladorTrabajadores(vistaTrabajadores);

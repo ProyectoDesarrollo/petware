@@ -267,7 +267,7 @@ public class controladorPaciente implements ActionListener, MouseListener {
     //----------------------Permite la selección de elementos dentro de tablas---------------------------
     private void tableTrabajadoresMouseClicked(java.awt.event.MouseEvent evt) {
 
-        fila = this.vistaTrabajador.jTableTrabajadores.getSelectedRow();
+        /*fila = this.vistaTrabajador.jTableTrabajadores.getSelectedRow();
         String DNI = (String) this.vistaTrabajador.jTableTrabajadores.getValueAt(fila, 0);
 
         String[] Relleno = this.modelo.RellenarTrabajadores(DNI);
@@ -285,6 +285,6 @@ public class controladorPaciente implements ActionListener, MouseListener {
         this.vistaPaciente.txtSalarioTrabajadores.setText(Relleno[10]);
         this.vistaPaciente.txtFechaITrabajadores.setText(Relleno[11]);
         this.vistaPaciente.TextAreaTrabajadores.setText(Relleno[12]);
-    }
+    */}
     
 }
