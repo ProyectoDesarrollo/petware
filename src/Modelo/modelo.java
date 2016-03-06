@@ -807,7 +807,7 @@ public class modelo extends Database{
       public int getStock(int i) {
         
         int r = 0;
-        String q = "SELECT Stock FROM Articulos WHERE ID = " + i;
+        String q = "SELECT Stock FROM Productos WHERE idProducto = " + i;
         
         // Se sacara de la base de datos la información correspondiente al articulo indicado.
         try {

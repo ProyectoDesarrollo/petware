@@ -81,13 +81,19 @@ public class controladorFactura implements ActionListener {
         if(comand.equals("Añadir")){
             
             Object [] productoA = new String[6];
-            String id = this.frame.txtIDProductoFactura.getText().toString();
+            int id = Integer.valueOf(this.frame.txtIDProductoFactura.getText());
             String nombre = this.frame.txtNombreProductoFactura.getText().toString();
             String stock = String.valueOf(this.frame.stock.getValue());
-            productoA[3] = this.frame.txtPrecioProductoFactura.getText().toString();
-            productoA[4] = this.frame.txtTipoProductoFactura.getText().toString();
-            productoA[5] = this.frame.TextAreaFactura.getText().toString();
+            int stockS = Integer.valueOf(stock);
+            int precio = Integer.valueOf(this.frame.txtPrecioProductoFactura.getText());
+            String tipo= this.frame.txtTipoProductoFactura.getText().toString();
+            String Descripcion = this.frame.TextAreaFactura.getText().toString();
+            int stockBD = this.modelo.getStock(id);
             
+            if(stockBD >= stock && stockS > 0 ){
+                
+            }
+                
             model.addRow(productoA);
             
             this.frame.tableCarrito.setModel(model);
