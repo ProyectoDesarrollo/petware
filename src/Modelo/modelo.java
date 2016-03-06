@@ -9,6 +9,7 @@ import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sun.util.calendar.LocalGregorianCalendar.Date;
@@ -801,6 +802,30 @@ public class modelo extends Database{
     
        
         return confir;
+        
+    }
+      public int getStock(int i) {
+        
+        int r = 0;
+        String q = "SELECT Stock FROM Articulos WHERE ID = " + i;
+        
+        // Se sacara de la base de datos la información correspondiente al articulo indicado.
+        try {
+            
+            Statement stmt = this.getConnection ().createStatement();
+            
+            ResultSet res = stmt.executeQuery(q);
+            res.next();
+            r = res.getInt("Stock");
+            res.close();
+            
+        } catch (SQLException e) {
+        
+            System.err.println(e.getMessage());
+            
+        }
+        
+        return r;
         
     }
  

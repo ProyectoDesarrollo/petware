@@ -8,6 +8,7 @@ package Controlador;
 import Modelo.modelo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import vista.Principal;
@@ -17,6 +18,7 @@ import vista.facturasFrame;
  *
  * @author Roberto
  */
+
 public class controladorFactura implements ActionListener {
 
   
@@ -24,6 +26,7 @@ public class controladorFactura implements ActionListener {
     modelo  modelo = new modelo();;
     int fila = 0;
     DefaultTableModel model;
+    ArrayList<Object> listaCarrito;
     
     public controladorFactura(facturasFrame frame) {
         
@@ -36,6 +39,7 @@ public class controladorFactura implements ActionListener {
 
             this.frame.tableFactura.setModel(this.modelo.getTablaProductos());
              model = (DefaultTableModel) this.frame.tableCarrito.getModel();
+             listaCarrito = new ArrayList();
         } catch (Exception e) {
         }
         this.frame.setVisible(true);
@@ -43,6 +47,7 @@ public class controladorFactura implements ActionListener {
         this.frame.btnAñadirCarrito.setActionCommand("Añadir");
         this.frame.btnAñadirCarrito.addActionListener(this);
         this.frame.btnAñadirCarrito.setEnabled(false);
+        this.frame.txtIDProductoFactura.setEnabled(false);
         
         this.frame.btnEleminarProductof.setActionCommand("Eliminar");
         this.frame.btnEleminarProductof.addActionListener(this);
@@ -55,6 +60,7 @@ public class controladorFactura implements ActionListener {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableProductosMouseClicked(evt);
                 frame.btnAñadirCarrito.setEnabled(true);
+          
 
             }
         });
@@ -75,9 +81,9 @@ public class controladorFactura implements ActionListener {
         if(comand.equals("Añadir")){
             
             Object [] productoA = new String[6];
-            productoA[0] = this.frame.txtIDProductoFactura.getText().toString();
-            productoA[1] = this.frame.txtNombreProductoFactura.getText().toString();
-            productoA[2] = String.valueOf(this.frame.stock.getValue());
+            String id = this.frame.txtIDProductoFactura.getText().toString();
+            String nombre = this.frame.txtNombreProductoFactura.getText().toString();
+            String stock = String.valueOf(this.frame.stock.getValue());
             productoA[3] = this.frame.txtPrecioProductoFactura.getText().toString();
             productoA[4] = this.frame.txtTipoProductoFactura.getText().toString();
             productoA[5] = this.frame.TextAreaFactura.getText().toString();
@@ -91,6 +97,7 @@ public class controladorFactura implements ActionListener {
             
             fila = this.frame.tableCarrito.getSelectedRow();
             this.frame.tableCarrito.remove(fila);
+ 
             this.frame.btnAñadirCarrito.setEnabled(false);
             
         }else if(comand.equals("Modificar")){
