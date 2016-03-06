@@ -31,9 +31,9 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         txtBuscadorTrabajadores = new javax.swing.JTextField();
         scrollTableCliente = new javax.swing.JScrollPane();
         jTableTrabajadores = new javax.swing.JTable();
-        btnAgregarCliente = new javax.swing.JButton();
+        btnAgregarTrabajadores = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        btnEliminarCliente = new javax.swing.JButton();
+        btnEliminarTrabajadores = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         panelClienteDatos = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
@@ -53,12 +53,12 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         jLabel60 = new javax.swing.JLabel();
         txtMovilTrabajadores = new javax.swing.JTextField();
         txtDNITrabajadores = new javax.swing.JTextField();
-        txtFechaNTrabajadores = new javax.swing.JTextField();
+        txtFechaTrabajadores = new javax.swing.JTextField();
         txtCodigoPTrabajadores = new javax.swing.JTextField();
         txtEmailTrabajadores = new javax.swing.JTextField();
         txtFechaITrabajadores = new javax.swing.JTextField();
         txtProvinciaTrabajadores = new javax.swing.JTextField();
-        btnGuardarCliente = new javax.swing.JButton();
+        btnGuardarTrabajadores = new javax.swing.JButton();
         scrollNotaCliente = new javax.swing.JScrollPane();
         TextAreaTrabajadores = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
@@ -118,22 +118,22 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
 
         panelListadoCliente.add(scrollTableCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 410, 490));
 
-        btnAgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
-        btnAgregarCliente.setPreferredSize(new java.awt.Dimension(70, 30));
-        btnAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/anadir-usuario-icono-4000-32.png"))); // NOI18N
+        btnAgregarTrabajadores.setPreferredSize(new java.awt.Dimension(70, 30));
+        btnAgregarTrabajadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarClienteActionPerformed(evt);
+                btnAgregarTrabajadoresActionPerformed(evt);
             }
         });
-        panelListadoCliente.add(btnAgregarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 70, 30));
+        panelListadoCliente.add(btnAgregarTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 70, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/fondo2_1.jpg"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(450, 900));
         jLabel3.setMinimumSize(new java.awt.Dimension(250, 600));
         panelListadoCliente.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 410, 490));
 
-        btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/eliminar-usuario-icono-7266-32.png"))); // NOI18N
-        panelListadoCliente.add(btnEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 70, 30));
+        btnEliminarTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/eliminar-usuario-icono-7266-32.png"))); // NOI18N
+        panelListadoCliente.add(btnEliminarTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 70, 30));
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -189,7 +189,7 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/guardar_1.png"))); // NOI18N
+        btnGuardarTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/guardar_1.png"))); // NOI18N
 
         scrollNotaCliente.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollNotaCliente.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -228,42 +228,44 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
                                             .addComponent(jLabel59))))
                                 .addGap(28, 28, 28)
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDireccionTrabajadores)
-                                    .addComponent(txtApellidosTrabajadores)
-                                    .addComponent(txtNombreTrabajadores)
-                                    .addComponent(txtTelefonoTrabajadores, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtMovilTrabajadores, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(txtDNITrabajadores))
-                                .addGap(89, 89, 89)
+                                    .addComponent(txtDireccionTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtApellidosTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombreTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelefonoTrabajadores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMovilTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDNITrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
+                                        .addGap(89, 89, 89)
                                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(45, 45, 45)
-                                                .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(7, 7, 7)
-                                                .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(26, 26, 26)
-                                                .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addComponent(jLabel54, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(jLabel2)))))
+                                            .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                                                        .addGap(45, 45, 45)
+                                                        .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                                                        .addGap(7, 7, 7)
+                                                        .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                                                        .addGap(26, 26, 26)
+                                                        .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                    .addComponent(jLabel54, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel2)))
                                 .addGap(18, 18, 18)
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCodigoPTrabajadores, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmailTrabajadores, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaNTrabajadores, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaITrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                    .addComponent(txtProvinciaTrabajadores, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSalarioTrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                                    .addComponent(txtCodigoPTrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtEmailTrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFechaTrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFechaITrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtProvinciaTrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSalarioTrabajadores, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelClienteDatosLayout.createSequentialGroup()
                                 .addGap(44, 596, Short.MAX_VALUE)
-                                .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnGuardarTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelClienteDatosLayout.createSequentialGroup()
                                 .addGap(48, 48, 48)
                                 .addComponent(scrollNotaCliente)))
@@ -278,13 +280,13 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
             panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelClienteDatosLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardarTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDNITrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel53)
-                    .addComponent(txtProvinciaTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(txtSalarioTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -301,8 +303,8 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDireccionTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel58)
-                    .addComponent(jLabel51)
-                    .addComponent(txtFechaNTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel53))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTelefonoTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,8 +315,8 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMovilTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtSalarioTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtProvinciaTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
                 .addGap(50, 50, 50)
                 .addComponent(jLabel1)
                 .addGap(31, 31, 31)
@@ -337,7 +339,7 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelListadoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+            .addComponent(panelListadoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
@@ -356,9 +358,9 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscadorTrabajadoresActionPerformed
 
-    private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
+    private void btnAgregarTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTrabajadoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregarClienteActionPerformed
+    }//GEN-LAST:event_btnAgregarTrabajadoresActionPerformed
 
     private void txtFechaITrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaITrabajadoresActionPerformed
         // TODO add your handling code here:
@@ -379,9 +381,9 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextPane TextAreaTrabajadores;
-    public javax.swing.JButton btnAgregarCliente;
-    public javax.swing.JButton btnEliminarCliente;
-    public javax.swing.JButton btnGuardarCliente;
+    public javax.swing.JButton btnAgregarTrabajadores;
+    public javax.swing.JButton btnEliminarTrabajadores;
+    public javax.swing.JButton btnGuardarTrabajadores;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -410,7 +412,7 @@ public class trabajadoresFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtDireccionTrabajadores;
     public javax.swing.JTextField txtEmailTrabajadores;
     public javax.swing.JTextField txtFechaITrabajadores;
-    public javax.swing.JTextField txtFechaNTrabajadores;
+    public javax.swing.JTextField txtFechaTrabajadores;
     public javax.swing.JTextField txtMovilTrabajadores;
     public javax.swing.JTextField txtNombreTrabajadores;
     public javax.swing.JTextField txtProvinciaTrabajadores;

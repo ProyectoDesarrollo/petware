@@ -240,6 +240,24 @@ public class modelo2 extends Database{
         }
             return false;      
     }
+    
+    public boolean InsertarTrabajador (String DNI, String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Provincia, String Nacimiento, int CodigoPostal, Double Salario, String Desde, String Nota) {
+            //Consulta para insertar 
+        
+        String q=" INSERT INTO Trabajadores ( DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Salario, Desde, Nota )"
+                    + "VALUES ( '" + DNI + "','" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "','" + Provincia + "','" + Nacimiento + "','" + CodigoPostal + "','" + Salario + "','" + Desde + "','" + Nota + "') ";
+            //se ejecuta la consulta
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            return true;
+        }catch(SQLException e){
+            System.err.println( e.getMessage() );
+        }
+            return false;      
+    }
+    
     public boolean InsertarProveedor (String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email) {
             //Consulta para insertar 
         
