@@ -325,11 +325,11 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
         } else if (comand.equals("btnTrabajadores")) {
             if (this.vista.panelPestaña.indexOfTab("Trabajadores   ") != -1) {
                 
-                int ntab = this.vista.panelPestaña.indexOfTab("Trabajadores    ");
+                int ntab = this.vista.panelPestaña.indexOfTab("Trabajadores   ");
                 this.vista.panelPestaña.setSelectedIndex(ntab);
             } else {
                crearPestaña("Trabajadores");
-               int ntab = this.vista.panelPestaña.indexOfTab("Trabajadores    ");
+               int ntab = this.vista.panelPestaña.indexOfTab("Trabajadores   ");
                 this.vista.panelPestaña.setSelectedIndex(ntab);
            }
 
