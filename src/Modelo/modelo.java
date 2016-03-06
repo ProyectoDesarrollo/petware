@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sun.util.calendar.LocalGregorianCalendar.Date;
@@ -186,6 +187,92 @@ public class modelo extends Database{
         return tablemodel;
     }
     
+     public DefaultTableModel getTablaCarrito(int idFactura){
+        
+      DefaultTableModel tablemodel = new DefaultTableModel();
+      int registros = 0; // Indica la cantidad de filas de la tabla.
+      String[] columNames = {"id Factura","id Producto", "Nombre", "Stock", "Precio" ,"Tipo" ,"Descripcion"}; // Indica el nombre de las columnas de la tabla.
+      //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
+      //para formar la matriz de datos
+      try{
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Carrito");
+         ResultSet res = pstm.executeQuery();
+         res.next();
+         registros = res.getInt("total");
+         res.close();
+        }catch(SQLException e){
+           System.err.println( e.getMessage() );
+        }
+      //se crea una matriz con tantas filas y columnas que necesite
+        Object[][] data = new String[registros][7];
+        try{
+          //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura ,idProducto, Nombre, Stock, Precio , Tipo , Descripcion FROM Carrito where  idFactura='" + idFactura + "' ");
+        ResultSet res = pstm.executeQuery();
+        int i=0;
+        while(res.next()){
+            
+                data[i][0] = res.getString("idFactura");
+                data[i][1] = res.getString("idProducto");
+                data[i][2] = res.getString("Nombre");
+                data[i][3] = res.getString("Stock");
+                data[i][4] = res.getString("Precio");
+                data[i][5] = res.getString("Tipo");
+                data[i][6] = res.getString("Descripcion");
+              
+                
+            i++;
+        }
+        res.close();
+         //se añade la matriz de datos en el DefaultTableModel
+        tablemodel.setDataVector(data, columNames );
+        }catch(SQLException e){
+           System.err.println( e.getMessage() );
+        }
+        return tablemodel;
+    }
+     
+     public DefaultTableModel getTablaFacturas(){
+        
+      DefaultTableModel tablemodel = new DefaultTableModel();
+      int registros = 0; // Indica la cantidad de filas de la tabla.
+      String[] columNames = {"id Factura", "Nombre"}; // Indica el nombre de las columnas de la tabla.
+      //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
+      //para formar la matriz de datos
+      try{
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as Total FROM Facturas");
+         ResultSet res = pstm.executeQuery();
+         res.next();
+         registros = res.getInt("total");
+         res.close();
+        }catch(SQLException e){
+           System.err.println( e.getMessage() );
+        }
+      //se crea una matriz con tantas filas y columnas que necesite
+        Object[][] data = new String[registros][7];
+        try{
+          //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura Nombre FROM Facturas ");
+        ResultSet res = pstm.executeQuery();
+        int i=0;
+        while(res.next()){
+            
+                data[i][0] = res.getString("idFactura");
+                data[i][1] = res.getString("Nombre");
+                
+              
+                
+            i++;
+        }
+        res.close();
+         //se añade la matriz de datos en el DefaultTableModel
+        tablemodel.setDataVector(data, columNames );
+        }catch(SQLException e){
+           System.err.println( e.getMessage() );
+        }
+        return tablemodel;
+    }
+     
     public DefaultTableModel getTablaTrabajadores(){
         
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -862,5 +949,6 @@ public class modelo extends Database{
         return r;
         
     }
+    
  
 }
