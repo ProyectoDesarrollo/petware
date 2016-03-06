@@ -33,7 +33,7 @@ public class controladorFactura implements ActionListener, ItemListener {
     ArrayList<Object> listaCarrito;
 
     String dni;
-
+    String usuario;
     int idFactura;
 
     public controladorFactura(facturasFrame frame) {
@@ -47,6 +47,7 @@ public class controladorFactura implements ActionListener, ItemListener {
 
             this.frame.tableFactura.setModel(this.modelo.getTablaProductos());
             this.tablaFactura.tablaFacturas.setModel(this.modelo.getTablaFacturas());
+            this.crear.tableClienteF.setModel(this.modelo.getTablaCliente());
 
         } catch (Exception e) {
         }
@@ -69,6 +70,7 @@ public class controladorFactura implements ActionListener, ItemListener {
         this.frame.btnAñadirCarrito.setEnabled(false);
         this.frame.txtIDProductoFactura.setEnabled(false);
 
+        //botones facturaFrame
         this.frame.btnEleminarProductof.setActionCommand("Eliminar");
         this.frame.btnEleminarProductof.addActionListener(this);
 
@@ -77,6 +79,11 @@ public class controladorFactura implements ActionListener, ItemListener {
 
         this.frame.btnCrearFactura.setActionCommand("Crear");
         this.frame.btnCrearFactura.addActionListener(this);
+        //Botones CrearFactura
+        this.crear.btnAñadirFactura.setActionCommand("Añadir C");
+        this.crear.btnAñadirFactura.addActionListener(this);
+        this.crear.btnCancelarAñadirFactura.setActionCommand("Cancelar C");
+        this.crear.btnCancelarAñadirFactura.addActionListener(this);
 
 //        this.frame.comboUsuarioF.addItemListener(new java.awt.event.ItemListener() {
 //               @Override
@@ -156,6 +163,19 @@ public class controladorFactura implements ActionListener, ItemListener {
 //            this.frame.btnAñadirCarrito.setEnabled(false);
         } else if (comand.equals("Crear")) {
             this.crear.setVisible(true);
+            
+            
+        }else if(comand.equals("Añadir C")){//crearFacturas
+            dni = this.crear.txtDNICrearF.getText().toString();
+            usuario  = this.crear.txtusuarioCreaF.getText().toString();
+            boolean confi =  this.modelo.InsertarFactura( dni, usuario);
+            if(confi){
+                JOptionPane.showMessageDialog(crear, "Factura creada con exito");
+            }else{
+                 JOptionPane.showMessageDialog(crear, "Fallo en la crearcion de factura");
+            }
+        }else if(comand.equals("Cancelar C")){
+            this.crear.setVisible(false);
         }
     }
 
@@ -198,7 +218,7 @@ public class controladorFactura implements ActionListener, ItemListener {
         fila = this.tablaFactura.tablaFacturas.getSelectedRow();
         String idFactura = (String) this.tablaFactura.tablaFacturas.getValueAt(fila, 0);
 
-        String[] Relleno = this.modelo.RellenarProducto(idFactura);
+        String[] Relleno = this.modelo.RellenarFactura(idFactura);
         this.frame.txtFacturaFactura.setText(idFactura);
         this.frame.txtUsuarioFactura.setText(Relleno[1]);
 
@@ -210,7 +230,7 @@ public class controladorFactura implements ActionListener, ItemListener {
         fila = this.crear.tableClienteF.getSelectedRow();
         String id = (String) this.crear.tableClienteF.getValueAt(fila, 0);
 
-        String[] Relleno = this.modelo.RellenarProducto(id);
+        String[] Relleno = this.modelo.RellenarCliente(id);
         this.crear.txtDNICrearF.setText(id);
         this.crear.txtusuarioCreaF.setText(Relleno[1]);
 
