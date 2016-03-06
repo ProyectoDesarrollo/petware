@@ -28,8 +28,8 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
     public enum AccionMVC {
         
         btnAgregarTrabajadores,
-        btnEliminarTrabajador,
-        btnGuardarTrabajador
+        btnEliminarTrabajadores,
+        btnGuardarTrabajadores
     }
     
     public controladorTrabajadores(trabajadoresFrame vistaTrabajador) {
@@ -100,7 +100,7 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
                     String Provincia = this.vistaTrabajador.txtProvinciaTrabajadores.getText();
                     String Nacimiento = this.vistaTrabajador.txtFechaTrabajadores.getText();
                     int CodigoPostal = Integer.parseInt(this.vistaTrabajador.txtCodigoPTrabajadores.getText());
-                    Double Salario = Double.parseDouble(this.vistaTrabajador.txtMovilTrabajadores.getText());
+                    Double Salario = Double.parseDouble(this.vistaTrabajador.txtSalarioTrabajadores.getText());
                     String Desde = this.vistaTrabajador.txtFechaITrabajadores.getText();
                     String Nota = this.vistaTrabajador.TextAreaTrabajadores.getText();
                     this.modelo.InsertarTrabajador(DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Salario, Desde, Nota);
@@ -113,7 +113,10 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
                     this.vistaTrabajador.txtMovilTrabajadores.setText("");
                     this.vistaTrabajador.txtEmailTrabajadores.setText("");
                     this.vistaTrabajador.txtProvinciaTrabajadores.setText("");
+                    this.vistaTrabajador.txtFechaTrabajadores.setText("");
                     this.vistaTrabajador.txtCodigoPTrabajadores.setText("");
+                    this.vistaTrabajador.txtSalarioTrabajadores.setText("");
+                    this.vistaTrabajador.txtFechaITrabajadores.setText("");
                     this.vistaTrabajador.TextAreaTrabajadores.setText("");
 
                 } catch (Exception ex) {
@@ -122,7 +125,7 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
 
                 break;
                 
-        case btnGuardarTrabajador:
+        case btnGuardarTrabajadores:
 
                 try {
 
@@ -136,9 +139,11 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
                     String Provincia = this.vistaTrabajador.txtProvinciaTrabajadores.getText();
                     String Nacimiento = this.vistaTrabajador.txtFechaTrabajadores.getText();
                     int CodigoPostal = Integer.parseInt(this.vistaTrabajador.txtCodigoPTrabajadores.getText());
+                    Double Salario = Double.parseDouble(this.vistaTrabajador.txtSalarioTrabajadores.getText());
+                    String Desde = this.vistaTrabajador.txtFechaITrabajadores.getText();
                     String Nota = this.vistaTrabajador.TextAreaTrabajadores.getText();
-                    this.modelo.modificarCliente(DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Nota);
-                    this.vistaTrabajador.jTableTrabajadores.setModel(this.modelo.getTablaCliente());
+                    this.modelo.modificarTrabajadores(DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Salario, Desde, Nota);
+                    this.vistaTrabajador.jTableTrabajadores.setModel(this.modelo.getTablaTrabajadores());
                     this.vistaTrabajador.txtDNITrabajadores.setText("");
                     this.vistaTrabajador.txtNombreTrabajadores.setText("");
                     this.vistaTrabajador.txtApellidosTrabajadores.setText("");
@@ -149,6 +154,8 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
                     this.vistaTrabajador.txtProvinciaTrabajadores.setText("");
                     this.vistaTrabajador.txtFechaTrabajadores.setText("");
                     this.vistaTrabajador.txtCodigoPTrabajadores.setText("");
+                    this.vistaTrabajador.txtSalarioTrabajadores.setText("");
+                    this.vistaTrabajador.txtFechaITrabajadores.setText("");
                     this.vistaTrabajador.TextAreaTrabajadores.setText("");
 
                 } catch (Exception ex) {
@@ -157,7 +164,7 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
 
                 break;
         
-        case btnEliminarTrabajador://Borra un cliente
+        case btnEliminarTrabajadores://Borra un cliente
 
             try {
 
@@ -169,7 +176,7 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
 
                         fila = this.vistaTrabajador.jTableTrabajadores.getSelectedRow();
                         String dni = (String) this.vistaTrabajador.jTableTrabajadores.getValueAt(fila, 0);
-                        this.modelo.EliminarClientes(dni);
+                        this.modelo.EliminarTrabajador(dni);
                         this.vistaTrabajador.jTableTrabajadores.setModel(this.modelo.getTablaTrabajadores());
 
                     }
@@ -211,7 +218,7 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
         fila = this.vistaTrabajador.jTableTrabajadores.getSelectedRow();
         String DNI = (String) this.vistaTrabajador.jTableTrabajadores.getValueAt(fila, 0);
 
-        String[] Relleno = this.modelo.RellenarCliente(DNI);
+        String[] Relleno = this.modelo.RellenarTrabajadores(DNI);
         this.vistaTrabajador.txtDNITrabajadores.setText(DNI);
         this.vistaTrabajador.txtDNITrabajadores.enable(false);
         this.vistaTrabajador.txtNombreTrabajadores.setText(Relleno[1]);
@@ -223,7 +230,9 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
         this.vistaTrabajador.txtProvinciaTrabajadores.setText(Relleno[7]);
         this.vistaTrabajador.txtFechaTrabajadores.setText(Relleno[8]);
         this.vistaTrabajador.txtCodigoPTrabajadores.setText(Relleno[9]);
-        this.vistaTrabajador.TextAreaTrabajadores.setText(Relleno[10]);
+        this.vistaTrabajador.txtSalarioTrabajadores.setText(Relleno[10]);
+        this.vistaTrabajador.txtFechaITrabajadores.setText(Relleno[11]);
+        this.vistaTrabajador.TextAreaTrabajadores.setText(Relleno[12]);
     }
     
 }

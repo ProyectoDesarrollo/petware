@@ -329,6 +329,26 @@ public class modelo2 extends Database{
         }
     }
     
+    public void modificarTrabajadores(String DNI, String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Provincia, String Nacimiento, int CodigoPostal, Double Salario, String Desde, String Nota) {
+
+        String q = "Update Trabajadores set Nombre='" + Nombre + "', Apellidos='" + Apellidos + "', Direccion='" + Direccion + "', Telefono='" + Telefono + "', Movil='" + Movil + "', Email='" + Email + "', Provincia='" + Provincia + "',Nacimiento='" + Nacimiento + "',CodigoPostal='" + CodigoPostal + "',Salario='" + Salario + "',Desde='" + Desde + "',Nota='" + Nota + "' where DNI='" + DNI + "';";
+
+        try {
+
+            //Se mete en la base de datos
+            PreparedStatement pstm1 = this.getConnection().prepareStatement(q);
+            pstm1.execute();
+            pstm1.close();
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "No se ha podido conectar con la base de datos.");
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la matricula en la base de datos");
+        }
+    }
+    
     public void modificarProveedor(String NIF, String nombre, String apellidos, int telefono, int Movil, String email, int idProductos) {
 
         String q = "Update Proveedores set Nombre='" + nombre + "', Apellidos='" + apellidos + "', Telefono='" + telefono + "', Movil='" + Movil + "', Email='" + email + "', idProductos='" + idProductos + "' where NIF='" + NIF + "';";
@@ -370,6 +390,22 @@ public class modelo2 extends Database{
         boolean res = false;
         //se arma la consulta
         String q = " DELETE FROM Pacientes WHERE  Codigo='" + codigo + "' ";
+        //se ejecuta la consulta
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            res = true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return res;
+    }
+    
+    public boolean EliminarTrabajador(String dni) {
+        boolean res = false;
+        //se arma la consulta
+        String q = " DELETE FROM Trabajadores WHERE  DNI='" + dni + "' ";
         //se ejecuta la consulta
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
@@ -718,10 +754,10 @@ public class modelo2 extends Database{
     }
     
     public String[] RellenarTrabajadores(String dni){     
-        String[] Relleno= new String[5];
+        String[] Relleno= new String[13];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Salario, Email, Nacimiento, Desde, Hasta, CodigoPostal FROM Trabajadores WHERE DNI like '%"+dni+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Salario, Desde, Nota FROM Trabajadores WHERE DNI like '%"+dni+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
@@ -731,12 +767,14 @@ public class modelo2 extends Database{
             Relleno[3]= res.getString("Direccion");
             Relleno[4]= res.getString("Telefono");
             Relleno[5]= res.getString("Movil");
-            Relleno[6] = res.getString("Salario");
-            Relleno[7]= res.getString("Email");
+            Relleno[6]= res.getString("Email");
+            Relleno[7] = res.getString("Provincia");
             Relleno[8]= res.getString("Nacimiento");
-            Relleno[9]= res.getString("Desde");
-            Relleno[10]= res.getString("Hasta");
-            Relleno[11] = res.getString("CodigoPostal");
+            Relleno[9] = res.getString("CodigoPostal");
+            Relleno[10] = res.getString("Salario");
+            Relleno[11]= res.getString("Desde");
+            Relleno[12]= res.getString("Nota");
+            
           
          }           
          res.close();
