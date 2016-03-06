@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import sun.util.calendar.LocalGregorianCalendar.Date;
 import vista.Principal;
 import vista.clienteFrame;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 
 /**
  *
@@ -681,10 +682,10 @@ public class modelo extends Database {
     }
 
     public String[] RellenarProducto(String idProducto) {
-        String[] Relleno = new String[5];
+        String[] Relleno = new String[6];
         try {
 
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Stock, Precio, Tipo FROM Productos WHERE idProducto like '%" + idProducto + "%'");
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Stock, Precio, Tipo, Descripcion FROM Productos WHERE idProducto like '%" + idProducto + "%'");
             ResultSet res = pstm.executeQuery();
 
             while (res.next()) {
@@ -693,6 +694,7 @@ public class modelo extends Database {
                 Relleno[2] = res.getString("Stock");
                 Relleno[3] = res.getString("Precio");
                 Relleno[4] = res.getString("Tipo");
+                Relleno[5] = res.getString("Descripcion");
             }
             res.close();
         } catch (SQLException e) {
@@ -840,10 +842,10 @@ public class modelo extends Database {
     }
 
     //Facturas
-    public int getStock(int i) {
+    public int getStock(int idProducto) {
 
         int r = 0;
-        String q = "SELECT Stock FROM Productos WHERE idProducto = " + i;
+        String q = "SELECT Stock FROM Productos WHERE idProducto = " + idProducto;
 
         // Se sacara de la base de datos la información correspondiente al articulo indicado.
         try {
@@ -886,7 +888,7 @@ public class modelo extends Database {
         String[] Relleno = new String[3];
         try {
 
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura,DNI , Nombre FROM Facturas WHERE idFactura like '%" + idFactura + "%'");
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura, DNI, Nombre FROM Facturas WHERE idFactura like '%" + idFactura + "%'");
             ResultSet res = pstm.executeQuery();
 
             while (res.next()) {
@@ -901,7 +903,7 @@ public class modelo extends Database {
         return Relleno;
     }
 
-    public boolean InsertarCarrito(int idFactura, int idProducto, String Nombre, int stock, int Precio, String tipo, String descripcion) {
+    public boolean InsertarCarrito(int idFactura, int idProducto, String Nombre, int stock, Double Precio, String tipo, String descripcion) {
         //Consulta para insertar 
 
         String q = " INSERT INTO Carrito ( idFactura,idProducto, Nombre ,Cantidad,Precio, Tipo,  Descripcion)"
@@ -918,11 +920,27 @@ public class modelo extends Database {
         return false;
     }
 
+    public boolean EliminarCarrito(int idFactura ,int idProducto) {
+        boolean res = false;
+        //se arma la consulta
+        String q = "DELETE FROM Carrito WHERE  idProducto="+idProducto+" && idFactura="+idFactura+"";
+        //se ejecuta la consulta
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            res = true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return res;
+    }
+
     public DefaultTableModel getTablaCarrito(int idFactura) {
 
         DefaultTableModel tablemodel = new DefaultTableModel();
         int registros = 0; // Indica la cantidad de filas de la tabla.
-        String[] columNames = {"id Factura", "id Producto", "Nombre", "Stock", "Precio", "Tipo", "Descripcion"}; // Indica el nombre de las columnas de la tabla.
+        String[] columNames = {"id Factura", "id Producto", "Nombre", "Cantidad", "Precio", "Tipo", "Descripcion"}; // Indica el nombre de las columnas de la tabla.
         //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
         //para formar la matriz de datos
         try {
@@ -938,7 +956,7 @@ public class modelo extends Database {
         Object[][] data = new String[registros][7];
         try {
             //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura ,idProducto, Nombre, Stock, Precio , Tipo , Descripcion FROM Carrito where  idFactura='" + idFactura + "' ");
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura, idProducto, Nombre, Cantidad, Precio , Tipo , Descripcion FROM Carrito where  idFactura=" + idFactura + " ");
             ResultSet res = pstm.executeQuery();
             int i = 0;
             while (res.next()) {
@@ -946,7 +964,7 @@ public class modelo extends Database {
                 data[i][0] = res.getString("idFactura");
                 data[i][1] = res.getString("idProducto");
                 data[i][2] = res.getString("Nombre");
-                data[i][3] = res.getString("Stock");
+                data[i][3] = res.getString("Cantidad");
                 data[i][4] = res.getString("Precio");
                 data[i][5] = res.getString("Tipo");
                 data[i][6] = res.getString("Descripcion");
@@ -1000,6 +1018,70 @@ public class modelo extends Database {
             System.err.println(e.getMessage());
         }
         return tablemodel;
+    }
+
+    public String[] RellenarCarrito(String idProducto) {
+        String[] Relleno = new String[6];
+        try {
+
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idProducto, Nombre, Cantidad, Precio, Tipo ,Descripcion FROM Carrito WHERE  idProducto like '%" + idProducto + "%'");
+            ResultSet res = pstm.executeQuery();
+
+            while (res.next()) {
+                Relleno[0] = res.getString("idProducto");
+                Relleno[1] = res.getString("Nombre");
+                Relleno[2] = res.getString("Cantidad");
+                Relleno[3] = res.getString("Precio");
+                Relleno[4] = res.getString("Tipo");
+                Relleno[5] = res.getString("Descripcion");
+               
+                
+            }
+            res.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return Relleno;
+    }
+
+    public void modificarProducto(int idProducto, int stock, double precio) {
+
+        String q = "Update Productos set Stock='" + stock +"',Precio='" + precio + "' where idProducto='"+idProducto+"';";
+
+        try {
+
+            //Se mete en la base de datos
+            PreparedStatement pstm1 = this.getConnection().prepareStatement(q);
+            pstm1.execute();
+            pstm1.close();
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "No se ha podido conectar con la base de datos.");
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la matricula en la base de datos");
+        }
+    }
+
+    public void modificarCarrito(int idFactura, int stock, double precio) {
+
+        String q = "Update Carrito set Cantidad='" + stock + "',Precio='" + precio + "' where idProducto='" + idFactura + "';";
+
+        try {
+
+            //Se mete en la base de datos
+            PreparedStatement pstm1 = this.getConnection().prepareStatement(q);
+            pstm1.execute();
+            pstm1.close();
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "No se ha podido conectar con la base de datos.");
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la matricula en la base de datos");
+        }
     }
 
 }
