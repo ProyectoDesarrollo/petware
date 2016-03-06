@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.modelo;
+import Modelo.modelo2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -22,7 +23,7 @@ public class controladorCliente implements ActionListener, MouseListener {
   
 
     clienteFrame vistaCliente = new clienteFrame();
-    modelo modelo = new modelo();
+    modelo2 modelo = new modelo2();
     
     public enum AccionMVC {
         
@@ -46,7 +47,7 @@ public class controladorCliente implements ActionListener, MouseListener {
         } catch (Exception e) {
         }
         
-        this.vistaCliente.btnAgregarCliente.setActionCommand("btnAñadirCliente");
+        this.vistaCliente.btnAgregarCliente.setActionCommand("btnAgregarCliente");
         this.vistaCliente.btnAgregarCliente.addActionListener(this);
 
         this.vistaCliente.btnEliminarCliente.setActionCommand("btnEliminarCliente");
@@ -66,17 +67,17 @@ public class controladorCliente implements ActionListener, MouseListener {
                 try {
 
                     String DNI = this.vistaCliente.txtDNICliente.getText();
-                    String nombre = this.vistaCliente.txtNombreCliente.getText();
-                    String apellidos = this.vistaCliente.txtApellidosCliente.getText();
-                    String direccion = this.vistaCliente.txtDireccionCliente.getText();
-                    int telefono = Integer.parseInt(this.vistaCliente.txtTelefonoCliente.getText());
-                    int movil = Integer.parseInt(this.vistaCliente.txtMovilCliente.getText());
-                    String fecha = this.vistaCliente.txtFechaCliente.getText();
-                    int CP = Integer.parseInt(this.vistaCliente.txtCodigoPCliente.getText());
-                    String email = this.vistaCliente.txtEmailCliente.getText();
-                    String provincia = this.vistaCliente.txtProvinciaCliente.getText();
-                    String fechaIngreso = this.vistaCliente.txtFechaICliente.getText();
-                    this.modelo.InsertarCliente(DNI, nombre, apellidos, direccion, telefono, movil, email, nombre, movil, provincia, fecha);
+                    String Nombre = this.vistaCliente.txtNombreCliente.getText();
+                    String Apellidos = this.vistaCliente.txtApellidosCliente.getText();
+                    String Direccion = this.vistaCliente.txtDireccionCliente.getText();
+                    int Telefono = Integer.parseInt(this.vistaCliente.txtTelefonoCliente.getText());
+                    int Movil = Integer.parseInt(this.vistaCliente.txtMovilCliente.getText());
+                    String Email = this.vistaCliente.txtEmailCliente.getText();
+                    String Nacimiento = this.vistaCliente.txtFechaCliente.getText();
+                    int CodigoPostal = Integer.parseInt(this.vistaCliente.txtCodigoPCliente.getText());
+                    String Provincia = this.vistaCliente.txtProvinciaCliente.getText();
+                    String Fecha = this.vistaCliente.txtFechaICliente.getText();
+                    this.modelo.InsertarCliente(DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Nacimiento, CodigoPostal, Provincia, Fecha);
                     this.vistaCliente.jTableCliente.setModel(this.modelo.getTablaCliente());
                     this.vistaCliente.txtDNICliente.setText("");
                     this.vistaCliente.txtNombreCliente.setText("");
