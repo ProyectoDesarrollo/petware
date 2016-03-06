@@ -54,6 +54,7 @@ public class controladorFactura implements ActionListener, ItemListener {
 
         this.frame.setVisible(true);
         this.crear.setVisible(false);
+        this.tablaFactura.setVisible(false);
         this.frame.btnAñadirCarrito.setEnabled(false);
         this.frame.btnEleminarProductof.setEnabled(false);
         this.frame.btnModificarProductoF.setEnabled(false);
@@ -64,9 +65,16 @@ public class controladorFactura implements ActionListener, ItemListener {
         this.frame.txtUsuarioFactura.setText("");
 
         //Bottones
+            
+        this.frame.btnAgregarUsuarioF.setActionCommand("Agregar");
+        this.frame.btnAgregarUsuarioF.addActionListener(this);
+        
+        this.frame.btnLimpiarFactura.setActionCommand("Limpiar");
+        this.frame.btnLimpiarFactura.addActionListener(this);
+
         this.frame.btnAñadirCarrito.setActionCommand("Añadir");
         this.frame.btnAñadirCarrito.addActionListener(this);
-
+    
         this.frame.btnAñadirCarrito.setEnabled(false);
         this.frame.txtIDProductoFactura.setEnabled(false);
 
@@ -176,6 +184,19 @@ public class controladorFactura implements ActionListener, ItemListener {
             }
         }else if(comand.equals("Cancelar C")){
             this.crear.setVisible(false);
+        }else if (comand.equals("Agregar")){
+            this.tablaFactura.setVisible(true);
+            
+        }else if(comand.equals("Limpiar")){
+            this.frame.txtFacturaClientes.setText(" ");
+            this.frame.txtUsuarioFactura.setText(" ");
+            this.frame.txtFacturaFactura.setText(" ");
+            this.frame.txtIDProductoFactura.setText(" ");
+            this.frame.txtNombreProductoFactura.setText(" ");
+            this.frame.txtPrecioProductoFactura.setText(" ");
+            this.frame.txtTipoProductoFactura.setText(" ");
+            this.frame.TextAreaFactura.setText(" ");
+            this.frame.stock.setValue(0);
         }
     }
 
@@ -195,7 +216,6 @@ public class controladorFactura implements ActionListener, ItemListener {
 //        this.frame.TextAreaFactura.setText(Relleno[5]);
 
     }
-
     private void tableCarritoMouseClicked(java.awt.event.MouseEvent evt) {
 
         fila = this.frame.tableCarrito.getSelectedRow();
@@ -212,7 +232,6 @@ public class controladorFactura implements ActionListener, ItemListener {
 //        this.frame.TextAreaFactura.setText(Relleno[5]);
 
     }
-
     private void tableFacturasMouseClicked(java.awt.event.MouseEvent evt) {
 
         fila = this.tablaFactura.tablaFacturas.getSelectedRow();
@@ -236,30 +255,6 @@ public class controladorFactura implements ActionListener, ItemListener {
 
 
     }
-//    public void llenarUsuario(){
-//        this.frame.comboUsuarioF.removeAllItems();
-//         ArrayList <String> usuari = this.modelo.usuarios();
-//         
-//         for(int i= 0 ; i < usuari.size(); i++){
-//             this.frame.comboUsuarioF.addItem(usuari.get(i));
-//         }
-//    }
-//    public void llenarUsuarioRegistro(){
-//        this.crear.comboUsuarioAñadir.removeAllItems();
-//         ArrayList <String> usuari = this.modelo.usuarios();
-//         
-//         for(int i= 0 ; i < usuari.size(); i++){
-//             this.crear.comboUsuarioAñadir.addItem(usuari.get(i));
-//         }
-//    }
-//    public void llenarFactura(String dni){
-//        this.frame.comboFactura.removeAllItems();
-//         ArrayList <String> usuari = this.modelo.factura(dni);
-//         
-//         for(int i= 0 ; i < usuari.size(); i++){
-//             this.frame.comboFactura.addItem(usuari.get(i));
-//         }
-//    }
 
     @Override
     public void itemStateChanged(ItemEvent ie) {

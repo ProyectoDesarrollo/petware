@@ -187,90 +187,6 @@ public class modelo extends Database {
         return tablemodel;
     }
 
-    public DefaultTableModel getTablaCarrito(int idFactura) {
-
-        DefaultTableModel tablemodel = new DefaultTableModel();
-        int registros = 0; // Indica la cantidad de filas de la tabla.
-        String[] columNames = {"id Factura", "id Producto", "Nombre", "Stock", "Precio", "Tipo", "Descripcion"}; // Indica el nombre de las columnas de la tabla.
-        //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
-        //para formar la matriz de datos
-        try {
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT count(*) as Total FROM Carrito");
-            ResultSet res = pstm.executeQuery();
-            res.next();
-            registros = res.getInt("total");
-            res.close();
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][7];
-        try {
-            //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura ,idProducto, Nombre, Stock, Precio , Tipo , Descripcion FROM Carrito where  idFactura='" + idFactura + "' ");
-            ResultSet res = pstm.executeQuery();
-            int i = 0;
-            while (res.next()) {
-
-                data[i][0] = res.getString("idFactura");
-                data[i][1] = res.getString("idProducto");
-                data[i][2] = res.getString("Nombre");
-                data[i][3] = res.getString("Stock");
-                data[i][4] = res.getString("Precio");
-                data[i][5] = res.getString("Tipo");
-                data[i][6] = res.getString("Descripcion");
-
-                i++;
-            }
-            res.close();
-            //se añade la matriz de datos en el DefaultTableModel
-            tablemodel.setDataVector(data, columNames);
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        return tablemodel;
-    }
-
-    public DefaultTableModel getTablaFacturas() {
-
-        DefaultTableModel tablemodel = new DefaultTableModel();
-        int registros = 0; // Indica la cantidad de filas de la tabla.
-        String[] columNames = {"id Factura", "DNI", "Nombre"}; // Indica el nombre de las columnas de la tabla.
-        //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
-        //para formar la matriz de datos
-        try {
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT count(*) as Total FROM Facturas");
-            ResultSet res = pstm.executeQuery();
-            res.next();
-            registros = res.getInt("total");
-            res.close();
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][3];
-        try {
-            //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura, DNI , Nombre FROM Facturas ");
-            ResultSet res = pstm.executeQuery();
-            int i = 0;
-            while (res.next()) {
-
-                data[i][0] = res.getString("idFactura");
-                data[i][1] = res.getString("DNI");
-                data[i][2] = res.getString("Nombre");
-
-                i++;
-            }
-            res.close();
-            //se añade la matriz de datos en el DefaultTableModel
-            tablemodel.setDataVector(data, columNames);
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        return tablemodel;
-    }
-
     public DefaultTableModel getTablaTrabajadores() {
 
         DefaultTableModel tablemodel = new DefaultTableModel();
@@ -379,24 +295,7 @@ public class modelo extends Database {
         return false;
     }
 
-    public boolean InsertarFactura( String dni, String nombre) {
-        //Consulta para insertar 
-
-        String q = " INSERT INTO Facturas (  dni, Nombre)"
-                + "VALUES ( '"  + dni + "','" + nombre + "') ";
-        //se ejecuta la consulta
-        try {
-            PreparedStatement pstm = this.getConnection().prepareStatement(q);
-            pstm.execute();
-            pstm.close();
-            return true;
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        return false;
-    }
     //----------------------------Metodos Modificar---------------------------------------
-
     public void modificarCliente(String DNI, String nombre, String apellidos, String Direccion, int telefono, int Movil, String email, String provincia, Date Nacimiento, String Tipo, Date Desde, int CodigoPostal) {
 
         String q = "Update Proveedores set Nombre='" + nombre + "', Apellidos='" + apellidos + "', Direccion='" + Direccion + "', Telefono='" + telefono + "', Movil='" + Movil + "', Email='" + email + "', Provincia='" + provincia + "',Nacimiento='" + Nacimiento + "',Tipo='" + Tipo + "', Desde='" + Desde + "', CodigoPostal='" + CodigoPostal + "' where DNI='" + DNI + "';";
@@ -801,24 +700,6 @@ public class modelo extends Database {
         }
         return Relleno;
     }
-      public String[] RellenarFactura(String idFactura) {
-        String[] Relleno = new String[3];
-        try {
-
-            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura,DNI , Nombre FROM Facturas WHERE idFactura like '%" + idFactura + "%'");
-            ResultSet res = pstm.executeQuery();
-
-            while (res.next()) {
-                Relleno[0] = res.getString("idFactura");
-                Relleno[1] = res.getString("DNI");
-                Relleno[2] = res.getString("Nombre");
-            }
-            res.close();
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        return Relleno;
-    }
 
     public String[] RellenarTrabajadores(String dni) {
         String[] Relleno = new String[5];
@@ -958,6 +839,7 @@ public class modelo extends Database {
 
     }
 
+    //Facturas
     public int getStock(int i) {
 
         int r = 0;
@@ -981,6 +863,143 @@ public class modelo extends Database {
 
         return r;
 
+    }
+
+    public boolean InsertarFactura(String dni, String nombre) {
+        //Consulta para insertar 
+
+        String q = " INSERT INTO Facturas (  dni, Nombre)"
+                + "VALUES ( '" + dni + "','" + nombre + "') ";
+        //se ejecuta la consulta
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public String[] RellenarFactura(String idFactura) {
+        String[] Relleno = new String[3];
+        try {
+
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura,DNI , Nombre FROM Facturas WHERE idFactura like '%" + idFactura + "%'");
+            ResultSet res = pstm.executeQuery();
+
+            while (res.next()) {
+                Relleno[0] = res.getString("idFactura");
+                Relleno[1] = res.getString("DNI");
+                Relleno[2] = res.getString("Nombre");
+            }
+            res.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return Relleno;
+    }
+
+    public boolean InsertarCarrito(int idFactura, int idProducto, String Nombre, int stock, int Precio, String tipo, String descripcion) {
+        //Consulta para insertar 
+
+        String q = " INSERT INTO Carrito ( idFactura,idProducto, Nombre ,Cantidad,Precio, Tipo,  Descripcion)"
+                + "VALUES ( '" + idFactura + "', '" + idProducto + "', '" + Nombre + "','" + stock + "','" + Precio + "','" + tipo + "','" + descripcion + "') ";
+        //se ejecuta la consulta
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            pstm.execute();
+            pstm.close();
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public DefaultTableModel getTablaCarrito(int idFactura) {
+
+        DefaultTableModel tablemodel = new DefaultTableModel();
+        int registros = 0; // Indica la cantidad de filas de la tabla.
+        String[] columNames = {"id Factura", "id Producto", "Nombre", "Stock", "Precio", "Tipo", "Descripcion"}; // Indica el nombre de las columnas de la tabla.
+        //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
+        //para formar la matriz de datos
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT count(*) as Total FROM Carrito");
+            ResultSet res = pstm.executeQuery();
+            res.next();
+            registros = res.getInt("total");
+            res.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        //se crea una matriz con tantas filas y columnas que necesite
+        Object[][] data = new String[registros][7];
+        try {
+            //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura ,idProducto, Nombre, Stock, Precio , Tipo , Descripcion FROM Carrito where  idFactura='" + idFactura + "' ");
+            ResultSet res = pstm.executeQuery();
+            int i = 0;
+            while (res.next()) {
+
+                data[i][0] = res.getString("idFactura");
+                data[i][1] = res.getString("idProducto");
+                data[i][2] = res.getString("Nombre");
+                data[i][3] = res.getString("Stock");
+                data[i][4] = res.getString("Precio");
+                data[i][5] = res.getString("Tipo");
+                data[i][6] = res.getString("Descripcion");
+
+                i++;
+            }
+            res.close();
+            //se añade la matriz de datos en el DefaultTableModel
+            tablemodel.setDataVector(data, columNames);
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return tablemodel;
+    }
+
+    public DefaultTableModel getTablaFacturas() {
+
+        DefaultTableModel tablemodel = new DefaultTableModel();
+        int registros = 0; // Indica la cantidad de filas de la tabla.
+        String[] columNames = {"id Factura", "DNI", "Nombre"}; // Indica el nombre de las columnas de la tabla.
+        //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
+        //para formar la matriz de datos
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT count(*) as Total FROM Facturas");
+            ResultSet res = pstm.executeQuery();
+            res.next();
+            registros = res.getInt("total");
+            res.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        //se crea una matriz con tantas filas y columnas que necesite
+        Object[][] data = new String[registros][3];
+        try {
+            //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
+            PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura, DNI , Nombre FROM Facturas ");
+            ResultSet res = pstm.executeQuery();
+            int i = 0;
+            while (res.next()) {
+
+                data[i][0] = res.getString("idFactura");
+                data[i][1] = res.getString("DNI");
+                data[i][2] = res.getString("Nombre");
+
+                i++;
+            }
+            res.close();
+            //se añade la matriz de datos en el DefaultTableModel
+            tablemodel.setDataVector(data, columNames);
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return tablemodel;
     }
 
 }
