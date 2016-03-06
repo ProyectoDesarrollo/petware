@@ -33,7 +33,8 @@ public class controladorFactura implements ActionListener, ItemListener {
     ArrayList<Object> listaCarrito;
 
     String dni;
-    String usuario;
+
+    int idFactura;
 
     public controladorFactura(facturasFrame frame) {
 
@@ -115,6 +116,13 @@ public class controladorFactura implements ActionListener, ItemListener {
 
             }
         });
+         this.crear.tableClienteF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableClienteMouseClicked(evt);
+
+            }
+        });
+
 
     }
 
@@ -124,24 +132,7 @@ public class controladorFactura implements ActionListener, ItemListener {
 
         if (comand.equals("Añadir")) {
             
-            
-                
-//            Object [] productoA = new String[6];
-//            int id = Integer.valueOf(this.frame.txtIDProductoFactura.getText());
-//            String nombre = this.frame.txtNombreProductoFactura.getText().toString();
-//            String stock = String.valueOf(this.frame.stock.getValue());
-//            int stockS = Integer.valueOf(stock);
-//            int precio = Integer.valueOf(this.frame.txtPrecioProductoFactura.getText());
-//            String tipo= this.frame.txtTipoProductoFactura.getText().toString();
-//            String Descripcion = this.frame.TextAreaFactura.getText().toString();
-//            int stockBD = this.modelo.getStock(id);
-//            
-//            
-//                
-//            model.addRow(productoA);
-//            
-//            this.frame.tableCarrito.setModel(model);
-//            this.frame.btnAñadirCarrito.setEnabled(false);
+          
         } else if (comand.equals("Eliminar")) {
 //            
 //            fila = this.frame.tableCarrito.getSelectedRow();
@@ -212,6 +203,17 @@ public class controladorFactura implements ActionListener, ItemListener {
         this.frame.txtUsuarioFactura.setText(Relleno[1]);
 
         this.tablaFactura.setVisible(false);
+
+    }
+    private void tableClienteMouseClicked(java.awt.event.MouseEvent evt) {
+
+        fila = this.crear.tableClienteF.getSelectedRow();
+        String id = (String) this.crear.tableClienteF.getValueAt(fila, 0);
+
+        String[] Relleno = this.modelo.RellenarProducto(id);
+        this.crear.txtDNICrearF.setText(id);
+        this.crear.txtusuarioCreaF.setText(Relleno[1]);
+
 
     }
 //    public void llenarUsuario(){

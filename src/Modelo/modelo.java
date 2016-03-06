@@ -236,7 +236,7 @@ public class modelo extends Database{
         
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0; // Indica la cantidad de filas de la tabla.
-      String[] columNames = {"id Factura", "Nombre"}; // Indica el nombre de las columnas de la tabla.
+      String[] columNames = {"id Factura","DNI", "Nombre"}; // Indica el nombre de las columnas de la tabla.
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
@@ -249,16 +249,17 @@ public class modelo extends Database{
            System.err.println( e.getMessage() );
         }
       //se crea una matriz con tantas filas y columnas que necesite
-        Object[][] data = new String[registros][7];
+        Object[][] data = new String[registros][3];
         try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura Nombre FROM Facturas ");
+        PreparedStatement pstm = this.getConnection().prepareStatement("SELECT idFactura, DNI , Nombre FROM Facturas ");
         ResultSet res = pstm.executeQuery();
         int i=0;
         while(res.next()){
             
                 data[i][0] = res.getString("idFactura");
-                data[i][1] = res.getString("Nombre");
+                data[i][1] = res.getString("DNI");
+                data[i][2] = res.getString("Nombre");
                 
               
                 
