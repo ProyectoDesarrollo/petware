@@ -34,7 +34,7 @@ public class controladorFactura implements ActionListener, ItemListener {
 
     String dni;
     String usuario;
-    int idFactura;
+    String idFactura;
 
     public controladorFactura(facturasFrame frame) {
 
@@ -55,12 +55,19 @@ public class controladorFactura implements ActionListener, ItemListener {
         this.frame.setVisible(true);
         this.crear.setVisible(false);
         this.tablaFactura.setVisible(false);
+        
         this.frame.btnAñadirCarrito.setEnabled(false);
         this.frame.btnEleminarProductof.setEnabled(false);
         this.frame.btnModificarProductoF.setEnabled(false);
         this.frame.txtIDProductoFactura.setEnabled(false);
         this.frame.txtUsuarioFactura.setEnabled(false);
         this.frame.txtFacturaFactura.setEnabled(false);
+        this.frame.txtPrecioProductoFactura.setEnabled(false);
+        this.frame.txtNombreProductoFactura.setEnabled(false);
+        this.frame.txtTipoProductoFactura.setEnabled(false);
+        this.frame.TextAreaFactura.setEnabled(false);
+        this.frame.TextAreaFactura.setLineWrap(true);
+        
         this.frame.txtFacturaFactura.setText("");
         this.frame.txtUsuarioFactura.setText("");
 
@@ -146,7 +153,19 @@ public class controladorFactura implements ActionListener, ItemListener {
         String comand = e.getActionCommand();
 
         if (comand.equals("Añadir")) {
+            dni = this.frame.txtUsuarioFactura.getText().toString();
+            idFactura = this.frame.txtFacturaFactura.getText().toString();
+            String idProduc = this.frame.txtIDProductoFactura.getText().toString();
+            String nombre = this.frame.txtNombreProductoFactura.getText().toString();
+            int stock  = Integer.valueOf(String.valueOf(this.frame.stock.getValue()));
+            double precio = Double.valueOf(this.frame.txtPrecioProductoFactura.getText());
             
+            
+            if(!dni.equals("") && !idFactura.equals("")){
+                
+            }else{
+                JOptionPane.showMessageDialog(crear, "Debe rellenar todos los campos");
+            }
           
         } else if (comand.equals("Eliminar")) {
 //            
@@ -213,7 +232,7 @@ public class controladorFactura implements ActionListener, ItemListener {
         this.frame.txtPrecioProductoFactura.setText(Relleno[3]);
         this.frame.txtPrecioProductoFactura.setText(Relleno[3]);
         this.frame.txtTipoProductoFactura.setText(Relleno[4]);
-//        this.frame.TextAreaFactura.setText(Relleno[5]);
+        this.frame.TextAreaFactura.append(String.valueOf(Relleno[5]));
 
     }
     private void tableCarritoMouseClicked(java.awt.event.MouseEvent evt) {
@@ -241,6 +260,7 @@ public class controladorFactura implements ActionListener, ItemListener {
         this.frame.txtFacturaFactura.setText(idFactura);
         this.frame.txtUsuarioFactura.setText(Relleno[1]);
 
+        this.frame.tableCarrito.setModel(this.modelo.getTablaCarrito(Integer.valueOf(idFactura)));
         this.tablaFactura.setVisible(false);
 
     }
