@@ -176,8 +176,7 @@ public class modelo extends Database {
                 data[i][3] = res.getString("Precio");
                 data[i][4] = res.getString("Tipo");
                 data[i][5] = res.getString("Descripcion");
-
-                
+                i++;
             }
             res.close();
             //se añade la matriz de datos en el DefaultTableModel

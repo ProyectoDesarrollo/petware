@@ -126,7 +126,8 @@ public class controladorFactura implements ActionListener, ItemListener {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableProductosMouseClicked(evt);
                 frame.btnAñadirCarrito.setEnabled(true);
-                frame.btnModificarProductoF.setEnabled(true);
+                frame.btnModificarProductoF.setEnabled(false);
+                frame.btnEleminarProductof.setEnabled(false);
 
             }
         });
@@ -330,13 +331,17 @@ public class controladorFactura implements ActionListener, ItemListener {
         String id = (String) this.frame.tableFactura.getValueAt(fila, 0);
 
         String[] Relleno = this.modelo.RellenarProducto(id);
-        this.frame.txtIDProductoFactura.setText(id);
-        this.frame.txtIDProductoFactura.enable(false);
-        this.frame.txtNombreProductoFactura.setText(Relleno[1]);
-        this.frame.stock.setValue(Integer.parseInt(Relleno[2]));
-        this.frame.txtPrecioProductoFactura.setText(Relleno[3]);
-        this.frame.txtTipoProductoFactura.setText(Relleno[4]);
-        this.frame.TextAreaFactura.setText(String.valueOf(Relleno[5]));
+        if (Integer.parseInt(Relleno[2]) <= 0) {
+
+        } else {
+            this.frame.txtIDProductoFactura.setText(id);
+            this.frame.txtIDProductoFactura.enable(false);
+            this.frame.txtNombreProductoFactura.setText(Relleno[1]);
+            this.frame.stock.setValue(Integer.parseInt(Relleno[2]));
+            this.frame.txtPrecioProductoFactura.setText(Relleno[3]);
+            this.frame.txtTipoProductoFactura.setText(Relleno[4]);
+            this.frame.TextAreaFactura.setText(String.valueOf(Relleno[5]));
+        }
 
     }
 
