@@ -271,7 +271,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JButton btnMascota;
     public javax.swing.JButton btnProductos;
     public javax.swing.JButton btnProveedores;
-    private javax.swing.JButton btnTrabajadores;
+    public javax.swing.JButton btnTrabajadores;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel panelBotones;
     public javax.swing.JTabbedPane panelPestaña;

@@ -28,6 +28,7 @@ import vista.pacienteFrame;
 import vista.productoFrame;
 import vista.proveedoresFrame;
 import vista.registro;
+import vista.trabajadoresFrame;
 
 public class controlador implements ActionListener, MouseListener ,ItemListener {
 
@@ -44,7 +45,8 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     proveedoresFrame vistaProveedor = new proveedoresFrame();
     productoFrame vistaProducto = new productoFrame();
     facturasFrame vistaFacturas = new facturasFrame();
-;
+    trabajadoresFrame vistaTrabajadores= new trabajadoresFrame();
+
     JDesktopPane cliente = new JDesktopPane();
     int fila = 0;
 
@@ -174,6 +176,9 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
 
         this.vista.btnCerrar.setActionCommand("btnCerrar");
         this.vista.btnCerrar.addActionListener(this);
+        
+        this.vista.btnTrabajadores.setActionCommand("btnTrabajadores");
+        this.vista.btnTrabajadores.addActionListener(this);
 
         //InternalFrame
         this.vistaCliente.setVisible(false);
@@ -316,7 +321,17 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
                int ntab = this.vista.panelPestaña.indexOfTab("Facturas    ");
                 this.vista.panelPestaña.setSelectedIndex(ntab);
            }
-
+            
+        } else if (comand.equals("btnTrabajadores")) {
+            if (this.vista.panelPestaña.indexOfTab("Trabajadores   ") != -1) {
+                
+                int ntab = this.vista.panelPestaña.indexOfTab("Trabajadores    ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
+            } else {
+               crearPestaña("Trabajadores");
+               int ntab = this.vista.panelPestaña.indexOfTab("Trabajadores    ");
+                this.vista.panelPestaña.setSelectedIndex(ntab);
+           }
 
         } else if (comand.equals("btnAñadirProveedor")) {
 
@@ -518,7 +533,9 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
 
         } else if (nombrePestaña.equals("Proveedores")) {
             this.vista.panelPestaña.addTab("Proveedores   ", vistaProveedor);
-
+            
+        } else if (nombrePestaña.equals("Trabajadores")) {
+            this.vista.panelPestaña.addTab("Trabajadores   ", vistaTrabajadores);    
 //
         } else if (nombrePestaña.equals("Facturas")) {
             this.vista.panelPestaña.addTab("Facturas    ",vistaFacturas);

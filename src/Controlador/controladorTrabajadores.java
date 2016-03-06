@@ -159,14 +159,13 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
         
         case btnEliminarTrabajador://Borra un cliente
 
-                try {
+            try {
 
                     this.vistaTrabajador.jTableTrabajadores.getSelectedRow();
                     if (this.vistaTrabajador.jTableTrabajadores.getSelectedRow() < 0) {
+                    JOptionPane.showMessageDialog(null, "Seleccione una fila");
 
-                        JOptionPane.showMessageDialog(null, "Seleccione una fila");
-
-                    } else {
+            } else {
 
                         fila = this.vistaTrabajador.jTableTrabajadores.getSelectedRow();
                         String dni = (String) this.vistaTrabajador.jTableTrabajadores.getValueAt(fila, 0);
@@ -175,9 +174,9 @@ public class controladorTrabajadores implements ActionListener, MouseListener {
 
                     }
 
-                } catch (Exception ex) {
+            } catch (Exception ex) {
                     ex.printStackTrace();
-                }
+            }
 
                 break;        
         }
