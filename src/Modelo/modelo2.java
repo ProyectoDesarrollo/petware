@@ -224,11 +224,11 @@ public class modelo2 extends Database{
     }
     
     //------------------------------Metodo Agregar----------------------------------
-    public boolean InsertarCliente (String DNI, String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Nacimiento, int CodigoPostal, String Provincia, String Fecha) {
+    public boolean InsertarCliente (String DNI, String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Provincia, String Nacimiento, int CodigoPostal, String Nota) {
             //Consulta para insertar 
         
-        String q=" INSERT INTO Cliente ( DNI, Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email, Provincia, Nacimiento, Tipo, Desde, CodigoPostal )"
-                    + "VALUES ( '" + DNI + "','" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "','" + Provincia + "','" + Nacimiento + "','"  + Fecha + "','" + CodigoPostal + "') ";
+        String q=" INSERT INTO Cliente ( DNI, Nombre ,Apellidos ,Direccion, Telefono,  Movil, Email, Provincia, Nacimiento, CodigoPostal, Nota )"
+                    + "VALUES ( '" + DNI + "','" + Nombre + "', '" + Apellidos + "', '" + Direccion + "','" + Telefono + "','" + Movil + "','" + Email + "','" + Provincia + "','" + Nacimiento + "','" + CodigoPostal + "','" + Nota + "') ";
             //se ejecuta la consulta
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
@@ -291,9 +291,9 @@ public class modelo2 extends Database{
     }
     //----------------------------Metodos Modificar---------------------------------------
     
-    public void modificarCliente(String DNI, String nombre, String apellidos, String Direccion, int telefono, int Movil, String email, String provincia, Date Nacimiento, String Tipo, Date Desde, int CodigoPostal) {
+    public void modificarCliente(String DNI, String Nombre, String Apellidos, String Direccion, int Telefono, int Movil, String Email, String Provincia, String Nacimiento, int CodigoPostal, String Nota) {
 
-        String q = "Update Proveedores set Nombre='" + nombre + "', Apellidos='" + apellidos + "', Direccion='" + Direccion + "', Telefono='" + telefono + "', Movil='" + Movil + "', Email='" + email + "', Provincia='" + provincia + "',Nacimiento='" + Nacimiento + "',Tipo='" + Tipo + "', Desde='" + Desde + "', CodigoPostal='" + CodigoPostal + "' where DNI='" + DNI + "';";
+        String q = "Update Cliente set Nombre='" + Nombre + "', Apellidos='" + Apellidos + "', Direccion='" + Direccion + "', Telefono='" + Telefono + "', Movil='" + Movil + "', Email='" + Email + "', Provincia='" + Provincia + "',Nacimiento='" + Nacimiento + "',CodigoPostal='" + CodigoPostal + "',Nota='" + Nota + "' where DNI='" + DNI + "';";
 
         try {
 
@@ -602,11 +602,11 @@ public class modelo2 extends Database{
     
     //--------------------------------- Meotdos Rellenar-----------------------------
     
-    public String[] RellenarCliente(String dni){     
-        String[] Relleno= new String[12];
+    public String[] RellenarCliente(String DNI){     
+        String[] Relleno= new String[11];
       try{
          
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Nota FROM Cliente WHERE DNI like '%"+dni+"%'");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT DNI, Nombre, Apellidos, Direccion, Telefono, Movil, Email, Provincia, Nacimiento, CodigoPostal, Nota FROM Cliente WHERE DNI like '%"+DNI+"%'");
          ResultSet res = pstm.executeQuery();
          
          while(res.next()){ 
@@ -619,8 +619,9 @@ public class modelo2 extends Database{
             Relleno[6] = res.getString("Email");
             Relleno[7]= res.getString("Provincia");
             Relleno[8]= res.getString("Nacimiento");
-            Relleno[9]= res.getString("Nota");
-            Relleno[10]= res.getString("CodigoPostal");
+            Relleno[9]= res.getString("CodigoPostal");
+            Relleno[10]= res.getString("Nota");
+            
           
          }           
          res.close();

@@ -187,12 +187,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
         this.vistaCliente.scrollTableCliente.getViewport().setOpaque(false);
 
         //--------------------- MouseClick--------------------------
-        this.vistaCliente.jTableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableClientesMouseClicked(evt);
-            }
-        });
-
+        
         this.vistaProducto.jTableProductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableProductosMouseClicked(evt);
@@ -209,7 +204,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
 
         this.vistaPaciente.jTablePacientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableClientesMouseClicked(evt);
+                tablePacientesMouseClicked(evt);
             }
         });
 
@@ -221,17 +216,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
 
         });
         //---------------------- Buscar--------------------------
-        //---------------------- Buscar Cientes------------------
-        this.vistaCliente.txtBuscadorCliente.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BuscarClientes(evt);
-            }
-        });
-        this.vistaCliente.txtBuscadorCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vistaCliente.txtBuscadorCliente.setText("");
-            }
-        });
+        
         //--------------------- Buscar Producto ------------------
         this.vistaProducto.txtBuscadorProducto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -496,10 +481,6 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     }
     //-----------------------------Metodo Buscar-------------------------------
 
-    private void BuscarClientes(java.awt.event.KeyEvent evt) {//Busca Clientes            
-        String buscar = this.vistaCliente.txtBuscadorCliente.getText();
-        this.vistaCliente.jTableCliente.setModel(this.modelo.buscarCliente(buscar));
-    }
 
     private void BuscarProveedor(java.awt.event.KeyEvent evt) {//Busca Clientes            
         String buscar = this.vistaProveedor.txtBuscadorProveedores.getText();
@@ -566,25 +547,7 @@ public class controlador implements ActionListener, MouseListener ,ItemListener 
     }
 
     //----------------------Permite la selección de elementos dentro de tablas---------------------------
-    private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {
-
-        fila = this.vistaCliente.jTableCliente.getSelectedRow();
-        String dni = (String) this.vistaCliente.jTableCliente.getValueAt(fila, 0);
-
-        String[] Relleno = this.modelo.RellenarCliente(dni);
-        this.vistaCliente.txtDNICliente.setText(dni);
-        this.vistaCliente.txtDNICliente.enable(false);
-        this.vistaCliente.txtNombreCliente.setText(Relleno[1]);
-        this.vistaCliente.txtApellidosCliente.setText(Relleno[2]);
-        this.vistaCliente.txtDireccionCliente.setText(Relleno[3]);
-        this.vistaCliente.txtTelefonoCliente.setText(Relleno[4]);
-        this.vistaCliente.txtMovilCliente.setText(Relleno[5]);
-        this.vistaCliente.txtEmailCliente.setText(Relleno[6]);
-        this.vistaCliente.txtProvinciaCliente.setText(Relleno[7]);
-        
-        this.vistaCliente.txtFechaICliente.setText(Relleno[9]);
-        this.vistaCliente.txtCodigoPCliente.setText(Relleno[10]);
-    }
+   
 
     private void tableProveedoresMouseClicked(java.awt.event.MouseEvent evt) {
 

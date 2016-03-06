@@ -38,7 +38,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         txtApellidosCliente = new javax.swing.JTextField();
@@ -54,11 +53,10 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         txtProvinciaCliente = new javax.swing.JTextField();
         txtCodigoPCliente = new javax.swing.JTextField();
         txtEmailCliente = new javax.swing.JTextField();
-        txtFechaICliente = new javax.swing.JTextField();
         txtFechaCliente = new javax.swing.JTextField();
         btnGuardarCliente = new javax.swing.JButton();
         scrollNotaCliente = new javax.swing.JScrollPane();
-        txtPCliente = new javax.swing.JTextPane();
+        TextAreaCliente = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         jScrollBar1 = new javax.swing.JScrollBar();
         pestañaMascotaCliente = new javax.swing.JPanel();
@@ -98,8 +96,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
         jLabel53.setText("Fecha Nacimiento:");
 
-        jLabel54.setText("Fecha Ingreso :");
-
         jLabel55.setText("DNI : ");
 
         jLabel56.setText("Nombre :");
@@ -130,18 +126,12 @@ public class clienteFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        txtFechaICliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaIClienteActionPerformed(evt);
-            }
-        });
-
         btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesBotones/guardar_1.png"))); // NOI18N
         btnGuardarCliente.setPreferredSize(new java.awt.Dimension(105, 36));
 
         scrollNotaCliente.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollNotaCliente.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollNotaCliente.setViewportView(txtPCliente);
+        scrollNotaCliente.setViewportView(TextAreaCliente);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Notas :");
@@ -155,66 +145,64 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
                         .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                        .addGap(47, 47, 47)
-                                        .addComponent(jLabel60))
+                                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(28, 28, 28)
-                                                .addComponent(jLabel57))
-                                            .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel55, javax.swing.GroupLayout.Alignment.TRAILING))
                                         .addGroup(panelClienteDatosLayout.createSequentialGroup()
                                             .addGap(28, 28, 28)
-                                            .addComponent(jLabel58))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
-                                            .addContainerGap()
-                                            .addComponent(jLabel59))))
+                                            .addComponent(jLabel57))
+                                        .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel55, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jLabel58))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel59)))
                                 .addGap(28, 28, 28)
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDireccionCliente)
-                                    .addComponent(txtApellidosCliente)
-                                    .addComponent(txtNombreCliente)
-                                    .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtMovilCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                                    .addComponent(txtDNICliente))
-                                .addGap(89, 89, 89)
+                                    .addComponent(txtDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtApellidosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDNICliente, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(45, 45, 45)
+                                        .addGap(89, 89, 89)
+                                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                                                .addGap(57, 57, 57)
                                                 .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(7, 7, 7)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                                                .addGap(19, 19, 19)
                                                 .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(panelClienteDatosLayout.createSequentialGroup()
-                                                .addGap(26, 26, 26)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelClienteDatosLayout.createSequentialGroup()
+                                                .addGap(38, 38, 38)
                                                 .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmailCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFechaICliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                                    .addComponent(txtFechaCliente, javax.swing.GroupLayout.Alignment.LEADING)))
+                                            .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(txtCodigoPCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtEmailCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtFechaCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(panelClienteDatosLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel60)
+                                        .addGap(28, 28, 28)
+                                        .addComponent(txtMovilCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelClienteDatosLayout.createSequentialGroup()
-                                .addGap(44, 581, Short.MAX_VALUE)
+                                .addGap(44, 591, Short.MAX_VALUE)
                                 .addComponent(btnGuardarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelClienteDatosLayout.createSequentialGroup()
                                 .addGap(48, 48, 48)
                                 .addComponent(scrollNotaCliente)))
-                        .addGap(57, 57, 57))
+                        .addGap(47, 47, 47))
                     .addGroup(panelClienteDatosLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(345, 345, 345)))
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(335, 335, 335)))
+                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         panelClienteDatosLayout.setVerticalGroup(
             panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,16 +234,14 @@ public class clienteFrame extends javax.swing.JInternalFrame {
                     .addComponent(jLabel51)
                     .addComponent(txtProvinciaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel59)
-                    .addComponent(jLabel54)
-                    .addComponent(txtFechaICliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMovilCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMovilCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelClienteDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel59)))
+                .addGap(85, 85, 85)
                 .addComponent(jLabel1)
                 .addGap(31, 31, 31)
                 .addComponent(scrollNotaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -423,10 +409,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarClienteActionPerformed
 
-    private void txtFechaIClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaIClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaIClienteActionPerformed
-
     private void txtDNIClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDNIClienteActionPerformed
@@ -441,6 +423,7 @@ public class clienteFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextPane TextAreaCliente;
     public javax.swing.JButton btnAgregarCliente;
     public javax.swing.JButton btnEliminarCliente;
     public javax.swing.JButton btnGuardarCliente;
@@ -452,7 +435,6 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
@@ -478,10 +460,8 @@ public class clienteFrame extends javax.swing.JInternalFrame {
     public javax.swing.JTextField txtDireccionCliente;
     public javax.swing.JTextField txtEmailCliente;
     public javax.swing.JTextField txtFechaCliente;
-    public javax.swing.JTextField txtFechaICliente;
     public javax.swing.JTextField txtMovilCliente;
     public javax.swing.JTextField txtNombreCliente;
-    public javax.swing.JTextPane txtPCliente;
     public javax.swing.JTextField txtProvinciaCliente;
     public javax.swing.JTextField txtTelefonoCliente;
     // End of variables declaration//GEN-END:variables
